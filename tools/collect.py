@@ -31,6 +31,14 @@ _CARD_SELECTORS = (
     "div[class*='listing']",
 )
 
+_DETAIL_GALLERY_SELECTORS = (
+    "[class*='gallery'] img",
+    "[class*='carousel'] img",
+    "[class*='property'] img",
+    "img[src*='nobroker.in/images']",
+    "img[src*='images.nobroker']",
+)
+
 
 def _root_dir() -> str:
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -124,6 +132,78 @@ def _listing_id(source_url: str, idx: int) -> str:
         digest = hashlib.md5(source_url.encode()).hexdigest()[:10]
         return f"LIVE_{digest}"
     return f"LIVE_{idx:03d}"
+
+
+def _is_property_detail_url(url: str) -> bool:
+    return bool(url) and "/property/" in url
+
+
+def _screenshot_ok(path: str, min_bytes: int = 800) -> bool:
+    return os.path.isfile(path) and os.path.getsize(path) >= min_bytes
+
+
+async def _screenshot_property_page(context, source_url: str, save_path: str) -> str | None:
+    """Open listing detail URL and save a Playwright screenshot (not extracted img src)."""
+    if not _is_property_detail_url(source_url):
+        return None
+
+    detail_page = await context.new_page()
+    try:
+        await detail_page.goto(source_url, wait_until="domcontentloaded", timeout=25000)
+        await detail_page.wait_for_timeout(2000)
+
+        for selector in _DETAIL_GALLERY_SELECTORS:
+            el = await detail_page.query_selector(selector)
+            if not el:
+                continue
+            try:
+                await el.scroll_into_view_if_needed()
+                await detail_page.wait_for_timeout(400)
+                await el.screenshot(path=save_path)
+                if _screenshot_ok(save_path):
+                    return save_path
+            except Exception:
+                continue
+
+        await detail_page.screenshot(path=save_path, full_page=False)
+        if _screenshot_ok(save_path):
+            return save_path
+        return None
+    except Exception as exc:
+        print(f"[Tools/Collect] Detail page screenshot failed ({source_url}): {exc}")
+        return None
+    finally:
+        await detail_page.close()
+
+
+async def _screenshot_card_element(card, save_path: str) -> str | None:
+    """Fallback: screenshot the whole search-result card."""
+    try:
+        await card.scroll_into_view_if_needed()
+        await card.screenshot(path=save_path)
+        if _screenshot_ok(save_path, min_bytes=500):
+            return save_path
+    except Exception as exc:
+        print(f"[Tools/Collect] Card screenshot failed: {exc}")
+    return None
+
+
+async def capture_listing_photo(context, card, source_url: str, save_path: str) -> str:
+    """Capture listing image via detail-page screenshot, then card, then static fallback."""
+    local_name = os.path.basename(save_path)
+
+    detail_path = await _screenshot_property_page(context, source_url, save_path)
+    if detail_path:
+        print(f"[Tools/Collect] Detail screenshot saved: {local_name}")
+        return detail_path
+
+    card_path = await _screenshot_card_element(card, save_path)
+    if card_path:
+        print(f"[Tools/Collect] Card screenshot saved: {local_name}")
+        return card_path
+
+    print(f"[Tools/Collect] Screenshot failed — using fallback for {local_name}")
+    return get_fallback_image(local_name)
 
 
 def _parse_html_articles(html: str, area: str, images_dir: str) -> list[dict[str, Any]]:
@@ -252,21 +332,12 @@ async def fetch_live_listings(
                     rent = _extract_rent(card_text) or 30000
                     bhk_val = _extract_bhk(title) or _extract_bhk(card_text) or "2"
 
-                    local_filename = f"scraped_{slug}_{idx:03d}.jpg"
+                    local_filename = f"scraped_{slug}_{idx:03d}.png"
                     local_path = os.path.join(images_dir, local_filename)
-                    photo_urls: list[str] = []
-
-                    img_el = await card.query_selector("img")
-                    if img_el:
-                        try:
-                            await img_el.scroll_into_view_if_needed()
-                            await page.wait_for_timeout(150)
-                            await img_el.screenshot(path=local_path)
-                            photo_urls.append(local_path)
-                        except Exception:
-                            photo_urls.append(get_fallback_image(local_filename))
-                    else:
-                        photo_urls.append(get_fallback_image(local_filename))
+                    photo_path = await capture_listing_photo(
+                        context, card, source_url, local_path
+                    )
+                    photo_urls = [photo_path]
 
                     address = f"{area}, Bangalore"
                     for line in card_text.split("\n"):
