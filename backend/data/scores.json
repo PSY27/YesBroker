@@ -1,0 +1,1022 @@
+{
+  "L001": {
+    "listing_id": "L001",
+    "score": 87,
+    "verdict": "SAFE",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b934,000 is in line with the \u20b935,000 area median.",
+        "evidence": [
+          "Area median: \u20b935,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 3 min away. Commute to your office (Embassy GolfLinks) is 15 min.",
+        "evidence": [
+          "Real metro: 3 min",
+          "Real office: 15 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Is the security deposit refundable in the agreement?",
+      "Are there any maintenance charges excluded from the rent?",
+      "What are the rules regarding tenant guests or pets?"
+    ]
+  },
+  "L002": {
+    "listing_id": "L002",
+    "score": 82,
+    "verdict": "SAFE",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b933,000 is in line with the \u20b935,000 area median.",
+        "evidence": [
+          "Area median: \u20b935,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 5 min away. Commute to your office (Embassy GolfLinks) is 18 min.",
+        "evidence": [
+          "Real metro: 5 min",
+          "Real office: 18 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Is the security deposit refundable in the agreement?",
+      "Are there any maintenance charges excluded from the rent?",
+      "What are the rules regarding tenant guests or pets?"
+    ]
+  },
+  "L003": {
+    "listing_id": "L003",
+    "score": 79,
+    "verdict": "SAFE",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b935,000 is in line with the \u20b935,000 area median.",
+        "evidence": [
+          "Area median: \u20b935,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 2 min away. Commute to your office (Embassy GolfLinks) is 22 min.",
+        "evidence": [
+          "Real metro: 2 min",
+          "Real office: 22 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Is the security deposit refundable in the agreement?",
+      "Are there any maintenance charges excluded from the rent?",
+      "What are the rules regarding tenant guests or pets?"
+    ]
+  },
+  "L004": {
+    "listing_id": "L004",
+    "score": 68,
+    "verdict": "CAUTION",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b932,000 is in line with the \u20b932,000 area median.",
+        "evidence": [
+          "Area median: \u20b932,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 12 min away. Commute to your office (Embassy GolfLinks) is 20 min.",
+        "evidence": [
+          "Real metro: 12 min",
+          "Real office: 20 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ]
+  },
+  "L005": {
+    "listing_id": "L005",
+    "score": 61,
+    "verdict": "CAUTION",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b931,000 is in line with the \u20b935,000 area median.",
+        "evidence": [
+          "Area median: \u20b935,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 8 min away. Commute to your office (Embassy GolfLinks) is 22 min.",
+        "evidence": [
+          "Real metro: 8 min",
+          "Real office: 22 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ]
+  },
+  "L006": {
+    "listing_id": "L006",
+    "score": 55,
+    "verdict": "CAUTION",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b930,000 is in line with the \u20b930,000 area median.",
+        "evidence": [
+          "Area median: \u20b930,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 10 min away. Commute to your office (Embassy GolfLinks) is 15 min.",
+        "evidence": [
+          "Real metro: 10 min",
+          "Real office: 15 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ]
+  },
+  "L007": {
+    "listing_id": "L007",
+    "score": 34,
+    "verdict": "RISK",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "SUSPICIOUS",
+        "detail": "Rent \u20b924,000 is 31% below the \u20b935,000 area median. Slightly underpriced.",
+        "evidence": [
+          "Area median: \u20b935,000",
+          "Deviation: 31% below median"
+        ],
+        "confidence": 0.8,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "SUSPICIOUS",
+        "detail": "Suspicious pattern found: coercive urgency. Directing verification.",
+        "evidence": [
+          "Found phrase matching 'first come first served'"
+        ],
+        "confidence": 0.7,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "SUSPICIOUS",
+        "detail": "Photo #2 appears in a 3BHK luxury listing in Mumbai under different pricing.",
+        "evidence": [
+          "Duplicate found: magicbricks.com/mumbai/3bhk-bandra"
+        ],
+        "confidence": 0.88,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "LIE",
+        "detail": "Claimed '5 min to metro' is inaccurate. Peak 9 AM drive to metro is actually 15 mins. Real drive to your office (Embassy GolfLinks) is 25 mins.",
+        "evidence": [
+          "Claimed commute: 5 min",
+          "Real metro commute (9 AM): 15 min",
+          "Real office commute (9 AM): 25 min"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: Flagged indicators (SUSPICIOUS/SUSPICIOUS) \u2192 escalating to deep Photo scan + Web-Recon on phone.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Photo origin conflict found \u2192 dispatching Commute address check.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can I video-call live from inside the flat right now?",
+      "Why is the rent so far below other 2BHKs here?",
+      "Can I pay strictly after a physical visit \u2014 no token?"
+    ]
+  },
+  "L008": {
+    "listing_id": "L008",
+    "score": 28,
+    "verdict": "RISK",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "SUSPICIOUS",
+        "detail": "Rent \u20b922,000 is 37% below the \u20b935,000 area median. Slightly underpriced.",
+        "evidence": [
+          "Area median: \u20b935,000",
+          "Deviation: 37% below median"
+        ],
+        "confidence": 0.8,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "SUSPICIOUS",
+        "detail": "Suspicious pattern found: whatsapp direct. Directing verification.",
+        "evidence": [
+          "Found phrase matching 'direct owner contact'"
+        ],
+        "confidence": 0.7,
+        "weight": 0.1
+      },
+      {
+        "agent": "web",
+        "verdict": "SUSPICIOUS",
+        "detail": "Address check: the building 'Royal Apartments, 14th Main' has no records on Google Maps or BBMP database.",
+        "evidence": [
+          "Google Maps search: 'Royal Apartments, 14th Main Indiranagar' - No results found",
+          "BBMP Pincode search: Address does not align with registered societies"
+        ],
+        "confidence": 0.85,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "SUSPICIOUS",
+        "detail": "Commute claims are slightly exaggerated. Metro is 12 min, while office is 28 min.",
+        "evidence": [
+          "Claimed: 3 min",
+          "Actual Metro: 12 min"
+        ],
+        "confidence": 0.75,
+        "weight": 0.15
+      },
+      {
+        "agent": "photo",
+        "verdict": "SUSPICIOUS",
+        "detail": "Photo #2 stolen recently. Matched duplicate in regional staging database.",
+        "evidence": [
+          "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
+        ],
+        "confidence": 0.9,
+        "weight": 0.35
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: Flagged indicators (SUSPICIOUS/SUSPICIOUS) \u2192 escalating to deep Photo scan + Web-Recon on phone.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: CONFLICT \u2014 photos marked clean but price/text/web flag suspicious behavior. Hypothesis: photo stolen recently, not yet indexed. Re-dispatching Photo with within-batch dedup.",
+      "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
+    ],
+    "questions_to_ask": [
+      "Can I video-call live from inside the flat right now?",
+      "Why is the rent so far below other 2BHKs here?",
+      "Can I pay strictly after a physical visit \u2014 no token?"
+    ]
+  },
+  "L091": {
+    "listing_id": "L091",
+    "score": 18,
+    "verdict": "HIGH_RISK",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "BAIT",
+        "detail": "Rent \u20b918,000 is 48% BELOW the \u20b935,000 area median for a 2 BHK.",
+        "evidence": [
+          "Area median: \u20b935,000",
+          "Listing rent: \u20b918,000",
+          "Deviation: 48% below median"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "SUSPICIOUS",
+        "detail": "Scam linguistics found: owner abroad, token to hold, whatsapp direct. High indicators of bait-and-switch.",
+        "evidence": [
+          "Found phrase matching 'owner going abroad'",
+          "Found phrase matching 'refundable token'",
+          "Found phrase matching 'whatsapp me'"
+        ],
+        "confidence": 0.9,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "SUSPICIOUS",
+        "detail": "Photo #2 is STOLEN. It appears on active listings in Hyderabad and Pune under different owners.",
+        "evidence": [
+          "Duplicate found: nobroker.in/hyd/flat-2bhk-banjara-hills",
+          "Duplicate found: 99acres.com/pune/2bhk-koregaon-park",
+          "Reverse Image Search Match: Stock image or stolen rental photo"
+        ],
+        "confidence": 0.98,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "SUSPICIOUS",
+        "detail": "Phone number +91 93003 40056 is flagged on complaint boards as part of a classic 'token scam'. Also, address is duplicate.",
+        "evidence": [
+          "Flagged phone: consumercomplaints.in/scam-thread-98032 (reported 4 times)",
+          "Address cross-portal check: 14th Main Indiranagar listing found under Owner 'Ravi Kumar' on Housing.com, but owner here is listed as 'Dr. James' going abroad."
+        ],
+        "confidence": 0.97,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "LIE",
+        "detail": "Claimed '5 min to metro' is inaccurate. Peak 9 AM drive to metro is actually 21 mins. Real drive to your office (Embassy GolfLinks) is 47 mins.",
+        "evidence": [
+          "Claimed commute: 5 min",
+          "Real metro commute (9 AM): 21 min",
+          "Real office commute (9 AM): 47 min"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: Flagged indicators (BAIT/SUSPICIOUS) \u2192 escalating to deep Photo scan + Web-Recon on phone.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Photo origin conflict found \u2192 dispatching Commute address check.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can I video-call live from inside the flat right now?",
+      "Why is the rent so far below other 2BHKs here?",
+      "Can I pay strictly after a physical visit \u2014 no token?"
+    ]
+  },
+  "L010": {
+    "listing_id": "L010",
+    "score": 12,
+    "verdict": "RISK",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "BAIT",
+        "detail": "Rent \u20b916,000 is 54% BELOW the \u20b935,000 area median for a 2 BHK.",
+        "evidence": [
+          "Area median: \u20b935,000",
+          "Listing rent: \u20b916,000",
+          "Deviation: 54% below median"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "SUSPICIOUS",
+        "detail": "Scam linguistics found: token to hold, coercive urgency. High indicators of bait-and-switch.",
+        "evidence": [
+          "Found phrase matching 'pay token'",
+          "Found phrase matching 'urgent listing'"
+        ],
+        "confidence": 0.9,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "SUSPICIOUS",
+        "detail": "Photo #1 is a stock/model apartment photo downloaded from Pinterest. Not of the actual flat.",
+        "evidence": [
+          "Source found: pinterest.com/pin/interior-design-scandi-modern",
+          "Zero EXIF metadata matching mobile cameras"
+        ],
+        "confidence": 0.95,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "SUSPICIOUS",
+        "detail": "Phone number +91 94004 50067 is associated with multiple urgent postings in 3 different suburbs within the last 48 hours.",
+        "evidence": [
+          "Cross-posting match: same number listed for flats in Whitefield, Indiranagar, and Jayanagar.",
+          "Scam alert forums: 'Urgent deposit required' reported on Reddit r/bangalore"
+        ],
+        "confidence": 0.92,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "LIE",
+        "detail": "Claimed '5 min to metro' is inaccurate. Peak 9 AM drive to metro is actually 18 mins. Real drive to your office (Embassy GolfLinks) is 38 mins.",
+        "evidence": [
+          "Claimed commute: 4 min",
+          "Real metro commute (9 AM): 18 min",
+          "Real office commute (9 AM): 38 min"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: Flagged indicators (BAIT/SUSPICIOUS) \u2192 escalating to deep Photo scan + Web-Recon on phone.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Photo origin conflict found \u2192 dispatching Commute address check.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can I video-call live from inside the flat right now?",
+      "Why is the rent so far below other 2BHKs here?",
+      "Can I pay strictly after a physical visit \u2014 no token?"
+    ]
+  },
+  "L011": {
+    "listing_id": "L011",
+    "score": 85,
+    "verdict": "SAFE",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b915,000 is in line with the \u20b917,500 area median.",
+        "evidence": [
+          "Area median: \u20b917,500"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 5 min away. Commute to your office (Embassy GolfLinks) is 18 min.",
+        "evidence": [
+          "Real metro: 5 min",
+          "Real office: 18 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Is the security deposit refundable in the agreement?",
+      "Are there any maintenance charges excluded from the rent?",
+      "What are the rules regarding tenant guests or pets?"
+    ]
+  },
+  "L012": {
+    "listing_id": "L012",
+    "score": 88,
+    "verdict": "SAFE",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b965,000 is in line with the \u20b956,000 area median.",
+        "evidence": [
+          "Area median: \u20b956,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 15 min away. Commute to your office (Embassy GolfLinks) is 25 min.",
+        "evidence": [
+          "Real metro: 15 min",
+          "Real office: 25 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Is the security deposit refundable in the agreement?",
+      "Are there any maintenance charges excluded from the rent?",
+      "What are the rules regarding tenant guests or pets?"
+    ]
+  },
+  "L013": {
+    "listing_id": "L013",
+    "score": 70,
+    "verdict": "CAUTION",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b928,000 is in line with the \u20b928,000 area median.",
+        "evidence": [
+          "Area median: \u20b928,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 45 min away. Commute to your office (Embassy GolfLinks) is 65 min.",
+        "evidence": [
+          "Real metro: 45 min",
+          "Real office: 65 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ]
+  },
+  "L014": {
+    "listing_id": "L014",
+    "score": 84,
+    "verdict": "SAFE",
+    "flags": [
+      {
+        "agent": "price",
+        "verdict": "CLEAN",
+        "detail": "Rent \u20b933,000 is in line with the \u20b933,000 area median.",
+        "evidence": [
+          "Area median: \u20b933,000"
+        ],
+        "confidence": 0.9,
+        "weight": 0.15
+      },
+      {
+        "agent": "text",
+        "verdict": "CLEAN",
+        "detail": "Description text appears normal and professional with no known scam linguistic markers.",
+        "evidence": [
+          "No scam keywords flagged"
+        ],
+        "confidence": 0.85,
+        "weight": 0.1
+      },
+      {
+        "agent": "photo",
+        "verdict": "CLEAN",
+        "detail": "Photos are original. No duplicate matches found across any major rental aggregators.",
+        "evidence": [
+          "Original EXIF tags present",
+          "Reverse image search: 0 duplicates on web"
+        ],
+        "confidence": 0.92,
+        "weight": 0.35
+      },
+      {
+        "agent": "web",
+        "verdict": "CLEAN",
+        "detail": "Broker phone number has a good reputation (0 scam reports found). Address and building verified as existing.",
+        "evidence": [
+          "Truecaller business directory verification: Verified Individual Owner",
+          "Google Maps check: Society exists and matches location exactly"
+        ],
+        "confidence": 0.9,
+        "weight": 0.25
+      },
+      {
+        "agent": "commute",
+        "verdict": "CLEAN",
+        "detail": "Commute times are accurate. Metro is 25 min away. Commute to your office (Embassy GolfLinks) is 35 min.",
+        "evidence": [
+          "Real metro: 25 min",
+          "Real office: 35 min"
+        ],
+        "confidence": 0.95,
+        "weight": 0.15
+      }
+    ],
+    "reasoning": [
+      "Planner: Dispatched cheap parallel checks (Price + Text).",
+      "Planner: No obvious flags in first pass. Dispatching standard validation.",
+      "Planner: Dispatched Photo-Forensics & Web-Recon.",
+      "Planner: Standard routing dispatched to Commute Agent.",
+      "Arbiter: Specialist findings are consistent. No multi-agent conflicts detected."
+    ],
+    "questions_to_ask": [
+      "Is the security deposit refundable in the agreement?",
+      "Are there any maintenance charges excluded from the rent?",
+      "What are the rules regarding tenant guests or pets?"
+    ]
+  }
+}

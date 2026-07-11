@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YesBroker (GharCheck) - Multi-Agent Trust Verification</title>
+    <!-- Modern Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation / Logo -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="logo-text">
+                    <h1>YesBroker</h1>
+                    <span>GharCheck Trust Engine</span>
+                </div>
+            </div>
+            <div class="header-tagline">
+                Genuine flats float up • Scams sink to the bottom
+            </div>
+        </header>
+
+        <main class="main-layout">
+            <!-- Left Panel: Requirements Form & Search Results -->
+            <section class="left-panel">
+                <!-- Requirements Form -->
+                <div class="card glass-card form-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-sliders"></i> Find me a safe rental</h2>
+                        <span class="badge info-badge">P4 Live Verified</span>
+                    </div>
+                    <form id="search-form" class="search-form">
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <label for="area">Pincode / Area</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="area" placeholder="e.g. Indiranagar" value="Indiranagar" required>
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="pincode">Pincode (Optional)</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                    <input type="text" id="pincode" placeholder="560038" value="560038">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <label for="max-rent">Max Budget (Monthly)</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                                    <input type="number" id="max-rent" placeholder="35000" value="35000" required>
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="bhk">Configuration</label>
+                                <div class="input-wrapper select-wrapper">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <select id="bhk" required>
+                                        <option value="1">1 BHK</option>
+                                        <option value="2" selected>2 BHK</option>
+                                        <option value="3">3 BHK</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="office">Daily Office (for commute check)</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <input type="text" id="office" placeholder="e.g. Embassy GolfLinks" value="Embassy GolfLinks">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-glow">
+                            <i class="fa-solid fa-magnifying-glass"></i> Find Safe Homes
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Search Results Listings -->
+                <div class="listings-container">
+                    <div class="listings-header">
+                        <span id="results-count" class="results-info">Enter preferences to search...</span>
+                        <div class="sort-indicator">Sorted by <strong class="text-gradient">Trust Score</strong></div>
+                    </div>
+                    <div id="listings-feed" class="listings-feed">
+                        <!-- Initial placeholder state -->
+                        <div class="empty-state">
+                            <i class="fa-solid fa-house-shield"></i>
+                            <h3>Start Your Smart Rental Search</h3>
+                            <p>Fill out the preferences form above to discover properties sorted automatically by safety metrics.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Full Trust Report -->
+            <section class="right-panel" id="report-section">
+                <!-- Welcome/Placeholder Card -->
+                <div class="card glass-card placeholder-card" id="report-placeholder">
+                    <div class="placeholder-icon">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h2>Deep Agentic Investigation</h2>
+                    <p>Click any rental listing on the left to fire up the multi-agent orchestration engine. We will deep-scan photos, cross-reference broker details, run path commute checks, and output a detailed trust analysis live.</p>
+                </div>
+
+                <!-- Real Trust Report Dashboard -->
+                <div class="trust-report-container hidden" id="trust-report-dashboard">
+                    <!-- Score Header Block -->
+                    <div class="card glass-card header-report-card">
+                        <div class="report-main-header">
+                            <div class="listing-brief">
+                                <span id="report-bhk-area" class="meta-tag">2 BHK • Indiranagar</span>
+                                <h2 id="report-title">Listing Title</h2>
+                                <div class="rent-amount"><i class="fa-solid fa-indian-rupee-sign"></i> <span id="report-rent">0</span> / month</div>
+                            </div>
+                            <div class="score-badge-container">
+                                <div class="score-radial-progress">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path id="score-circle-path" class="circle-progress" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="score-inner">
+                                        <span id="score-number" class="score-number">--</span>
+                                        <span class="score-max">/100</span>
+                                    </div>
+                                </div>
+                                <div id="verdict-label" class="verdict-pill">UNKNOWN</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabs/Navigation -->
+                    <div class="report-sections-grid">
+                        <!-- Left Sub-column -->
+                        <div class="sub-col">
+                            <!-- RED FLAGS -->
+                            <div class="card glass-card section-card">
+                                <div class="section-title text-red">
+                                    <i class="fa-solid fa-triangle-exclamation"></i> Verified Agent Findings
+                                </div>
+                                <div id="report-flags-list" class="findings-list">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+
+                            <!-- INTERROGATION CHECKS -->
+                            <div class="card glass-card section-card questions-card">
+                                <div class="section-title text-blue">
+                                    <i class="fa-solid fa-shield-halved"></i> Before You Contact This Broker, Ask:
+                                </div>
+                                <ul id="report-questions-list" class="questions-list">
+                                    <!-- Populated dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Sub-column -->
+                        <div class="sub-col">
+                            <!-- BRAIN TERMINAL LOG -->
+                            <div class="card dark-card terminal-card">
+                                <div class="terminal-header">
+                                    <div class="terminal-dots">
+                                        <span class="dot red"></span>
+                                        <span class="dot yellow"></span>
+                                        <span class="dot green"></span>
+                                    </div>
+                                    <div class="terminal-title"><i class="fa-solid fa-terminal"></i> Agentic Investigation Trace</div>
+                                    <div class="terminal-status"><span class="pulse-indicator"></span> LIVE</div>
+                                </div>
+                                <div id="terminal-body" class="terminal-body">
+                                    <!-- Typewriter terminal output -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
