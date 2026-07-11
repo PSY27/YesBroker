@@ -5,7 +5,9 @@ description = "YesBroker (GharCheck) — multi-agent rental trust verification f
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.139.0",
+    "google-genai>=2.11.0",
     "httpx>=0.28.1",
     "pydantic>=2.13.4",
+    "python-dotenv>=1.2.2",
     "uvicorn>=0.51.0",
 ]

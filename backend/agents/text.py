@@ -1,12 +1,12 @@
 import agents._path  # noqa: F401
 
-import os
 import re
 
 from agents.base import BaseAgent
 from schema import AgentResult, CaseState
+from tools.gemini_client import generate_json, is_configured
 
-# English scam linguistic patterns
+# Regex fallback when Gemini key is not set
 SCAM_PATTERNS_EN = {
     "owner abroad": [
         r"owner (?:is )?going abroad",
@@ -36,7 +36,6 @@ SCAM_PATTERNS_EN = {
     ],
 }
 
-# Kannada / Hindi transliterated scam phrases common in Bangalore listings
 SCAM_PATTERNS_MULTILINGUAL = {
     "token/advance pressure (kn/hi)": [
         r"token kodsi",
@@ -68,40 +67,27 @@ def _regex_scan(text: str) -> tuple[list[str], list[str]]:
 
 
 async def _gemini_scan(description: str) -> tuple[list[str], list[str], float] | None:
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-    if not api_key:
+    if not is_configured():
         return None
 
-    try:
-        import httpx
-
-        prompt = (
-            "Analyze this rental listing description for scam indicators. "
-            "Respond with JSON only: "
-            '{"flags": ["short label", ...], "evidence": ["quote or reason", ...], "confidence": 0.0-1.0}. '
-            "Check English, Kannada, Hindi, and mixed-language text.\n\n"
-            f"Description:\n{description}"
-        )
-        async with httpx.AsyncClient(timeout=20.0) as client:
-            resp = await client.post(
-                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
-                params={"key": api_key},
-                json={"contents": [{"parts": [{"text": prompt}]}]},
-            )
-            resp.raise_for_status()
-            text = resp.json()["candidates"][0]["content"]["parts"][0]["text"]
-            import json
-
-            # Strip markdown fences if present
-            text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip(), flags=re.MULTILINE)
-            data = json.loads(text)
-            return data.get("flags", []), data.get("evidence", []), float(data.get("confidence", 0.85))
-    except Exception:
+    prompt = (
+        "Analyze this Bangalore rental listing description for scam indicators. "
+        "Check English, Kannada, Hindi, and mixed-language text. "
+        'Respond with JSON: {"flags": ["short label"], "evidence": ["quote or reason"], "confidence": 0.0-1.0}\n\n'
+        f"Description:\n{description}"
+    )
+    data = await generate_json(prompt)
+    if not data:
         return None
+    return (
+        data.get("flags", []),
+        data.get("evidence", []),
+        float(data.get("confidence", 0.85)),
+    )
 
 
 class TextAgent(BaseAgent):
-    """Scans listing copy for scam linguistics (regex + optional Gemini)."""
+    """Scans listing copy for scam linguistics via Gemini (regex fallback offline)."""
 
     name = "text"
     weight = 0.10
@@ -119,26 +105,25 @@ class TextAgent(BaseAgent):
                 weight=self.weight,
             )
 
-        desc_lower = desc.lower()
-        flagged, evidence = _regex_scan(desc_lower)
+        flagged: list[str] = []
+        evidence: list[str] = []
+        confidence_boost: float | None = None
 
         gemini = await _gemini_scan(desc)
         if gemini:
-            g_flags, g_evidence, g_conf = gemini
-            for f in g_flags:
-                if f not in flagged:
-                    flagged.append(f)
-            evidence.extend(g_evidence)
-            confidence_boost = g_conf
+            flagged, evidence, confidence_boost = gemini
+            evidence = [str(e) for e in evidence]
+            source = "Gemini analysis"
         else:
-            confidence_boost = None
+            flagged, evidence = _regex_scan(desc.lower())
+            source = "Regex fallback (set GEMINI_API_KEY in .env for live analysis)"
 
         if len(flagged) >= 2:
             return AgentResult(
                 agent=self.name,
                 verdict="SUSPICIOUS",
                 detail=f"Scam linguistics found: {', '.join(flagged)}. High indicators of bait-and-switch.",
-                evidence=evidence,
+                evidence=evidence + [source],
                 confidence=confidence_boost or 0.90,
                 weight=self.weight,
             )
@@ -148,7 +133,7 @@ class TextAgent(BaseAgent):
                 agent=self.name,
                 verdict="SUSPICIOUS",
                 detail=f"Suspicious pattern found: {flagged[0]}. Directing verification.",
-                evidence=evidence,
+                evidence=evidence + [source],
                 confidence=confidence_boost or 0.70,
                 weight=self.weight,
             )
@@ -157,7 +142,7 @@ class TextAgent(BaseAgent):
             agent=self.name,
             verdict="CLEAN",
             detail="Description text appears normal with no known scam linguistic markers.",
-            evidence=["No scam keywords flagged"],
+            evidence=evidence or ["No scam keywords flagged", source],
             confidence=confidence_boost or 0.85,
             weight=self.weight,
         )

@@ -58,32 +58,36 @@ YesBroker/
 
 Requires **Python 3.11+** and [uv](https://docs.astral.sh/uv/) for dependency management.
 
-### 1. Install dependencies (creates `.venv` automatically)
+### 1. Configure Gemini API key
+```bash
+cp .env.example .env
+# Paste your key into .env:
+# GEMINI_API_KEY=your_key_here
+```
+Get a free key at [Google AI Studio](https://aistudio.google.com/apikey).
+
+All AI features (text analysis, web search, photo forensics, OCR, commute) use **Gemini only**.
+The `.env` file is gitignored and will never be committed.
+
+### 2. Install dependencies (creates `.venv` automatically)
 From the project root (`YesBroker/`):
 ```bash
 uv sync
 ```
 
-### 2. Run Pre-computation (Optional)
+### 3. Run Pre-computation (Optional)
 This compiles the raw listings database and runs all 5 agents through the Planner and Arbiter loops, saving the results in `backend/data/scores.json` for latency-free demo performance:
 ```bash
 uv run python backend/precompute.py
 ```
 
-### 3. Start the FastAPI Server
+### 4. Start the FastAPI Server
 Launch the server on port `8000`:
 ```bash
 uv run uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-### Optional API keys (live integrations)
-```bash
-export GOOGLE_MAPS_API_KEY=...          # live Distance Matrix (maps tool)
-export GOOGLE_APPLICATION_CREDENTIALS=... # live Cloud Vision (vision tool)
-export GEMINI_API_KEY=...               # Gemini text analysis + search grounding
-```
-
-### 4. Access the Platform
+### 5. Access the Platform
 Once running, simply:
 - Open your browser and navigate to **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** (hosted directly by FastAPI).
 - Or double-click **`frontend/index.html`** on your system (handles cross-origin requests seamlessly).

@@ -3,6 +3,11 @@
 venv/
 ENV/
 
+# Secrets — never commit API keys
+.env
+.env.local
+.env.*.local
+
 # UV lockfile is committed; local UV cache is not
 .uv/
 
