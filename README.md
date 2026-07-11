@@ -23,6 +23,9 @@ YesBroker passes rental listings through a pipeline of **5 specialized verificat
 YesBroker/
 ├── backend/
 │   ├── agents/
+│   │   ├── __init__.py            # Agent registry (price, text, photo, commute, web)
+│   │   ├── base.py                # BaseAgent interface: async run(state) -> AgentResult
+│   │   ├── mock_data.py           # Deterministic mock intel for demo corpus
 │   │   ├── commute.py             # Commute-Truth agent logic
 │   │   ├── photo.py               # Photo-Forensics agent logic
 │   │   ├── price.py               # Price-Sanity agent logic
@@ -38,7 +41,14 @@ YesBroker/
 │   ├── index.html                 # Main interface structure
 │   ├── style.css                  # Custom, animated dark glassmorphism styles
 │   └── app.js                     # Frontend interactive controller & typewriter simulator
-├── .venv/                         # Pristine isolated Python environment
+├── tools/                         # Member 3 — Maps, Vision, OCR, Search, Collect
+│   ├── maps.py
+│   ├── vision.py
+│   ├── ocr.py
+│   ├── google_search.py
+│   └── collect.py
+├── pyproject.toml                 # UV-managed Python dependencies
+├── uv.lock                        # Locked dependency versions
 └── README.md                      # Documentation (this file)
 ```
 
@@ -46,33 +56,34 @@ YesBroker/
 
 ## Quick Start & Installation
 
-Ensure you have Python 3.9+ installed.
+Requires **Python 3.11+** and [uv](https://docs.astral.sh/uv/) for dependency management.
 
-### 1. Set Up and Active Virtual Environment
-From the root of the project directory (`YesBroker/`), run:
+### 1. Install dependencies (creates `.venv` automatically)
+From the project root (`YesBroker/`):
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+uv sync
 ```
 
-### 2. Install Dependencies
-```bash
-pip install -r backend/requirements.txt  # Or pip install pydantic fastapi uvicorn
-```
-
-### 3. Run Pre-computation (Optional)
+### 2. Run Pre-computation (Optional)
 This compiles the raw listings database and runs all 5 agents through the Planner and Arbiter loops, saving the results in `backend/data/scores.json` for latency-free demo performance:
 ```bash
-python backend/precompute.py
+uv run python backend/precompute.py
 ```
 
-### 4. Start the FastAPI Server
+### 3. Start the FastAPI Server
 Launch the server on port `8000`:
 ```bash
-python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
+uv run uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-### 5. Access the Platform
+### Optional API keys (live integrations)
+```bash
+export GOOGLE_MAPS_API_KEY=...          # live Distance Matrix (maps tool)
+export GOOGLE_APPLICATION_CREDENTIALS=... # live Cloud Vision (vision tool)
+export GEMINI_API_KEY=...               # Gemini text analysis + search grounding
+```
+
+### 4. Access the Platform
 Once running, simply:
 - Open your browser and navigate to **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** (hosted directly by FastAPI).
 - Or double-click **`frontend/index.html`** on your system (handles cross-origin requests seamlessly).

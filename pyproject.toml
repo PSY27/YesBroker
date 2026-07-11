@@ -1,0 +1,11 @@
+[project]
+name = "yesbroker"
+version = "0.1.0"
+description = "YesBroker (GharCheck) — multi-agent rental trust verification for Bangalore"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.139.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.13.4",
+    "uvicorn>=0.51.0",
+]

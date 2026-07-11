@@ -150,7 +150,7 @@ async def main():
     for l in listings:
         print(f"Investigating: {l.id} - {l.title}...")
         report = await investigate_listing(l)
-        precomputed_scores[l.id] = report.dict()
+        precomputed_scores[l.id] = report.model_dump()
         
     with open(scores_path, "w") as f:
         json.dump(precomputed_scores, f, indent=2)

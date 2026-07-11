@@ -3,6 +3,9 @@
 venv/
 ENV/
 
+# UV lockfile is committed; local UV cache is not
+.uv/
+
 # Python cache
 __pycache__/
 *.pyc
