@@ -11,6 +11,7 @@ interface ListingsPanelProps {
   onSelectListing: (id: string) => void;
   onSearch: (prefs: SearchPrefs) => void;
   isSearching?: boolean;
+  hasSearched?: boolean;
   searchPrefs: SearchPrefs;
 }
 
@@ -20,6 +21,7 @@ export function ListingsPanel({
   onSelectListing,
   onSearch,
   isSearching = false,
+  hasSearched = false,
   searchPrefs,
 }: ListingsPanelProps) {
   return (
@@ -39,6 +41,7 @@ export function ListingsPanel({
         selectedListingId={selectedListingId}
         onSelectListing={onSelectListing}
         isSearching={isSearching}
+        hasSearched={hasSearched}
         searchPrefs={searchPrefs}
       />
     </motion.div>

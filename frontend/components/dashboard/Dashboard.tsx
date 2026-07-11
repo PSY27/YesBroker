@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
 import { DEFAULT_SEARCH_PREFS, SearchPrefs } from '@/lib/types';
 import { searchStream, fetchReport } from '@/lib/api';
@@ -20,6 +20,7 @@ export function Dashboard({ onLogout }: DashboardProps) {
   const [report, setReport] = useState<TrustReportType | null>(null);
   const [isLoadingReport, setIsLoadingReport] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
   const [traceLines, setTraceLines] = useState<string[]>([]);
   const closeSearchStreamRef = useRef<(() => void) | null>(null);
@@ -30,6 +31,7 @@ export function Dashboard({ onLogout }: DashboardProps) {
 
     setSearchPrefs(prefs);
     setIsSearching(true);
+    setHasSearched(true);
     setSearchError(null);
     setSelectedListingId(null);
     setReport(null);
@@ -56,9 +58,8 @@ export function Dashboard({ onLogout }: DashboardProps) {
   }, []);
 
   useEffect(() => {
-    handleSearch(DEFAULT_SEARCH_PREFS);
     return () => closeSearchStreamRef.current?.();
-  }, [handleSearch]);
+  }, []);
 
   const handleSelectListing = useCallback(async (listingId: string) => {
     setSelectedListingId(listingId);
@@ -136,6 +137,7 @@ export function Dashboard({ onLogout }: DashboardProps) {
               onSelectListing={handleSelectListing}
               onSearch={handleSearch}
               isSearching={isSearching}
+              hasSearched={hasSearched}
               searchPrefs={searchPrefs}
             />
           </motion.div>
@@ -152,6 +154,7 @@ export function Dashboard({ onLogout }: DashboardProps) {
               traceLines={activeTraceLines}
               isLoading={isLoadingReport}
               isSearching={isSearching}
+              hasSearched={hasSearched}
             />
           </motion.div>
         </div>

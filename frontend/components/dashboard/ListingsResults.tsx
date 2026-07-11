@@ -9,6 +9,7 @@ interface ListingsResultsProps {
   selectedListingId: string | null;
   onSelectListing: (id: string) => void;
   isSearching?: boolean;
+  hasSearched?: boolean;
   searchPrefs: SearchPrefs;
 }
 
@@ -17,13 +18,16 @@ export function ListingsResults({
   selectedListingId,
   onSelectListing,
   isSearching = false,
+  hasSearched = false,
   searchPrefs,
 }: ListingsResultsProps) {
   const header = isSearching
     ? 'Fetching listings & running trust analysis...'
-    : listings.length === 0
-      ? `No matches for ${searchPrefs.bhk} BHK · ${searchPrefs.area} · ≤₹${searchPrefs.max_rent.toLocaleString()}`
-      : `Showing ${listings.length} matches for ${searchPrefs.bhk} BHK · ${searchPrefs.area} · ≤₹${searchPrefs.max_rent.toLocaleString()}`;
+    : !hasSearched
+      ? 'Set your preferences and click Find Safe Homes'
+      : listings.length === 0
+        ? `No matches for ${searchPrefs.bhk} BHK · ${searchPrefs.area} · ≤₹${searchPrefs.max_rent.toLocaleString()}`
+        : `Showing ${listings.length} matches for ${searchPrefs.bhk} BHK · ${searchPrefs.area} · ≤₹${searchPrefs.max_rent.toLocaleString()}`;
 
   return (
     <motion.div
@@ -49,6 +53,10 @@ export function ListingsResults({
           {isSearching ? (
             <div className="py-8 text-center text-sm text-muted-foreground">
               Scraping live listings and analyzing with AI agents...
+            </div>
+          ) : !hasSearched ? (
+            <div className="py-8 text-center text-sm text-muted-foreground">
+              Click <span className="text-[#a78bfa] font-medium">Find Safe Homes</span> to start analysis
             </div>
           ) : (
             listings.map((listing, index) => (

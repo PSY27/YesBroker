@@ -11,6 +11,7 @@ interface TrustReportPanelProps {
   traceLines: string[];
   isLoading: boolean;
   isSearching?: boolean;
+  hasSearched?: boolean;
 }
 
 function AnalyzingView({
@@ -56,6 +57,7 @@ export function TrustReportPanel({
   traceLines,
   isLoading,
   isSearching = false,
+  hasSearched = false,
 }: TrustReportPanelProps) {
   return (
     <motion.div
@@ -71,6 +73,35 @@ export function TrustReportPanel({
           traceLines={traceLines}
           live
         />
+      ) : !hasSearched ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col items-center justify-center h-full text-center px-4"
+        >
+          <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4">
+            <svg
+              className="w-8 h-8 text-muted-foreground"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            Ready to search
+          </h3>
+          <p className="text-sm text-muted-foreground max-w-xs">
+            Set your area, budget, and BHK on the left, then click Find Safe Homes to run trust analysis
+          </p>
+        </motion.div>
       ) : !selectedListing ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
