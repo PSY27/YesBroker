@@ -1,6 +1,6 @@
 # YesBroker (GharCheck)
 
-**GharCheck** is an AI-powered rental trust verification platform for Bangalore. It helps home seekers spot scams, bait pricing, stolen photos, and exaggerated commute claims before they book a visit.
+**YesBroker** is an AI-powered rental trust verification platform for India. It helps home seekers spot scams, bait pricing, stolen photos, and exaggerated commute claims before they book a visit.
 
 Listings are scraped from live portals (or loaded from static demo data), analyzed by **five specialist agents**, ranked by trust score, and presented in a Next.js dashboard with live investigation traces, photo forensics, commute maps, and shareable reports.
 
