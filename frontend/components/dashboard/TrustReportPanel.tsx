@@ -30,12 +30,12 @@ function AnalyzingView({
       animate={{ opacity: 1 }}
       className="flex flex-col gap-4 h-full p-4 overflow-hidden"
     >
-      <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+      <div className="flex items-center gap-3 glass-panel p-4">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
         >
-          <div className="w-6 h-6 rounded-full border-2 border-white/10 border-t-[#7c5cff]" />
+          <div className="w-6 h-6 rounded-full border-2 border-white/10 border-t-[#a78bfa]" />
         </motion.div>
         <div>
           <h3 className="text-sm font-semibold text-foreground">{title}</h3>
@@ -62,7 +62,7 @@ export function TrustReportPanel({
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="flex flex-col h-full bg-white/2"
+      className="flex flex-col h-full glass-panel border-0 bg-transparent"
     >
       {isSearching ? (
         <AnalyzingView
