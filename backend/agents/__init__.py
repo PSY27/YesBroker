@@ -1,3 +1,4 @@
+from __future__ import annotations
 import agents._path  # noqa: F401 — repo root on sys.path for tools/
 
 from agents.base import BaseAgent

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import agents._path  # noqa: F401
 
 import re

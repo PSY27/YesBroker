@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Ensure repo root is on sys.path and .env is loaded before any Gemini calls."""
 
 import os
