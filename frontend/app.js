@@ -138,20 +138,18 @@ function renderListings(listings, payload) {
     });
 }
 
-// Handle Row Click and ESCALATE to Live Investigation
+// Handle Row Click and ESCALATE to Live Investigation (SSE trace stream)
 async function handleListingSelection(id, clickedRowElement) {
-    if (activeListingId === id) return; // already active
+    if (activeListingId === id) return;
 
     activeListingId = id;
 
-    // Update row active state
     document.querySelectorAll('.listing-row').forEach(row => row.classList.remove('active'));
     clickedRowElement.classList.add('active');
 
-    // Display loader in Right Panel
     reportPlaceholder.classList.add('hidden');
     trustReportDashboard.classList.add('hidden');
-    
+
     let loaderDiv = document.getElementById('live-report-loader');
     if (!loaderDiv) {
         loaderDiv = document.createElement('div');
@@ -162,37 +160,86 @@ async function handleListingSelection(id, clickedRowElement) {
     loaderDiv.classList.remove('hidden');
     loaderDiv.innerHTML = `
         <div class="loader-pulse"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-weight: 800; font-size: 1.1rem; color:var(--text-primary);">Launching Live Investigation...</h3>
-        <p style="font-size: 0.85rem; color:var(--text-secondary); max-width: 300px; text-align: center; line-height: 1.5;">
-            Planner agent delegating parallel specialist tasks...
-        </p>
+        <h3 style="font-weight: 800; font-size: 1.1rem; color:var(--text-primary);">Live Investigation Running...</h3>
+        <p style="font-size: 0.85rem; color:var(--text-secondary);">Watch the terminal for agent handoffs →</p>
     `;
 
-    try {
-        const response = await fetch(`${API_BASE_URL}/investigate`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: id })
-        });
+    // Clear terminal and show live trace
+    terminalBody.innerHTML = '';
+    appendTerminalLine('Connecting to agent orchestrator (Gemini)...', 'muted');
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+    const rowTitle = clickedRowElement.querySelector('.row-title').textContent;
+    const rowRent = clickedRowElement.querySelector('.row-rent').textContent;
 
-        const report = await response.json();
-        
-        // Let's grab listing data to populate metadata
-        const rowTitle = clickedRowElement.querySelector('.row-title').textContent;
-        const rowRent = clickedRowElement.querySelector('.row-rent').textContent;
+    return new Promise((resolve, reject) => {
+        const source = new EventSource(`${API_BASE_URL}/investigate/stream?id=${encodeURIComponent(id)}`);
 
-        loaderDiv.classList.add('hidden');
-        renderTrustReport(report, rowTitle, rowRent);
-    } catch (err) {
-        console.error('Error fetching trust report:', err);
+        source.onmessage = (event) => {
+            const payload = JSON.parse(event.data);
+
+            if (payload.type === 'start') {
+                appendTerminalLine(`Investigating: ${payload.title} (${payload.listing_id})`, 'highlight');
+            } else if (payload.type === 'trace') {
+                const line = formatTraceEvent(payload);
+                let style = 'text';
+                const msg = (payload.message || '').toLowerCase();
+                if (payload.kind === 'handoff' || msg.includes('escalat') || msg.includes('re-dispatch')) {
+                    style = 'alert';
+                } else if (payload.kind === 'arbiter' || msg.includes('conflict')) {
+                    style = 'critical';
+                } else if (payload.kind === 'gemini') {
+                    style = 'highlight';
+                } else if (payload.kind === 'result') {
+                    style = msg.includes('clean') ? 'highlight' : 'alert';
+                }
+                appendTerminalLine(line, style);
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            } else if (payload.type === 'done') {
+                source.close();
+                loaderDiv.classList.add('hidden');
+                appendTerminalLine('Investigation complete. Rendering trust report...', 'highlight');
+                renderTrustReport(payload.report, rowTitle, rowRent);
+                resolve(payload.report);
+            }
+        };
+
+        source.onerror = (err) => {
+            source.close();
+            console.error('SSE stream error:', err);
+            // Fallback to non-streaming endpoint
+            fetch(`${API_BASE_URL}/investigate`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            })
+            .then(r => r.json())
+            .then(report => {
+                loaderDiv.classList.add('hidden');
+                renderTrustReport(report, rowTitle, rowRent);
+                resolve(report);
+            })
+            .catch(reject);
+        };
+    }).catch(err => {
+        console.error('Error during investigation:', err);
         loaderDiv.classList.add('hidden');
         reportPlaceholder.classList.remove('hidden');
-        alert('Could not retrieve trust analysis. Is your backend running?');
+        alert('Could not complete live investigation. Check server logs.');
+    });
+}
+
+function formatTraceEvent(ev) {
+    const kind = (ev.kind || '').toUpperCase();
+    const actor = ev.actor || 'agent';
+    let prefix = kind === 'AGENT' ? actor.toUpperCase() : (ev.message?.startsWith('[') ? '' : `[${kind}] `);
+    if (ev.kind === 'gemini') {
+        const dir = ev.meta?.direction || '';
+        return `[Gemini ${dir}] ${ev.message}`;
     }
+    if (ev.kind === 'result') {
+        return `${actor}: ${ev.message}`;
+    }
+    return `${prefix}${ev.message || ''}`;
 }
 
 // Render Full Trust Report
@@ -285,8 +332,10 @@ function renderTrustReport(report, title, rent) {
         reportQuestionsList.appendChild(li);
     });
 
-    // Run Terminal Logger Emulator with sequential type-in delay
-    runTerminalTrace(report.reasoning);
+    // Terminal already streamed live during investigation; only replay if empty
+    if (terminalBody.children.length <= 2) {
+        runTerminalTrace(report.reasoning);
+    }
 }
 
 // Live Terminal reasoning trace typwriter simulation

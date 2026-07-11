@@ -37,7 +37,7 @@ class CloudVisionWrapper:
                 "Search for cross-city duplicate listings using this image.\n"
                 'Return JSON: {"has_matches": bool, "matching_urls": ["url", ...], "confidence": 0.0-1.0, "detail": "..."}'
             )
-            data = await generate_json(prompt, google_search=True)
+            data = await generate_json(prompt, google_search=True, caller="vision")
             if data is not None:
                 matches = data.get("matching_urls", [])
                 has = bool(data.get("has_matches")) or bool(matches)

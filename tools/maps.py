@@ -37,7 +37,7 @@ class GoogleMapsWrapper:
                 "Include: driving time with traffic, nearest metro station walk/drive time, and distance in km.\n"
                 'Return JSON: {"distance_km": float, "drive_duration_minutes": int, "metro_duration_minutes": int}'
             )
-            data = await generate_json(prompt, google_maps=True)
+            data = await generate_json(prompt, google_maps=True, caller="maps")
             if data:
                 print("[Tools/Maps] Gemini Maps grounding: commute estimated.")
                 return {

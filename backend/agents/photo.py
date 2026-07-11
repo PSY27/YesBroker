@@ -3,47 +3,61 @@ import agents._path  # noqa: F401
 import os
 
 from agents.base import BaseAgent
+from agents.confidence import photo_confidence
+from agents.evidence import PhotoEvidence, structured_to_dict
 from schema import AgentResult, CaseState
-from tools.maps import GoogleMapsWrapper
 from tools.ocr import OCRWrapper
 from tools.vision import CloudVisionWrapper
 
-DEFAULT_OFFICE = "Embassy GolfLinks, Bangalore"
 
+def _build_result(
+    vision: dict,
+    ocr: dict | None,
+    photos_scanned: int,
+    weight: float,
+) -> AgentResult:
+    stolen_urls = list(vision.get("matching_urls", []))
+    watermarks = list(ocr.get("detected_watermarks", [])) if ocr else []
+    is_stolen = bool(stolen_urls) or bool(watermarks)
+    is_live = bool(vision.get("is_grounded_live"))
 
-def _vision_to_result(vision: dict, ocr: dict | None, weight: float) -> AgentResult:
+    structured = PhotoEvidence(
+        is_stolen=is_stolen,
+        matches_count=len(stolen_urls),
+        stolen_urls=stolen_urls,
+        watermarks=watermarks,
+        photos_scanned=photos_scanned,
+        is_live_vision=is_live,
+    )
+
     evidence: list[str] = []
-    suspicious = False
+    for url in stolen_urls:
+        evidence.append(f"Duplicate found: {url}")
+    for mark in watermarks:
+        evidence.append(f"OCR watermark: {mark}")
+    if is_live:
+        evidence.append("Source: Gemini + Google Search grounding (live)")
 
-    if vision.get("has_matches"):
-        suspicious = True
-        for url in vision.get("matching_urls", []):
-            evidence.append(f"Duplicate found: {url}")
-        if vision.get("is_grounded_live"):
-            evidence.append("Source: Google Cloud Vision Web Detection (live)")
+    confidence = photo_confidence(
+        len(stolen_urls),
+        len(watermarks),
+        is_live,
+        float(vision.get("match_confidence", 0)),
+    )
 
-    if ocr and ocr.get("is_watermarked"):
-        suspicious = True
-        for mark in ocr.get("detected_watermarks", []):
-            evidence.append(f"OCR watermark: {mark}")
-        if ocr.get("raw_text"):
-            evidence.append(f"OCR text: {ocr['raw_text'][:120]}")
-
-    if suspicious:
-        dup_count = len(vision.get("matching_urls", []))
-        detail_parts = []
-        if dup_count:
-            detail_parts.append(
-                f"Photo appears on {dup_count} other listing(s) across cities/portals"
-            )
-        if ocr and ocr.get("is_watermarked"):
-            detail_parts.append("foreign property-management watermark detected in image")
+    if is_stolen:
+        parts = []
+        if stolen_urls:
+            parts.append(f"Photo appears on {len(stolen_urls)} other listing(s) across cities/portals")
+        if watermarks:
+            parts.append("foreign property-management watermark detected")
         return AgentResult(
             agent="photo",
             verdict="SUSPICIOUS",
-            detail=". ".join(detail_parts) + ".",
+            detail=". ".join(parts) + ".",
             evidence=evidence,
-            confidence=max(float(vision.get("match_confidence", 0.88)), 0.88),
+            structured_evidence=structured_to_dict(structured),
+            confidence=confidence,
             weight=weight,
         )
 
@@ -52,13 +66,14 @@ def _vision_to_result(vision: dict, ocr: dict | None, weight: float) -> AgentRes
         verdict="CLEAN",
         detail="Photos are original. No duplicate matches or suspicious watermarks found.",
         evidence=evidence or ["Reverse image search: 0 duplicates", "OCR: no foreign watermarks"],
-        confidence=0.92,
+        structured_evidence=structured_to_dict(structured),
+        confidence=confidence,
         weight=weight,
     )
 
 
 class PhotoAgent(BaseAgent):
-    """Photo forensics via Member 3 Cloud Vision + OCR tools."""
+    """Photo forensics via Cloud Vision + OCR tools (Gemini-grounded)."""
 
     name = "photo"
     weight = 0.35
@@ -72,16 +87,17 @@ class PhotoAgent(BaseAgent):
         directive = state.directives.get("photo", "standard_scan")
 
         if not listing.photo_urls:
+            structured = PhotoEvidence(is_stolen=False, matches_count=0, photos_scanned=0)
             return AgentResult(
                 agent=self.name,
                 verdict="SUSPICIOUS",
                 detail="No photos supplied — cannot verify listing authenticity.",
                 evidence=["photo_urls is empty"],
+                structured_evidence=structured_to_dict(structured),
                 confidence=0.70,
                 weight=self.weight,
             )
 
-        # Deep scan checks all photos; standard scan checks the first
         urls = listing.photo_urls if directive in ("deep_scan", "dedup_lowthreshold") else listing.photo_urls[:1]
 
         combined_vision = {
@@ -108,18 +124,24 @@ class PhotoAgent(BaseAgent):
             if ocr.get("is_watermarked"):
                 combined_ocr = ocr
 
-        result = _vision_to_result(combined_vision, combined_ocr, self.weight)
+        result = _build_result(combined_vision, combined_ocr, len(urls), self.weight)
 
         if directive == "dedup_lowthreshold" and result.verdict == "CLEAN":
-            # Arbiter re-dispatch: lower threshold — flag filename heuristics
             for url in listing.photo_urls:
                 base = os.path.basename(url).lower()
                 if any(token in base for token in ("abroad", "token", "uk", "army")):
+                    structured = PhotoEvidence(
+                        is_stolen=True,
+                        matches_count=1,
+                        stolen_urls=[url],
+                        photos_scanned=len(urls),
+                    )
                     return AgentResult(
                         agent=self.name,
                         verdict="SUSPICIOUS",
                         detail="Re-scan found staging duplicate for recently-uploaded photo.",
                         evidence=[f"Staging match for {url}"],
+                        structured_evidence=structured_to_dict(structured),
                         confidence=0.90,
                         weight=self.weight,
                     )

@@ -1,32 +1,21 @@
 import agents._path  # noqa: F401
 
 from agents.base import BaseAgent
+from agents.confidence import web_confidence
+from agents.evidence import WebEvidence, structured_to_dict
 from schema import AgentResult, CaseState
 from tools.google_search import GoogleSearchWrapper
 
 SCAM_SNIPPET_KEYWORDS = (
-    "scam",
-    "fraud",
-    "blacklist",
-    "complaint",
-    "cheat",
-    "beware",
-    "warning",
-    "cyber crime",
-    "cybercrime",
+    "scam", "fraud", "blacklist", "complaint", "cheat", "beware", "warning",
+    "cyber crime", "cybercrime",
 )
-
-NEGATIVE_PHRASES = (
-    "no scam",
-    "no immediate scam",
-    "no complaints",
-    "appears clean",
-    "normal business",
-)
+NEGATIVE_PHRASES = ("no scam", "no immediate scam", "no complaints", "appears clean", "normal business")
+GOV_DOMAINS = ("police", "gov.in", "cybercrime", "consumerforum")
 
 
 class WebAgent(BaseAgent):
-    """Web-recon via Member 3 Google Search tool for phone/address reputation."""
+    """Web-recon via Gemini Google Search grounding."""
 
     name = "web"
     weight = 0.25
@@ -42,19 +31,23 @@ class WebAgent(BaseAgent):
             return False
         return any(kw in text for kw in SCAM_SNIPPET_KEYWORDS) or "token" in text
 
-    async def _search_phone(self, phone: str) -> tuple[list[dict], bool]:
-        if not phone:
-            return [], False
-        results = await self._search.search_query(phone)
-        scam_hits = [r for r in results if self._is_scam_hit(r)]
-        return results, len(scam_hits) > 0
+    def _has_gov_source(self, results: list[dict]) -> bool:
+        return any(
+            any(g in (r.get("url", "") + r.get("title", "")).lower() for g in GOV_DOMAINS)
+            for r in results
+        )
 
-    async def _search_address(self, address: str) -> tuple[list[dict], bool]:
+    async def _search_phone(self, phone: str) -> tuple[list[dict], list[dict]]:
+        if not phone:
+            return [], []
+        results = await self._search.search_query(phone)
+        return results, [r for r in results if self._is_scam_hit(r)]
+
+    async def _search_address(self, address: str) -> tuple[list[dict], list[dict]]:
         if not address:
-            return [], False
+            return [], []
         results = await self._search.search_query(f'"{address}" rental scam')
-        scam_hits = [r for r in results if self._is_scam_hit(r)]
-        return results, len(scam_hits) > 0
+        return results, [r for r in results if self._is_scam_hit(r)]
 
     async def run(self, state: CaseState) -> AgentResult:
         listing = state.listing
@@ -62,26 +55,42 @@ class WebAgent(BaseAgent):
         address = listing.address or ""
         directive = state.directives.get("web", "standard_lookup")
 
-        phone_results, phone_scam = await self._search_phone(phone)
-        address_results, address_scam = await self._search_address(address) if directive == "check_phone_and_dupes" else ([], False)
+        phone_results, phone_scam_hits = await self._search_phone(phone)
+        address_results, address_scam_hits = (
+            await self._search_address(address) if directive == "check_phone_and_dupes" else ([], [])
+        )
 
-        evidence: list[str] = []
-        for r in phone_results[:3]:
-            evidence.append(f"{r.get('title', 'Result')}: {r.get('url', '')}")
-        for r in address_results[:2]:
-            evidence.append(f"Address hit: {r.get('title', 'Result')}")
+        all_scam_hits = phone_scam_hits + address_scam_hits
+        all_results = phone_results + address_results
+        sources = [
+            {"title": r.get("title", ""), "url": r.get("url", ""), "snippet": r.get("snippet", "")[:120]}
+            for r in all_results[:5]
+        ]
+
+        structured = WebEvidence(
+            phone=phone,
+            scam_hits=len(all_scam_hits),
+            total_results=len(all_results),
+            sources=sources,
+            address_scanned=directive == "check_phone_and_dupes",
+        )
+
+        evidence = [f"{s['title']}: {s['url']}" for s in sources]
+        has_gov = self._has_gov_source(all_scam_hits)
+        confidence = web_confidence(len(all_scam_hits), len(all_results), has_gov)
 
         source = (listing.source_url or "").lower()
         low_trust_portal = any(d in source for d in ("craigslist", "olx", "facebook", "quikr"))
 
-        if phone_scam or address_scam:
-            top = next((r for r in phone_results if self._is_scam_hit(r)), phone_results[0] if phone_results else {})
+        if all_scam_hits:
+            top = all_scam_hits[0]
             return AgentResult(
                 agent=self.name,
                 verdict="SUSPICIOUS",
-                detail=top.get("snippet", f"Phone number {phone} flagged in web complaint databases."),
+                detail=top.get("snippet", f"Phone {phone} flagged in web complaint databases."),
                 evidence=evidence,
-                confidence=0.95 if phone_scam else 0.85,
+                structured_evidence=structured_to_dict(structured),
+                confidence=confidence,
                 weight=self.weight,
             )
 
@@ -91,7 +100,8 @@ class WebAgent(BaseAgent):
                 verdict="SUSPICIOUS",
                 detail="Listing source is a low-trust portal with limited broker verification.",
                 evidence=evidence + [f"Source URL: {listing.source_url}"],
-                confidence=0.72,
+                structured_evidence=structured_to_dict(structured),
+                confidence=min(confidence, 0.72),
                 weight=self.weight,
             )
 
@@ -100,7 +110,8 @@ class WebAgent(BaseAgent):
             verdict="CLEAN",
             detail="Broker phone and address show no scam complaints in web search.",
             evidence=evidence or ["Web search: 0 scam complaints found"],
-            confidence=0.90,
+            structured_evidence=structured_to_dict(structured),
+            confidence=confidence,
             weight=self.weight,
         )
 

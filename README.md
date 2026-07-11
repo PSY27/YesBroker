@@ -87,7 +87,25 @@ Launch the server on port `8000`:
 uv run uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-### 5. Access the Platform
+### Live agent tracing
+Watch planner ↔ agent handoffs in the terminal:
+
+```bash
+# CLI trace (colored logs in terminal)
+uv run python backend/trace_demo.py SCAM_001
+
+# Or click any listing in the UI — terminal streams live via SSE
+uv run uvicorn backend.app:app --host 127.0.0.1 --port 8000
+```
+
+Set `GEMINI_MODEL=gemini-3.1-pro-preview` in `.env` (default). Trace shows Planner escalations, HANDOFFs, Gemini API calls, and Arbiter conflicts.
+
+### 6. Run tests
+```bash
+uv run pytest backend/tests -v
+```
+
+### 7. Access the Platform
 Once running, simply:
 - Open your browser and navigate to **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** (hosted directly by FastAPI).
 - Or double-click **`frontend/index.html`** on your system (handles cross-origin requests seamlessly).

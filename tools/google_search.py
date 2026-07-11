@@ -57,7 +57,7 @@ class GoogleSearchWrapper:
                 "Focus on Bangalore rental fraud, phone blacklists, and cross-portal duplicate listings.\n"
                 'Return JSON: {"results": [{"title": "...", "snippet": "...", "url": "..."}], "is_scam": true/false}'
             )
-            data = await generate_json(prompt, google_search=True)
+            data = await generate_json(prompt, google_search=True, caller="google_search")
             if data and data.get("results"):
                 results = data["results"]
                 if data.get("is_scam"):

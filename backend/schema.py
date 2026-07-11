@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 
 class Prefs(BaseModel):
     area: str
@@ -29,6 +29,7 @@ class AgentResult(BaseModel):
     verdict: str               # SAFE | SUSPICIOUS | BAIT | LIE | CLEAN
     detail: str
     evidence: List[str] = []
+    structured_evidence: Optional[Dict[str, Any]] = None  # typed payload for frontend UI
     confidence: float
     weight: float
 

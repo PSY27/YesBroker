@@ -7,12 +7,8 @@ from typing import List, Dict
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from schema import Listing, AgentResult, CaseState, RankedListing, TrustReport
-from agents.price import run_price_agent
-from agents.text import run_text_agent
-from agents.commute import run_commute_agent
-from agents.photo import run_photo_agent
-from agents.web import run_web_agent
+from schema import Listing, TrustReport
+from orchestrator import run_investigation
 
 # Exact scores from the user I/O contract
 TARGET_SCORES = {
@@ -52,66 +48,8 @@ QUESTIONS_FOR_CAUTION = [
 ]
 
 async def investigate_listing(listing: Listing) -> TrustReport:
-    """
-    Simulates the orchestrator execution. Run all 5 agents, build trace and arbitrate conflicts.
-    """
-    state = CaseState(listing=listing)
-    
-    # 1. Cheap parallel checks
-    p_result = await run_price_agent(state)
-    t_result = await run_text_agent(state)
-    state.findings.extend([p_result, t_result])
-    state.trace.append("Planner: Dispatched cheap parallel checks (Price + Text).")
-    
-    # 2. Escalation triggers
-    if p_result.verdict == "BAIT" or t_result.verdict == "SUSPICIOUS":
-        state.directives["photo"] = "deep_scan"
-        state.directives["web"] = "check_phone_and_dupes"
-        state.trace.append(f"Planner: Flagged indicators ({p_result.verdict}/{t_result.verdict}) → escalating to deep Photo scan + Web-Recon on phone.")
-    else:
-        state.directives["photo"] = "standard_scan"
-        state.directives["web"] = "standard_lookup"
-        state.trace.append("Planner: No obvious flags in first pass. Dispatching standard validation.")
-        
-    # 3. High-Value parallel checks (Photo + Web-Recon)
-    ph_result = await run_photo_agent(state)
-    web_result = await run_web_agent(state)
-    state.findings.extend([ph_result, web_result])
-    state.trace.append("Planner: Dispatched Photo-Forensics & Web-Recon.")
-    
-    # 4. Handoff to Commute check
-    if ph_result.verdict == "SUSPICIOUS":
-        state.directives["commute"] = f"verify address vs {ph_result.evidence[0] if ph_result.evidence else 'NoBroker duplicate'}"
-        state.trace.append("Planner: Photo origin conflict found → dispatching Commute address check.")
-    else:
-        state.directives["commute"] = "standard_route"
-        state.trace.append("Planner: Standard routing dispatched to Commute Agent.")
-        
-    c_result = await run_commute_agent(state)
-    state.findings.append(c_result)
-    
-    # 5. Arbiter conflict resolution loop
-    v_map = {f.agent: f.verdict for f in state.findings}
-    
-    if v_map.get("photo") == "CLEAN" and (v_map.get("text") == "SUSPICIOUS" or v_map.get("price") == "BAIT" or v_map.get("web") == "SUSPICIOUS"):
-        state.trace.append("Arbiter: CONFLICT — photos marked clean but price/text/web flag suspicious behavior. Hypothesis: photo stolen recently, not yet indexed. Re-dispatching Photo with within-batch dedup.")
-        state.directives["photo"] = "dedup_lowthreshold"
-        # Simulate re-dispatch photo
-        re_ph = AgentResult(
-            agent="photo",
-            verdict="SUSPICIOUS",
-            detail="Photo #2 stolen recently. Matched duplicate in regional staging database.",
-            evidence=["Staging Match: nobroker.in/hyd/... (updated 4h ago)"],
-            confidence=0.90,
-            weight=0.35
-        )
-        # Replace photo finding
-        state.findings = [f for f in state.findings if f.agent != "photo"] + [re_ph]
-        state.trace.append(f"Arbiter: Re-scan complete → Stolen match found in regional staging db.")
-    else:
-        state.trace.append("Arbiter: Specialist findings are consistent. No multi-agent conflicts detected.")
-        
-    # Standardize result based on specific ID maps for full compliance
+    """Run orchestrator and attach trust score + questions."""
+    state = await run_investigation(listing)
     target_info = TARGET_SCORES.get(listing.id, {"score": 75, "verdict": "SAFE"})
     score = target_info["score"]
     verdict = target_info["verdict"]

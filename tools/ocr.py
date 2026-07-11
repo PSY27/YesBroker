@@ -39,7 +39,7 @@ class OCRWrapper:
                 "image was stolen from another city's listing.\n"
                 'Return JSON: {"watermarks": ["..."], "raw_text": "...", "confidence": 0.0-1.0, "is_watermarked": bool}'
             )
-            data = await generate_json(prompt, google_search=True)
+            data = await generate_json(prompt, google_search=True, caller="ocr")
             if data is not None:
                 watermarks = data.get("watermarks", [])
                 is_marked = bool(data.get("is_watermarked")) or bool(watermarks)
