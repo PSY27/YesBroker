@@ -1,135 +1,1907 @@
 [
   {
-    "id": "L001",
-    "title": "2BHK · 100 Ft Road",
-    "rent": 34000,
-    "deposit": 150000,
-    "bhk": "2",
-    "area_sqft": 1100,
-    "address": "100 Ft Road, Near Toit, Indiranagar, Bangalore",
-    "pincode": "560038",
-    "landmark": "Near Toit Brewpub",
-    "claimed_commute_min": 15,
-    "phone": "+91 98860 12345",
-    "photo_urls": ["photo_100ft_1.jpg", "photo_100ft_2.jpg"],
-    "description": "Premium 2BHK flat available for rent on 100 Ft Road. Excellent ventilation, semi-furnished with modular kitchen, wardrobes, and geysers. Strictly for families or working professionals. Safe gated building with security.",
-    "source_url": "https://nobroker.in/blr/indiranagar/100ft"
-  },
-  {
-    "id": "L002",
-    "title": "2BHK · 12th Main",
-    "rent": 33000,
-    "deposit": 120000,
-    "bhk": "2",
-    "area_sqft": 1050,
-    "address": "12th Main Road, HAL 2nd Stage, Indiranagar, Bangalore",
-    "pincode": "560038",
-    "landmark": "Near Corner House Ice Cream",
-    "claimed_commute_min": 18,
-    "phone": "+91 98450 67890",
-    "photo_urls": ["photo_12th_1.jpg", "photo_12th_2.jpg"],
-    "description": "Lovely 2BHK flat located in the heart of Indiranagar on 12th Main. East facing, 1st floor, with covered car parking. Walking distance to Metro station, restaurants, and shopping centers.",
-    "source_url": "https://99acres.com/blr/indiranagar/12thmain"
-  },
-  {
-    "id": "L003",
-    "title": "2BHK · CMH Road",
-    "rent": 35000,
-    "deposit": 180000,
-    "bhk": "2",
-    "area_sqft": 1200,
-    "address": "CMH Road, Near Metro Station, Indiranagar, Bangalore",
-    "pincode": "560038",
-    "landmark": "Indiranagar Metro Station",
-    "claimed_commute_min": 10,
-    "phone": "+91 91122 33445",
-    "photo_urls": ["photo_cmh_1.jpg", "photo_cmh_2.jpg"],
-    "description": "Spacious and elegant 2 BHK apartment near Indiranagar Metro Station. 24 hours water supply, power backup, lifts, and security. Perfect for daily commuters. Rent is slightly negotiable.",
-    "source_url": "https://magicbricks.com/blr/indiranagar/cmh"
-  },
-  {
-    "id": "L004",
-    "title": "2BHK · Jeevan Bima Nagar",
-    "rent": 32000,
-    "deposit": 100000,
-    "bhk": "2",
-    "area_sqft": 980,
-    "address": "Jeevan Bima Nagar Main Road, Bangalore",
+    "id": "L_100",
+    "title": "3BHK \u00b7 JBN Layout",
+    "rent": 55000,
+    "deposit": 220000,
+    "bhk": "3",
+    "area_sqft": 1540,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
     "pincode": "560075",
-    "landmark": "LIC Colony",
-    "claimed_commute_min": 20,
-    "phone": "+91 88844 55667",
-    "photo_urls": ["photo_jbn_1.jpg", "photo_jbn_2.jpg"],
-    "description": "Standard 2BHK flat in Jeevan Bima Nagar. Clean surroundings, peaceful residential colony. Built-in cupboards, immediate occupancy available. Deposit is reasonable.",
-    "source_url": "https://housing.com/blr/jbn/standard"
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 70051 63556",
+    "photo_urls": [
+      "photo_item_L_100_1.jpg",
+      "photo_item_L_100_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_100"
   },
   {
-    "id": "L005",
-    "title": "2BHK · HAL 2nd Stage",
-    "rent": 31000,
-    "deposit": 110000,
+    "id": "L_101",
+    "title": "2BHK \u00b7 LIC Colony",
+    "rent": 33000,
+    "deposit": 198500,
     "bhk": "2",
-    "area_sqft": 1000,
-    "address": "HAL 2nd Stage, Indiranagar, Bangalore",
-    "pincode": "560038",
-    "landmark": "Near ESI Hospital",
-    "claimed_commute_min": 22,
-    "phone": "+91 97766 88990",
-    "photo_urls": ["photo_hal_1.jpg", "photo_hal_2.jpg"],
-    "description": "2BHK apartment in quiet, tree-lined lane of HAL 2nd stage. Covered bike parking, 1st floor, no lift. Reliable borewell water, separate electricity meter.",
-    "source_url": "https://nobroker.in/blr/hal/quiet"
+    "area_sqft": 1094,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 5,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 89425 37133",
+    "photo_urls": [
+      "photo_item_L_101_1.jpg",
+      "photo_item_L_101_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_101"
   },
   {
-    "id": "L006",
-    "title": "2BHK · Domlur border",
-    "rent": 30000,
-    "deposit": 90000,
-    "bhk": "2",
-    "area_sqft": 950,
-    "address": "Domlur Layout (Near Indiranagar Border), Bangalore",
+    "id": "L_102",
+    "title": "1BHK \u00b7 Flyover Lane",
+    "rent": 13500,
+    "deposit": 67500,
+    "bhk": "1",
+    "area_sqft": 478,
+    "address": "Flyover Lane, Domlur, Bangalore",
     "pincode": "560071",
-    "landmark": "Domlur Flyover",
-    "claimed_commute_min": 15,
-    "phone": "+91 95533 22110",
-    "photo_urls": ["photo_dom_1.jpg", "photo_dom_2.jpg"],
-    "description": "Cozy 2BHK near Domlur border. Ideal for tech professionals working in EGL (Embassy GolfLinks) or Indiranagar. Unfurnished but very neat. No security guard.",
-    "source_url": "https://99acres.com/blr/domlur/border"
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 17,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 96334 41566",
+    "photo_urls": [
+      "photo_item_L_102_1.jpg",
+      "photo_item_L_102_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_102"
   },
   {
-    "id": "L007",
-    "title": "2BHK · \"Prime Indiranagar\"",
-    "rent": 24000,
-    "deposit": 50000,
+    "id": "L_103",
+    "title": "3BHK \u00b7 LIC Colony",
+    "rent": 50000,
+    "deposit": 251000,
+    "bhk": "3",
+    "area_sqft": 1531,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 14,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 76726 43877",
+    "photo_urls": [
+      "photo_item_L_103_1.jpg",
+      "photo_item_L_103_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_103"
+  },
+  {
+    "id": "L_104",
+    "title": "3BHK \u00b7 100 Ft Road",
+    "rent": 59000,
+    "deposit": 296500,
+    "bhk": "3",
+    "area_sqft": 1469,
+    "address": "100 Ft Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 82755 14069",
+    "photo_urls": [
+      "photo_item_L_104_1.jpg",
+      "photo_item_L_104_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_104"
+  },
+  {
+    "id": "L_105",
+    "title": "2BHK \u00b7 CMH Road",
+    "rent": 32000,
+    "deposit": 128000,
     "bhk": "2",
-    "area_sqft": 1100,
+    "area_sqft": 1074,
+    "address": "CMH Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 96998 81928",
+    "photo_urls": [
+      "photo_item_L_105_1.jpg",
+      "photo_item_L_105_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_105"
+  },
+  {
+    "id": "L_106",
+    "title": "2BHK \u00b7 Flyover Lane",
+    "rent": 27500,
+    "deposit": 166500,
+    "bhk": "2",
+    "area_sqft": 964,
+    "address": "Flyover Lane, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 73133 75009",
+    "photo_urls": [
+      "photo_item_L_106_1.jpg",
+      "photo_item_L_106_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_106"
+  },
+  {
+    "id": "L_107",
+    "title": "2BHK \u00b7 Domlur Border",
+    "rent": 28500,
+    "deposit": 171500,
+    "bhk": "2",
+    "area_sqft": 963,
+    "address": "Domlur Border, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 93490 60433",
+    "photo_urls": [
+      "photo_item_L_107_1.jpg",
+      "photo_item_L_107_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_107"
+  },
+  {
+    "id": "L_108",
+    "title": "2BHK \u00b7 Double Road",
+    "rent": 35000,
+    "deposit": 141500,
+    "bhk": "2",
+    "area_sqft": 1051,
     "address": "Double Road, Indiranagar, Bangalore",
     "pincode": "560038",
-    "landmark": "Metro pillar",
-    "claimed_commute_min": 5,
-    "phone": "+91 91001 20034",
-    "photo_urls": ["photo_prime_1.jpg", "photo_prime_2.jpg"],
-    "description": "Beautiful 2BHK flat in Prime Indiranagar area. Extremely cheap rent because owner needs to rent it out urgently this week. Modern amenities included. First come first served.",
-    "source_url": "https://craigslist.com/blr/ind/scam1"
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 93846 37356",
+    "photo_urls": [
+      "photo_item_L_108_1.jpg",
+      "photo_item_L_108_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_108"
   },
   {
-    "id": "L008",
-    "title": "2BHK · \"Spacious, near metro\"",
-    "rent": 22000,
-    "deposit": 40000,
+    "id": "L_109",
+    "title": "1BHK \u00b7 Flyover Lane",
+    "rent": 14000,
+    "deposit": 70000,
+    "bhk": "1",
+    "area_sqft": 594,
+    "address": "Flyover Lane, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 89667 70788",
+    "photo_urls": [
+      "photo_item_L_109_1.jpg",
+      "photo_item_L_109_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_109"
+  },
+  {
+    "id": "L_110",
+    "title": "1BHK \u00b7 JBN Layout",
+    "rent": 14500,
+    "deposit": 88500,
+    "bhk": "1",
+    "area_sqft": 568,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 86244 99120",
+    "photo_urls": [
+      "photo_item_L_110_1.jpg",
+      "photo_item_L_110_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_110"
+  },
+  {
+    "id": "L_111",
+    "title": "1BHK \u00b7 Wipro Park Lane",
+    "rent": 17000,
+    "deposit": 69500,
+    "bhk": "1",
+    "area_sqft": 538,
+    "address": "Wipro Park Lane, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 83693 20658",
+    "photo_urls": [
+      "photo_item_L_111_1.jpg",
+      "photo_item_L_111_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_111"
+  },
+  {
+    "id": "L_112",
+    "title": "1BHK \u00b7 4th Block",
+    "rent": 14500,
+    "deposit": 74500,
+    "bhk": "1",
+    "area_sqft": 585,
+    "address": "4th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 78100 78727",
+    "photo_urls": [
+      "photo_item_L_112_1.jpg",
+      "photo_item_L_112_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_112"
+  },
+  {
+    "id": "L_113",
+    "title": "3BHK \u00b7 Inner Ring Road",
+    "rent": 48000,
+    "deposit": 192000,
+    "bhk": "3",
+    "area_sqft": 1564,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 78036 12887",
+    "photo_urls": [
+      "photo_item_L_113_1.jpg",
+      "photo_item_L_113_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_113"
+  },
+  {
+    "id": "L_114",
+    "title": "2BHK \u00b7 Defence Colony",
+    "rent": 34000,
+    "deposit": 137500,
     "bhk": "2",
-    "area_sqft": 1150,
-    "address": "14th Main, Indiranagar, Bangalore",
+    "area_sqft": 977,
+    "address": "Defence Colony, Indiranagar, Bangalore",
     "pincode": "560038",
-    "landmark": "Behind Metro station",
-    "claimed_commute_min": 3,
-    "phone": "+91 92002 30045",
-    "photo_urls": ["photo_near_metro_1.jpg", "photo_near_metro_2.jpg"],
-    "description": "Fully furnished 2BHK, 1150sqft, just 2 minutes walking distance from Indiranagar Metro Station. Rent is 22k only! Safe environment, no broker fee, direct owner contact.",
-    "source_url": "https://olx.in/blr/indiranagar/flat1"
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 11,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 98660 25665",
+    "photo_urls": [
+      "photo_item_L_114_1.jpg",
+      "photo_item_L_114_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_114"
   },
   {
-    "id": "L091",
-    "title": "2BHK · \"Owner going abroad\"",
+    "id": "L_115",
+    "title": "2BHK \u00b7 ITPL Main Road",
+    "rent": 30500,
+    "deposit": 183500,
+    "bhk": "2",
+    "area_sqft": 1016,
+    "address": "ITPL Main Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 9,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 75453 45214",
+    "photo_urls": [
+      "photo_item_L_115_1.jpg",
+      "photo_item_L_115_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_115"
+  },
+  {
+    "id": "L_116",
+    "title": "1BHK \u00b7 Domlur Border",
+    "rent": 15000,
+    "deposit": 76000,
+    "bhk": "1",
+    "area_sqft": 551,
+    "address": "Domlur Border, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 89882 39727",
+    "photo_urls": [
+      "photo_item_L_116_1.jpg",
+      "photo_item_L_116_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_116"
+  },
+  {
+    "id": "L_117",
+    "title": "2BHK \u00b7 Wipro Park Lane",
+    "rent": 34000,
+    "deposit": 172000,
+    "bhk": "2",
+    "area_sqft": 1085,
+    "address": "Wipro Park Lane, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 96517 21509",
+    "photo_urls": [
+      "photo_item_L_117_1.jpg",
+      "photo_item_L_117_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_117"
+  },
+  {
+    "id": "L_118",
+    "title": "2BHK \u00b7 Wipro Park Lane",
+    "rent": 30000,
+    "deposit": 151000,
+    "bhk": "2",
+    "area_sqft": 957,
+    "address": "Wipro Park Lane, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 79198 88723",
+    "photo_urls": [
+      "photo_item_L_118_1.jpg",
+      "photo_item_L_118_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_118"
+  },
+  {
+    "id": "L_119",
+    "title": "3BHK \u00b7 LIC Colony",
+    "rent": 48500,
+    "deposit": 291500,
+    "bhk": "3",
+    "area_sqft": 1516,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 79468 74392",
+    "photo_urls": [
+      "photo_item_L_119_1.jpg",
+      "photo_item_L_119_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_119"
+  },
+  {
+    "id": "L_120",
+    "title": "1BHK \u00b7 Flyover Lane",
+    "rent": 16500,
+    "deposit": 84000,
+    "bhk": "1",
+    "area_sqft": 566,
+    "address": "Flyover Lane, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71871 59661",
+    "photo_urls": [
+      "photo_item_L_120_1.jpg",
+      "photo_item_L_120_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_120"
+  },
+  {
+    "id": "L_121",
+    "title": "2BHK \u00b7 12th Main",
+    "rent": 35500,
+    "deposit": 215000,
+    "bhk": "2",
+    "area_sqft": 1031,
+    "address": "12th Main, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 12,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 82133 82630",
+    "photo_urls": [
+      "photo_item_L_121_1.jpg",
+      "photo_item_L_121_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_121"
+  },
+  {
+    "id": "L_122",
+    "title": "3BHK \u00b7 8th Block",
+    "rent": 55000,
+    "deposit": 220500,
+    "bhk": "3",
+    "area_sqft": 1515,
+    "address": "8th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 77670 69279",
+    "photo_urls": [
+      "photo_item_L_122_1.jpg",
+      "photo_item_L_122_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_122"
+  },
+  {
+    "id": "L_123",
+    "title": "3BHK \u00b7 ECC Road",
+    "rent": 46500,
+    "deposit": 234500,
+    "bhk": "3",
+    "area_sqft": 1479,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 99530 93651",
+    "photo_urls": [
+      "photo_item_L_123_1.jpg",
+      "photo_item_L_123_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_123"
+  },
+  {
+    "id": "L_124",
+    "title": "2BHK \u00b7 JBN Layout",
+    "rent": 29000,
+    "deposit": 117500,
+    "bhk": "2",
+    "area_sqft": 1075,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 90738 59000",
+    "photo_urls": [
+      "photo_item_L_124_1.jpg",
+      "photo_item_L_124_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_124"
+  },
+  {
+    "id": "L_125",
+    "title": "2BHK \u00b7 8th Block",
+    "rent": 31500,
+    "deposit": 127000,
+    "bhk": "2",
+    "area_sqft": 1058,
+    "address": "8th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 77982 61815",
+    "photo_urls": [
+      "photo_item_L_125_1.jpg",
+      "photo_item_L_125_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_125"
+  },
+  {
+    "id": "L_126",
+    "title": "2BHK \u00b7 Domlur Border",
+    "rent": 31500,
+    "deposit": 127000,
+    "bhk": "2",
+    "area_sqft": 1032,
+    "address": "Domlur Border, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 79935 45786",
+    "photo_urls": [
+      "photo_item_L_126_1.jpg",
+      "photo_item_L_126_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_126"
+  },
+  {
+    "id": "L_127",
+    "title": "3BHK \u00b7 HAL 3rd Stage",
+    "rent": 49000,
+    "deposit": 197000,
+    "bhk": "3",
+    "area_sqft": 1536,
+    "address": "HAL 3rd Stage, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 77399 79150",
+    "photo_urls": [
+      "photo_item_L_127_1.jpg",
+      "photo_item_L_127_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_127"
+  },
+  {
+    "id": "L_128",
+    "title": "2BHK \u00b7 8th Block",
+    "rent": 35000,
+    "deposit": 212500,
+    "bhk": "2",
+    "area_sqft": 993,
+    "address": "8th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71882 73927",
+    "photo_urls": [
+      "photo_item_L_128_1.jpg",
+      "photo_item_L_128_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_128"
+  },
+  {
+    "id": "L_129",
+    "title": "1BHK \u00b7 ECC Road",
+    "rent": 12000,
+    "deposit": 60000,
+    "bhk": "1",
+    "area_sqft": 547,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 85624 98699",
+    "photo_urls": [
+      "photo_item_L_129_1.jpg",
+      "photo_item_L_129_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_129"
+  },
+  {
+    "id": "L_130",
+    "title": "3BHK \u00b7 Inner Ring Road",
+    "rent": 45500,
+    "deposit": 274000,
+    "bhk": "3",
+    "area_sqft": 1588,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 75283 39788",
+    "photo_urls": [
+      "photo_item_L_130_1.jpg",
+      "photo_item_L_130_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_130"
+  },
+  {
+    "id": "L_131",
+    "title": "2BHK \u00b7 ITPL Main Road",
+    "rent": 27500,
+    "deposit": 166500,
+    "bhk": "2",
+    "area_sqft": 1061,
+    "address": "ITPL Main Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 72828 29167",
+    "photo_urls": [
+      "photo_item_L_131_1.jpg",
+      "photo_item_L_131_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_131"
+  },
+  {
+    "id": "L_132",
+    "title": "1BHK \u00b7 Double Road",
+    "rent": 19000,
+    "deposit": 114500,
+    "bhk": "1",
+    "area_sqft": 486,
+    "address": "Double Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 86491 38051",
+    "photo_urls": [
+      "photo_item_L_132_1.jpg",
+      "photo_item_L_132_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_132"
+  },
+  {
+    "id": "L_133",
+    "title": "1BHK \u00b7 100 Ft Road",
+    "rent": 15500,
+    "deposit": 94500,
+    "bhk": "1",
+    "area_sqft": 575,
+    "address": "100 Ft Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 96067 77230",
+    "photo_urls": [
+      "photo_item_L_133_1.jpg",
+      "photo_item_L_133_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_133"
+  },
+  {
+    "id": "L_134",
+    "title": "1BHK \u00b7 4th Block",
+    "rent": 17000,
+    "deposit": 102000,
+    "bhk": "1",
+    "area_sqft": 549,
+    "address": "4th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 83542 28916",
+    "photo_urls": [
+      "photo_item_L_134_1.jpg",
+      "photo_item_L_134_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_134"
+  },
+  {
+    "id": "L_135",
+    "title": "3BHK \u00b7 ECC Road",
+    "rent": 41000,
+    "deposit": 248000,
+    "bhk": "3",
+    "area_sqft": 1533,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 7,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 97109 12968",
+    "photo_urls": [
+      "photo_item_L_135_1.jpg",
+      "photo_item_L_135_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_135"
+  },
+  {
+    "id": "L_136",
+    "title": "2BHK \u00b7 Main Road",
+    "rent": 34000,
+    "deposit": 137500,
+    "bhk": "2",
+    "area_sqft": 1007,
+    "address": "Main Road, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 7,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 92854 29943",
+    "photo_urls": [
+      "photo_item_L_136_1.jpg",
+      "photo_item_L_136_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_136"
+  },
+  {
+    "id": "L_137",
+    "title": "2BHK \u00b7 4th Block",
+    "rent": 31500,
+    "deposit": 190000,
+    "bhk": "2",
+    "area_sqft": 1100,
+    "address": "4th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71386 74357",
+    "photo_urls": [
+      "photo_item_L_137_1.jpg",
+      "photo_item_L_137_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_137"
+  },
+  {
+    "id": "L_138",
+    "title": "2BHK \u00b7 Layout Road",
+    "rent": 28000,
+    "deposit": 140000,
+    "bhk": "2",
+    "area_sqft": 1040,
+    "address": "Layout Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 73465 76889",
+    "photo_urls": [
+      "photo_item_L_138_1.jpg",
+      "photo_item_L_138_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_138"
+  },
+  {
+    "id": "L_139",
+    "title": "1BHK \u00b7 Hope Farm",
+    "rent": 14500,
+    "deposit": 87000,
+    "bhk": "1",
+    "area_sqft": 496,
+    "address": "Hope Farm, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 80149 15521",
+    "photo_urls": [
+      "photo_item_L_139_1.jpg",
+      "photo_item_L_139_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_139"
+  },
+  {
+    "id": "L_140",
+    "title": "1BHK \u00b7 JBN Layout",
+    "rent": 14000,
+    "deposit": 70000,
+    "bhk": "1",
+    "area_sqft": 507,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 6,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 76475 95583",
+    "photo_urls": [
+      "photo_item_L_140_1.jpg",
+      "photo_item_L_140_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_140"
+  },
+  {
+    "id": "L_141",
+    "title": "1BHK \u00b7 Channasandra",
+    "rent": 13500,
+    "deposit": 83000,
+    "bhk": "1",
+    "area_sqft": 599,
+    "address": "Channasandra, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 14,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 99680 30197",
+    "photo_urls": [
+      "photo_item_L_141_1.jpg",
+      "photo_item_L_141_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_141"
+  },
+  {
+    "id": "L_142",
+    "title": "3BHK \u00b7 JBN Layout",
+    "rent": 53500,
+    "deposit": 322000,
+    "bhk": "3",
+    "area_sqft": 1472,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 97584 37575",
+    "photo_urls": [
+      "photo_item_L_142_1.jpg",
+      "photo_item_L_142_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_142"
+  },
+  {
+    "id": "L_143",
+    "title": "2BHK \u00b7 HAL 3rd Stage",
+    "rent": 31000,
+    "deposit": 155000,
+    "bhk": "2",
+    "area_sqft": 959,
+    "address": "HAL 3rd Stage, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 74801 87526",
+    "photo_urls": [
+      "photo_item_L_143_1.jpg",
+      "photo_item_L_143_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_143"
+  },
+  {
+    "id": "L_144",
+    "title": "3BHK \u00b7 8th Block",
+    "rent": 51500,
+    "deposit": 206000,
+    "bhk": "3",
+    "area_sqft": 1553,
+    "address": "8th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71793 52248",
+    "photo_urls": [
+      "photo_item_L_144_1.jpg",
+      "photo_item_L_144_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_144"
+  },
+  {
+    "id": "L_145",
+    "title": "1BHK \u00b7 12th Main",
+    "rent": 18000,
+    "deposit": 73500,
+    "bhk": "1",
+    "area_sqft": 599,
+    "address": "12th Main, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 85143 55128",
+    "photo_urls": [
+      "photo_item_L_145_1.jpg",
+      "photo_item_L_145_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_145"
+  },
+  {
+    "id": "L_146",
+    "title": "3BHK \u00b7 Double Road",
+    "rent": 53000,
+    "deposit": 212500,
+    "bhk": "3",
+    "area_sqft": 1461,
+    "address": "Double Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 12,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 86552 84929",
+    "photo_urls": [
+      "photo_item_L_146_1.jpg",
+      "photo_item_L_146_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_146"
+  },
+  {
+    "id": "L_147",
+    "title": "3BHK \u00b7 Main Road",
+    "rent": 54500,
+    "deposit": 219500,
+    "bhk": "3",
+    "area_sqft": 1506,
+    "address": "Main Road, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 81824 49434",
+    "photo_urls": [
+      "photo_item_L_147_1.jpg",
+      "photo_item_L_147_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_147"
+  },
+  {
+    "id": "L_148",
+    "title": "2BHK \u00b7 Channasandra",
+    "rent": 30500,
+    "deposit": 184500,
+    "bhk": "2",
+    "area_sqft": 1042,
+    "address": "Channasandra, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 16,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 94671 32757",
+    "photo_urls": [
+      "photo_item_L_148_1.jpg",
+      "photo_item_L_148_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_148"
+  },
+  {
+    "id": "L_149",
+    "title": "3BHK \u00b7 Main Road",
+    "rent": 52000,
+    "deposit": 312500,
+    "bhk": "3",
+    "area_sqft": 1549,
+    "address": "Main Road, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 97439 45999",
+    "photo_urls": [
+      "photo_item_L_149_1.jpg",
+      "photo_item_L_149_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_149"
+  },
+  {
+    "id": "L_150",
+    "title": "1BHK \u00b7 Domlur Border",
+    "rent": 16000,
+    "deposit": 82000,
+    "bhk": "1",
+    "area_sqft": 496,
+    "address": "Domlur Border, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 11,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 74387 57945",
+    "photo_urls": [
+      "photo_item_L_150_1.jpg",
+      "photo_item_L_150_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_150"
+  },
+  {
+    "id": "L_151",
+    "title": "2BHK \u00b7 Inner Ring Road",
+    "rent": 31500,
+    "deposit": 158500,
+    "bhk": "2",
+    "area_sqft": 954,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 79066 40007",
+    "photo_urls": [
+      "photo_item_L_151_1.jpg",
+      "photo_item_L_151_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_151"
+  },
+  {
+    "id": "L_152",
+    "title": "3BHK \u00b7 ITPL Main Road",
+    "rent": 41500,
+    "deposit": 249000,
+    "bhk": "3",
+    "area_sqft": 1564,
+    "address": "ITPL Main Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 75531 35139",
+    "photo_urls": [
+      "photo_item_L_152_1.jpg",
+      "photo_item_L_152_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_152"
+  },
+  {
+    "id": "L_153",
+    "title": "3BHK \u00b7 HAL 3rd Stage",
+    "rent": 49500,
+    "deposit": 199500,
+    "bhk": "3",
+    "area_sqft": 1583,
+    "address": "HAL 3rd Stage, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 78469 31361",
+    "photo_urls": [
+      "photo_item_L_153_1.jpg",
+      "photo_item_L_153_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_153"
+  },
+  {
+    "id": "L_154",
+    "title": "2BHK \u00b7 Defence Colony",
+    "rent": 35500,
+    "deposit": 178000,
+    "bhk": "2",
+    "area_sqft": 1086,
+    "address": "Defence Colony, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 17,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 79438 30992",
+    "photo_urls": [
+      "photo_item_L_154_1.jpg",
+      "photo_item_L_154_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_154"
+  },
+  {
+    "id": "L_155",
+    "title": "3BHK \u00b7 ITPL Main Road",
+    "rent": 44500,
+    "deposit": 179000,
+    "bhk": "3",
+    "area_sqft": 1471,
+    "address": "ITPL Main Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 7,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 77568 94793",
+    "photo_urls": [
+      "photo_item_L_155_1.jpg",
+      "photo_item_L_155_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_155"
+  },
+  {
+    "id": "L_156",
+    "title": "3BHK \u00b7 Layout Road",
+    "rent": 48500,
+    "deposit": 292500,
+    "bhk": "3",
+    "area_sqft": 1542,
+    "address": "Layout Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 95829 98079",
+    "photo_urls": [
+      "photo_item_L_156_1.jpg",
+      "photo_item_L_156_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_156"
+  },
+  {
+    "id": "L_157",
+    "title": "2BHK \u00b7 Main Road",
+    "rent": 32000,
+    "deposit": 193000,
+    "bhk": "2",
+    "area_sqft": 1088,
+    "address": "Main Road, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 87252 36074",
+    "photo_urls": [
+      "photo_item_L_157_1.jpg",
+      "photo_item_L_157_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_157"
+  },
+  {
+    "id": "L_158",
+    "title": "3BHK \u00b7 Inner Ring Road",
+    "rent": 51500,
+    "deposit": 206500,
+    "bhk": "3",
+    "area_sqft": 1536,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 9,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 96759 10490",
+    "photo_urls": [
+      "photo_item_L_158_1.jpg",
+      "photo_item_L_158_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_158"
+  },
+  {
+    "id": "L_159",
+    "title": "1BHK \u00b7 Flyover Lane",
+    "rent": 16500,
+    "deposit": 66000,
+    "bhk": "1",
+    "area_sqft": 482,
+    "address": "Flyover Lane, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 81722 54456",
+    "photo_urls": [
+      "photo_item_L_159_1.jpg",
+      "photo_item_L_159_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_159"
+  },
+  {
+    "id": "L_160",
+    "title": "3BHK \u00b7 Double Road",
+    "rent": 53000,
+    "deposit": 318500,
+    "bhk": "3",
+    "area_sqft": 1499,
+    "address": "Double Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 17,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 88198 52245",
+    "photo_urls": [
+      "photo_item_L_160_1.jpg",
+      "photo_item_L_160_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_160"
+  },
+  {
+    "id": "L_161",
+    "title": "1BHK \u00b7 12th Main",
+    "rent": 16500,
+    "deposit": 83000,
+    "bhk": "1",
+    "area_sqft": 507,
+    "address": "12th Main, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 78988 92100",
+    "photo_urls": [
+      "photo_item_L_161_1.jpg",
+      "photo_item_L_161_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_161"
+  },
+  {
+    "id": "L_162",
+    "title": "1BHK \u00b7 JBN Layout",
+    "rent": 15500,
+    "deposit": 95500,
+    "bhk": "1",
+    "area_sqft": 452,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 9,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 86101 38455",
+    "photo_urls": [
+      "photo_item_L_162_1.jpg",
+      "photo_item_L_162_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_162"
+  },
+  {
+    "id": "L_163",
+    "title": "3BHK \u00b7 Hope Farm",
+    "rent": 45500,
+    "deposit": 274500,
+    "bhk": "3",
+    "area_sqft": 1571,
+    "address": "Hope Farm, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 87823 82199",
+    "photo_urls": [
+      "photo_item_L_163_1.jpg",
+      "photo_item_L_163_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_163"
+  },
+  {
+    "id": "L_164",
+    "title": "2BHK \u00b7 ECC Road",
+    "rent": 27500,
+    "deposit": 138500,
+    "bhk": "2",
+    "area_sqft": 1056,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 81332 79630",
+    "photo_urls": [
+      "photo_item_L_164_1.jpg",
+      "photo_item_L_164_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_164"
+  },
+  {
+    "id": "L_165",
+    "title": "1BHK \u00b7 ECC Road",
+    "rent": 13500,
+    "deposit": 83000,
+    "bhk": "1",
+    "area_sqft": 508,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71314 89556",
+    "photo_urls": [
+      "photo_item_L_165_1.jpg",
+      "photo_item_L_165_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_165"
+  },
+  {
+    "id": "L_166",
+    "title": "1BHK \u00b7 Inner Ring Road",
+    "rent": 13000,
+    "deposit": 52500,
+    "bhk": "1",
+    "area_sqft": 556,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 73925 77518",
+    "photo_urls": [
+      "photo_item_L_166_1.jpg",
+      "photo_item_L_166_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_166"
+  },
+  {
+    "id": "L_167",
+    "title": "1BHK \u00b7 ITPL Main Road",
+    "rent": 14500,
+    "deposit": 89500,
+    "bhk": "1",
+    "area_sqft": 519,
+    "address": "ITPL Main Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 16,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 75836 89979",
+    "photo_urls": [
+      "photo_item_L_167_1.jpg",
+      "photo_item_L_167_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_167"
+  },
+  {
+    "id": "L_168",
+    "title": "3BHK \u00b7 Hope Farm",
+    "rent": 47000,
+    "deposit": 189000,
+    "bhk": "3",
+    "area_sqft": 1559,
+    "address": "Hope Farm, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 9,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 70728 63008",
+    "photo_urls": [
+      "photo_item_L_168_1.jpg",
+      "photo_item_L_168_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_168"
+  },
+  {
+    "id": "L_169",
+    "title": "3BHK \u00b7 LIC Colony",
+    "rent": 54000,
+    "deposit": 324000,
+    "bhk": "3",
+    "area_sqft": 1533,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 12,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 86247 29949",
+    "photo_urls": [
+      "photo_item_L_169_1.jpg",
+      "photo_item_L_169_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_169"
+  },
+  {
+    "id": "L_170",
+    "title": "1BHK \u00b7 JBN Layout",
+    "rent": 14000,
+    "deposit": 56000,
+    "bhk": "1",
+    "area_sqft": 545,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 20,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71676 73935",
+    "photo_urls": [
+      "photo_item_L_170_1.jpg",
+      "photo_item_L_170_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_170"
+  },
+  {
+    "id": "L_171",
+    "title": "2BHK \u00b7 Flyover Lane",
+    "rent": 28000,
+    "deposit": 141000,
+    "bhk": "2",
+    "area_sqft": 986,
+    "address": "Flyover Lane, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 5,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 70093 68858",
+    "photo_urls": [
+      "photo_item_L_171_1.jpg",
+      "photo_item_L_171_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_171"
+  },
+  {
+    "id": "L_172",
+    "title": "2BHK \u00b7 HAL 3rd Stage",
+    "rent": 34500,
+    "deposit": 208500,
+    "bhk": "2",
+    "area_sqft": 1091,
+    "address": "HAL 3rd Stage, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 12,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 88776 32548",
+    "photo_urls": [
+      "photo_item_L_172_1.jpg",
+      "photo_item_L_172_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_172"
+  },
+  {
+    "id": "L_173",
+    "title": "2BHK \u00b7 LIC Colony",
+    "rent": 34000,
+    "deposit": 136500,
+    "bhk": "2",
+    "area_sqft": 1018,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 92283 37553",
+    "photo_urls": [
+      "photo_item_L_173_1.jpg",
+      "photo_item_L_173_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_173"
+  },
+  {
+    "id": "L_174",
+    "title": "2BHK \u00b7 5th Block",
+    "rent": 30500,
+    "deposit": 154000,
+    "bhk": "2",
+    "area_sqft": 998,
+    "address": "5th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 10",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 96947 55260",
+    "photo_urls": [
+      "photo_item_L_174_1.jpg",
+      "photo_item_L_174_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_174"
+  },
+  {
+    "id": "L_175",
+    "title": "3BHK \u00b7 Flyover Lane",
+    "rent": 44500,
+    "deposit": 223500,
+    "bhk": "3",
+    "area_sqft": 1576,
+    "address": "Flyover Lane, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 88601 73894",
+    "photo_urls": [
+      "photo_item_L_175_1.jpg",
+      "photo_item_L_175_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_175"
+  },
+  {
+    "id": "L_176",
+    "title": "1BHK \u00b7 12th Main",
+    "rent": 17500,
+    "deposit": 87500,
+    "bhk": "1",
+    "area_sqft": 516,
+    "address": "12th Main, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 82239 15006",
+    "photo_urls": [
+      "photo_item_L_176_1.jpg",
+      "photo_item_L_176_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_176"
+  },
+  {
+    "id": "L_177",
+    "title": "2BHK \u00b7 ECC Road",
+    "rent": 28500,
+    "deposit": 172500,
+    "bhk": "2",
+    "area_sqft": 1050,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 14,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 77168 96686",
+    "photo_urls": [
+      "photo_item_L_177_1.jpg",
+      "photo_item_L_177_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_177"
+  },
+  {
+    "id": "L_178",
+    "title": "1BHK \u00b7 LIC Colony",
+    "rent": 16500,
+    "deposit": 83500,
+    "bhk": "1",
+    "area_sqft": 521,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 78845 54716",
+    "photo_urls": [
+      "photo_item_L_178_1.jpg",
+      "photo_item_L_178_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_178"
+  },
+  {
+    "id": "L_179",
+    "title": "1BHK \u00b7 Defence Colony",
+    "rent": 18500,
+    "deposit": 92500,
+    "bhk": "1",
+    "area_sqft": 522,
+    "address": "Defence Colony, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 9",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 98516 79538",
+    "photo_urls": [
+      "photo_item_L_179_1.jpg",
+      "photo_item_L_179_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_179"
+  },
+  {
+    "id": "L_180",
+    "title": "1BHK \u00b7 ECC Road",
+    "rent": 15500,
+    "deposit": 93000,
+    "bhk": "1",
+    "area_sqft": 510,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 5,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 84412 89228",
+    "photo_urls": [
+      "photo_item_L_180_1.jpg",
+      "photo_item_L_180_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_180"
+  },
+  {
+    "id": "L_181",
+    "title": "2BHK \u00b7 4th Block",
+    "rent": 33500,
+    "deposit": 168000,
+    "bhk": "2",
+    "area_sqft": 1049,
+    "address": "4th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 17,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 82806 43630",
+    "photo_urls": [
+      "photo_item_L_181_1.jpg",
+      "photo_item_L_181_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_181"
+  },
+  {
+    "id": "L_182",
+    "title": "2BHK \u00b7 CMH Road",
+    "rent": 35000,
+    "deposit": 177000,
+    "bhk": "2",
+    "area_sqft": 954,
+    "address": "CMH Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 1",
+    "claimed_commute_min": 12,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 94211 30016",
+    "photo_urls": [
+      "photo_item_L_182_1.jpg",
+      "photo_item_L_182_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_182"
+  },
+  {
+    "id": "L_183",
+    "title": "3BHK \u00b7 ECC Road",
+    "rent": 48500,
+    "deposit": 242500,
+    "bhk": "3",
+    "area_sqft": 1581,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 11,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 89715 17809",
+    "photo_urls": [
+      "photo_item_L_183_1.jpg",
+      "photo_item_L_183_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_183"
+  },
+  {
+    "id": "L_184",
+    "title": "1BHK \u00b7 Wipro Park Lane",
+    "rent": 16000,
+    "deposit": 81500,
+    "bhk": "1",
+    "area_sqft": 583,
+    "address": "Wipro Park Lane, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 11,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 84765 66559",
+    "photo_urls": [
+      "photo_item_L_184_1.jpg",
+      "photo_item_L_184_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_184"
+  },
+  {
+    "id": "L_185",
+    "title": "1BHK \u00b7 4th Block",
+    "rent": 15500,
+    "deposit": 77500,
+    "bhk": "1",
+    "area_sqft": 512,
+    "address": "4th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 19,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 75685 93651",
+    "photo_urls": [
+      "photo_item_L_185_1.jpg",
+      "photo_item_L_185_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_185"
+  },
+  {
+    "id": "L_186",
+    "title": "1BHK \u00b7 LIC Colony",
+    "rent": 17500,
+    "deposit": 107000,
+    "bhk": "1",
+    "area_sqft": 493,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 16,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 70431 17818",
+    "photo_urls": [
+      "photo_item_L_186_1.jpg",
+      "photo_item_L_186_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_186"
+  },
+  {
+    "id": "L_187",
+    "title": "1BHK \u00b7 CMH Road",
+    "rent": 15500,
+    "deposit": 95000,
+    "bhk": "1",
+    "area_sqft": 478,
+    "address": "CMH Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 5,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 70882 90408",
+    "photo_urls": [
+      "photo_item_L_187_1.jpg",
+      "photo_item_L_187_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_187"
+  },
+  {
+    "id": "L_188",
+    "title": "2BHK \u00b7 Inner Ring Road",
+    "rent": 32000,
+    "deposit": 129000,
+    "bhk": "2",
+    "area_sqft": 1064,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 10,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 88353 14452",
+    "photo_urls": [
+      "photo_item_L_188_1.jpg",
+      "photo_item_L_188_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_188"
+  },
+  {
+    "id": "L_189",
+    "title": "1BHK \u00b7 Inner Ring Road",
+    "rent": 14000,
+    "deposit": 86500,
+    "bhk": "1",
+    "area_sqft": 494,
+    "address": "Inner Ring Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 72164 20050",
+    "photo_urls": [
+      "photo_item_L_189_1.jpg",
+      "photo_item_L_189_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_189"
+  },
+  {
+    "id": "L_190",
+    "title": "2BHK \u00b7 Layout Road",
+    "rent": 29000,
+    "deposit": 174000,
+    "bhk": "2",
+    "area_sqft": 1074,
+    "address": "Layout Road, Domlur, Bangalore",
+    "pincode": "560071",
+    "landmark": "Near Landmark 4",
+    "claimed_commute_min": 14,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Domlur. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 84731 73055",
+    "photo_urls": [
+      "photo_item_L_190_1.jpg",
+      "photo_item_L_190_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/domlur/l_190"
+  },
+  {
+    "id": "L_191",
+    "title": "2BHK \u00b7 ECC Road",
+    "rent": 25500,
+    "deposit": 102500,
+    "bhk": "2",
+    "area_sqft": 1002,
+    "address": "ECC Road, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 17,
+    "description": "Beautiful, semi-furnished 2 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 93299 85257",
+    "photo_urls": [
+      "photo_item_L_191_1.jpg",
+      "photo_item_L_191_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_191"
+  },
+  {
+    "id": "L_192",
+    "title": "3BHK \u00b7 CMH Road",
+    "rent": 52000,
+    "deposit": 209500,
+    "bhk": "3",
+    "area_sqft": 1567,
+    "address": "CMH Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 7,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 73931 13410",
+    "photo_urls": [
+      "photo_item_L_192_1.jpg",
+      "photo_item_L_192_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_192"
+  },
+  {
+    "id": "L_193",
+    "title": "1BHK \u00b7 Defence Colony",
+    "rent": 18500,
+    "deposit": 94000,
+    "bhk": "1",
+    "area_sqft": 522,
+    "address": "Defence Colony, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 5",
+    "claimed_commute_min": 16,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 83616 37498",
+    "photo_urls": [
+      "photo_item_L_193_1.jpg",
+      "photo_item_L_193_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_193"
+  },
+  {
+    "id": "L_194",
+    "title": "1BHK \u00b7 Channasandra",
+    "rent": 15000,
+    "deposit": 77000,
+    "bhk": "1",
+    "area_sqft": 512,
+    "address": "Channasandra, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 14,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Whitefield. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 93484 66139",
+    "photo_urls": [
+      "photo_item_L_194_1.jpg",
+      "photo_item_L_194_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/whitefield/l_194"
+  },
+  {
+    "id": "L_195",
+    "title": "1BHK \u00b7 LIC Colony",
+    "rent": 15500,
+    "deposit": 95000,
+    "bhk": "1",
+    "area_sqft": 585,
+    "address": "LIC Colony, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 3",
+    "claimed_commute_min": 13,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 94483 79874",
+    "photo_urls": [
+      "photo_item_L_195_1.jpg",
+      "photo_item_L_195_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_195"
+  },
+  {
+    "id": "L_196",
+    "title": "3BHK \u00b7 CMH Road",
+    "rent": 55500,
+    "deposit": 279500,
+    "bhk": "3",
+    "area_sqft": 1471,
+    "address": "CMH Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 2",
+    "claimed_commute_min": 18,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 86207 57225",
+    "photo_urls": [
+      "photo_item_L_196_1.jpg",
+      "photo_item_L_196_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_196"
+  },
+  {
+    "id": "L_197",
+    "title": "1BHK \u00b7 8th Block",
+    "rent": 15500,
+    "deposit": 62500,
+    "bhk": "1",
+    "area_sqft": 597,
+    "address": "8th Block, Koramangala, Bangalore",
+    "pincode": "560034",
+    "landmark": "Near Landmark 8",
+    "claimed_commute_min": 15,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Koramangala. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 71414 19374",
+    "photo_urls": [
+      "photo_item_L_197_1.jpg",
+      "photo_item_L_197_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/koramangala/l_197"
+  },
+  {
+    "id": "L_198",
+    "title": "3BHK \u00b7 CMH Road",
+    "rent": 53000,
+    "deposit": 212000,
+    "bhk": "3",
+    "area_sqft": 1527,
+    "address": "CMH Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Landmark 7",
+    "claimed_commute_min": 17,
+    "description": "Beautiful, semi-furnished 3 BHK flat available for rent in Indiranagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 97154 68229",
+    "photo_urls": [
+      "photo_item_L_198_1.jpg",
+      "photo_item_L_198_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/l_198"
+  },
+  {
+    "id": "L_199",
+    "title": "1BHK \u00b7 JBN Layout",
+    "rent": 16000,
+    "deposit": 81500,
+    "bhk": "1",
+    "area_sqft": 590,
+    "address": "JBN Layout, Jeevan Bima Nagar, Bangalore",
+    "pincode": "560075",
+    "landmark": "Near Landmark 6",
+    "claimed_commute_min": 7,
+    "description": "Beautiful, semi-furnished 1 BHK flat available for rent in Jeevan Bima Nagar. Located in a safe and peaceful residential layout. Built-in wardrobes, modular kitchen, and excellent ventilation. Easy access to public transit.",
+    "phone": "+91 80135 59763",
+    "photo_urls": [
+      "photo_item_L_199_1.jpg",
+      "photo_item_L_199_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/jeevan bima nagar/l_199"
+  },
+  {
+    "id": "SCAM_001",
+    "title": "2BHK \u00b7 \"Owner going abroad\"",
     "rent": 18000,
     "deposit": 30000,
     "bhk": "2",
@@ -138,14 +1910,17 @@
     "pincode": "560038",
     "landmark": "Indiranagar Club",
     "claimed_commute_min": 5,
+    "description": "Luxurious 2 BHK apartment. Owner going abroad, hence renting out very cheap. Rent \u20b918,000 only! Modular kitchen, AC, leather sofas, high speed wifi. Fully loaded luxury. Please pay a minor refundable token to reserve and hold the flat. WhatsApp me directly at the number to visit. No calls.",
     "phone": "+91 93003 40056",
-    "photo_urls": ["photo_abroad_1.jpg", "photo_abroad_2.jpg"],
-    "description": "Luxurious 2 BHK apartment. Owner going abroad, hence renting out very cheap. Rent ₹18,000 only! Modular kitchen, AC, leather sofas, high speed wifi. Fully loaded luxury. Please pay a minor refundable token to reserve and hold the flat. WhatsApp me directly at the number to visit. No calls.",
+    "photo_urls": [
+      "photo_abroad_1.jpg",
+      "photo_abroad_2.jpg"
+    ],
     "source_url": "https://facebook.com/marketplace/blr/flat_abroad"
   },
   {
-    "id": "L010",
-    "title": "2BHK · \"Urgent, token to hold\"",
+    "id": "SCAM_002",
+    "title": "2BHK \u00b7 \"Urgent, token to hold\"",
     "rent": 16000,
     "deposit": 25000,
     "bhk": "2",
@@ -154,73 +1929,196 @@
     "pincode": "560038",
     "landmark": "Defence Colony Park",
     "claimed_commute_min": 4,
+    "description": "Urgent listing! Beautiful 2BHK flat in the posh Defence Colony. Only \u20b916,000 rent. Direct dealing. Need to pay token amount of \u20b95,000 to hold this flat today as there is a huge queue. Very urgent.",
     "phone": "+91 94004 50067",
-    "photo_urls": ["photo_token_1.jpg", "photo_token_2.jpg"],
-    "description": "Urgent listing! Beautiful 2BHK flat in the posh Defence Colony. Only ₹16,000 rent. Direct dealing. Need to pay token amount of ₹5,000 to hold this flat today as there is a huge queue. Very urgent.",
+    "photo_urls": [
+      "photo_token_1.jpg",
+      "photo_token_2.jpg"
+    ],
     "source_url": "https://quikr.com/blr/defence/token"
   },
   {
-    "id": "L011",
-    "title": "1BHK · Affordable Studio",
-    "rent": 15000,
+    "id": "SCAM_003",
+    "title": "2BHK \u00b7 \"Prime Indiranagar\"",
+    "rent": 24000,
     "deposit": 50000,
-    "bhk": "1",
-    "area_sqft": 500,
-    "address": "Binnamangala, Indiranagar, Bangalore",
-    "pincode": "560038",
-    "landmark": "Near ESI Hospital",
-    "claimed_commute_min": 10,
-    "phone": "+91 95005 60078",
-    "photo_urls": ["photo_1bhk_1.jpg"],
-    "description": "Cozy and affordable 1 BHK studio apartment. Semi-furnished, walking distance to shops. Safe and secure locality, CCTV installed.",
-    "source_url": "https://nobroker.in/blr/indiranagar/1bhk"
-  },
-  {
-    "id": "L012",
-    "title": "3BHK · Luxury Penthouse",
-    "rent": 65000,
-    "deposit": 300000,
-    "bhk": "3",
-    "area_sqft": 1800,
-    "address": "Defence Colony, Indiranagar, Bangalore",
-    "pincode": "560038",
-    "landmark": "Defence Colony Club",
-    "claimed_commute_min": 15,
-    "phone": "+91 96006 70089",
-    "photo_urls": ["photo_3bhk_1.jpg", "photo_3bhk_2.jpg"],
-    "description": "Stunning 3 BHK penthouse apartment with huge private terrace. Semi-furnished, top class marble flooring, modular kitchen, chimney, wardrobes in all rooms. 2 reserved car parking spaces.",
-    "source_url": "https://housing.com/blr/defence/penthouse"
-  },
-  {
-    "id": "L013",
-    "title": "2BHK · Whitefield TechPark",
-    "rent": 28000,
-    "deposit": 120000,
     "bhk": "2",
     "area_sqft": 1100,
-    "address": "ECC Road, Whitefield, Bangalore",
-    "pincode": "560066",
-    "landmark": "Near ITPL",
-    "claimed_commute_min": 45,
-    "phone": "+91 97007 80090",
-    "photo_urls": ["photo_wf_1.jpg"],
-    "description": "Lovely 2BHK flat in Whitefield. Close to ITPL, school and hospitals. Perfect for techies working in Whitefield area.",
-    "source_url": "https://nobroker.in/blr/whitefield/ecc"
+    "address": "Double Road, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Metro pillar",
+    "claimed_commute_min": 5,
+    "description": "Beautiful 2BHK flat in Prime Indiranagar area. Extremely cheap rent because owner needs to rent it out urgently this week. Modern amenities included. First come first served.",
+    "phone": "+91 91001 20034",
+    "photo_urls": [
+      "photo_prime_1.jpg",
+      "photo_prime_2.jpg"
+    ],
+    "source_url": "https://craigslist.com/blr/ind/scam1"
   },
   {
-    "id": "L014",
-    "title": "2BHK · Koramangala Cozy",
-    "rent": 33000,
-    "deposit": 150000,
+    "id": "SCAM_004",
+    "title": "2BHK \u00b7 \"Owner Relocating to UK\"",
+    "rent": 19000,
+    "deposit": 40000,
     "bhk": "2",
-    "area_sqft": 1000,
+    "area_sqft": 1050,
+    "address": "12th Main, HAL 2nd Stage, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near Corner House",
+    "claimed_commute_min": 6,
+    "description": "Owner relocating to UK immediately. Fully furnished flat available at throwaway price. Do not call, direct WhatsApp only on my number. Must pay refundable safety deposit token of Rs 6000 before viewing is scheduled. No brokers.",
+    "phone": "+91 92002 44556",
+    "photo_urls": [
+      "photo_uk_1.jpg",
+      "photo_uk_2.jpg"
+    ],
+    "source_url": "https://olx.in/item/blr-ind-uk"
+  },
+  {
+    "id": "SCAM_005",
+    "title": "1BHK \u00b7 \"Military Officer Transfer\"",
+    "rent": 9000,
+    "deposit": 15000,
+    "bhk": "1",
+    "area_sqft": 600,
+    "address": "Jeevan Bima Nagar Main Road, Bangalore",
+    "pincode": "560075",
+    "landmark": "LIC Colony Park",
+    "claimed_commute_min": 5,
+    "description": "I am an army military officer transferred from Bangalore. Renting my fully furnished 1BHK. Rent Rs 9000 only. To see flat, you must pay Rs 3000 gate-pass fee which is 100% refundable immediately after visiting. Genuine tenants only. WhatsApp me.",
+    "phone": "+91 95005 11223",
+    "photo_urls": [
+      "photo_army_1.jpg"
+    ],
+    "source_url": "https://facebook.com/army_officer_scam"
+  },
+  {
+    "id": "SCAM_006",
+    "title": "2BHK \u00b7 \"Fully Furnished Luxury Lure\"",
+    "rent": 21000,
+    "deposit": 45000,
+    "bhk": "2",
+    "area_sqft": 1150,
+    "address": "Domlur Flyover Enclave, Bangalore",
+    "pincode": "560071",
+    "landmark": "EGL Backgate",
+    "claimed_commute_min": 3,
+    "description": "Stunning luxury 2BHK. Price heavily discounted as landlord resides in Singapore. High quality Italian marble, central AC. Direct owner deal. Secure the flat today by paying Rs 5000 holding deposit. Fully refundable if you do not like the flat.",
+    "phone": "+91 96006 22334",
+    "photo_urls": [
+      "photo_lure_1.jpg",
+      "photo_lure_2.jpg"
+    ],
+    "source_url": "https://magicbricks.com/blr/domlur/lure"
+  },
+  {
+    "id": "SCAM_007",
+    "title": "3BHK \u00b7 \"NRI Posh Penthouse\"",
+    "rent": 29000,
+    "deposit": 60000,
+    "bhk": "3",
+    "area_sqft": 1700,
+    "address": "Posh Defence Colony, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Defence Club",
+    "claimed_commute_min": 10,
+    "description": "High-end 3BHK penthouse available for rent. Owner settled in Dubai. Rent is extremely low at 29k because we need a neat tenant who can maintain the house. Need token deposit of 10k to hold as we have 15 families waiting. Direct deal.",
+    "phone": "+91 97007 33445",
+    "photo_urls": [
+      "photo_pent_1.jpg",
+      "photo_pent_2.jpg"
+    ],
+    "source_url": "https://craigslist.com/blr/defence/penthouse"
+  },
+  {
+    "id": "SCAM_008",
+    "title": "2BHK \u00b7 \"Urgent Relocation to USA\"",
+    "rent": 17500,
+    "deposit": 35000,
+    "bhk": "2",
+    "area_sqft": 1080,
+    "address": "CMH Road Metro Corridor, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Indiranagar Metro",
+    "claimed_commute_min": 2,
+    "description": "My family is moving to the United States next Monday. Renting our premium 2BHK flat. All wood works and modular kitchen done. Rent only 17.5k. Pay nominal holding fee of 4k via GPay before visiting. Strictly no direct calls, text on WhatsApp.",
+    "phone": "+91 98008 44556",
+    "photo_urls": [
+      "photo_usa_1.jpg"
+    ],
+    "source_url": "https://quikr.com/blr/cmh/usa"
+  },
+  {
+    "id": "SCAM_009",
+    "title": "2BHK \u00b7 \"No-Brokerage Direct Offer\"",
+    "rent": 19500,
+    "deposit": 40000,
+    "bhk": "2",
+    "area_sqft": 1100,
+    "address": "Binnamangala Layout, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "ESI Hospital",
+    "claimed_commute_min": 5,
+    "description": "Fully furnished 2 BHK apartment in outstanding condition. Direct owner listing, save huge brokerage fees. Landlord lives in Germany. WhatsApp direct for address details and token instructions. First person to transfer token gets occupancy.",
+    "phone": "+91 99009 55667",
+    "photo_urls": [
+      "photo_n_1.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/indiranagar/germany"
+  },
+  {
+    "id": "SCAM_010",
+    "title": "2BHK \u00b7 \"Posh TechPark Proximity\"",
+    "rent": 15000,
+    "deposit": 30000,
+    "bhk": "2",
+    "area_sqft": 950,
+    "address": "ECC Road, Near ITPL, Whitefield, Bangalore",
+    "pincode": "560066",
+    "landmark": "ITPL gate",
+    "claimed_commute_min": 2,
+    "description": "Super cozy 2BHK flat next to ITPL gate. Only 15k rent! Owner shifted to Mumbai for business. Send token deposit of Rs 4000 on GPay to fix viewing appointment. Fast deal.",
+    "phone": "+91 90009 12345",
+    "photo_urls": [
+      "photo_whitefield_scam_1.jpg"
+    ],
+    "source_url": "https://olx.in/item/wf-scam"
+  },
+  {
+    "id": "SCAM_011",
+    "title": "1BHK \u00b7 \"Cozy Corporate Flat\"",
+    "rent": 11000,
+    "deposit": 20000,
+    "bhk": "1",
+    "area_sqft": 550,
     "address": "4th Block, Koramangala, Bangalore",
     "pincode": "560034",
-    "landmark": "Near Wipro Park",
-    "claimed_commute_min": 35,
-    "phone": "+91 98008 90100",
-    "photo_urls": ["photo_kora_1.jpg"],
-    "description": "Cosy 2 BHK apartment in prime Koramangala 4th block. Walking distance to Wipro park, restaurants and pubs. Semi-furnished, gated community.",
-    "source_url": "https://housing.com/blr/koramangala/4thblock"
+    "landmark": "Wipro Park",
+    "claimed_commute_min": 5,
+    "description": "Renting out beautiful, fully loaded 1BHK. Underpriced as owner resides in London. To generate visiting gate-pass, pay Rs 2500 online. Gate-pass fee fully refundable inside flat.",
+    "phone": "+91 91009 23456",
+    "photo_urls": [
+      "photo_koramangala_scam_1.jpg"
+    ],
+    "source_url": "https://facebook.com/kora_scam"
+  },
+  {
+    "id": "SCAM_012",
+    "title": "2BHK \u00b7 \"Metro Walk-in Special\"",
+    "rent": 18500,
+    "deposit": 35000,
+    "bhk": "2",
+    "area_sqft": 1050,
+    "address": "HAL 2nd Stage, Indiranagar, Bangalore",
+    "pincode": "560038",
+    "landmark": "Near ESI Metro",
+    "claimed_commute_min": 3,
+    "description": "Corporate professionals luxury 2BHK, 3 min walk to Metro. Rent heavily reduced due to owner moving to Chennai. High security building. Transfer Rs 3500 holding token to lock before someone else takes it.",
+    "phone": "+91 92009 34567",
+    "photo_urls": [
+      "photo_hal_scam_1.jpg"
+    ],
+    "source_url": "https://quikr.com/blr/hal/metro"
   }
 ]
