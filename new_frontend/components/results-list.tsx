@@ -35,8 +35,8 @@ export function ResultsList({
             }`}
           >
             <span className="w-5 shrink-0 text-center text-sm font-semibold text-muted-foreground">{l.rank}</span>
-            <div className="relative size-14 shrink-0 overflow-hidden rounded-xl">
-              <Image src={l.imageUrl} alt={l.title} fill className="object-cover" sizes="56px" />
+            <div className="relative size-16 shrink-0 overflow-hidden rounded-xl ring-1 ring-white/15">
+              <Image src={l.imageUrl} alt={l.title} fill className="object-cover transition-transform duration-300 group-hover:scale-110" sizes="64px" />
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold">{l.title}</p>

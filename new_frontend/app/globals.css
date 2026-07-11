@@ -83,16 +83,23 @@
 
 @layer utilities {
   .glass {
-    background: color-mix(in oklab, white 4%, transparent);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in oklab, white 10%, transparent);
+    background: color-mix(in oklab, #060d14 58%, transparent);
+    backdrop-filter: blur(18px) saturate(125%);
+    -webkit-backdrop-filter: blur(18px) saturate(125%);
+    border: 1px solid color-mix(in oklab, white 14%, transparent);
+    box-shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.65),
+      inset 0 1px 0 color-mix(in oklab, white 8%, transparent);
+  }
+  .glass:hover {
+    border-color: color-mix(in oklab, white 20%, transparent);
   }
   .glass-strong {
-    background: color-mix(in oklab, white 7%, transparent);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-    border: 1px solid color-mix(in oklab, white 12%, transparent);
+    background: color-mix(in oklab, #060d14 74%, transparent);
+    backdrop-filter: blur(26px) saturate(135%);
+    -webkit-backdrop-filter: blur(26px) saturate(135%);
+    border: 1px solid color-mix(in oklab, white 16%, transparent);
+    box-shadow: 0 20px 50px -16px rgba(0, 0, 0, 0.75),
+      inset 0 1px 0 color-mix(in oklab, white 10%, transparent);
   }
   .text-gradient {
     background: linear-gradient(90deg, var(--brand), var(--brand-2));

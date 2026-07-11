@@ -12,7 +12,7 @@ export default function Page() {
 
   return (
     <ToastProvider>
-      <AuroraBackground withSkyline={authed} />
+      <AuroraBackground />
       <main className="relative z-10 min-h-screen">
         <AnimatePresence mode="wait">
           {!authed ? (

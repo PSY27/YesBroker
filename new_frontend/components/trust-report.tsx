@@ -76,13 +76,27 @@ export function TrustReport({ listing }: { listing: RankedListing | null }) {
       transition={{ duration: 0.4 }}
       className="flex flex-col gap-4"
     >
-      {/* Header card */}
-      <div className="glass-strong relative overflow-hidden rounded-3xl">
-        <div className="absolute inset-0">
-          <Image src={listing.imageUrl} alt="" fill className="object-cover opacity-30 blur-md" sizes="50vw" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d17] via-[#0b0d17]/80 to-transparent" />
+      {/* Header card — crisp image banner + details */}
+      <div className="glass-strong overflow-hidden rounded-3xl">
+        {/* Image card banner */}
+        <div className="relative h-44 w-full overflow-hidden sm:h-52">
+          <motion.div
+            initial={{ scale: 1.08 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 6, ease: 'easeOut' }}
+            className="absolute inset-0"
+          >
+            <Image src={listing.imageUrl} alt={listing.title} fill className="object-cover" sizes="60vw" priority />
+          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#060d14] via-[#060d14]/35 to-[#060d14]/10" />
+          <span
+            className="absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-bold backdrop-blur-md"
+            style={{ background: `color-mix(in oklab, ${vm.color} 26%, rgba(0,0,0,0.4))`, color: '#fff' }}
+          >
+            {vm.label}
+          </span>
         </div>
-        <div className="relative flex flex-col gap-5 p-6 sm:flex-row sm:items-center">
+        <div className="relative -mt-8 flex flex-col gap-5 p-6 sm:flex-row sm:items-center">
           <div className="flex-1">
             <h2 className="text-balance text-xl font-semibold">{listing.title}</h2>
             <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
