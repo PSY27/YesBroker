@@ -20,27 +20,35 @@ export function ListingsResults({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.5 }}
-      className="space-y-2"
+      className="space-y-4"
     >
-      <div className="flex items-center justify-between px-1 mb-3">
-        <h3 className="text-sm font-semibold text-foreground">
-          Results ({listings.length})
+      <div className="glassmorphic-card p-4">
+        <h3 className="text-sm font-semibold text-foreground mb-1">
+          Showing 10 of 14 matches for 2BHK · Indiranagar · ≤₹35k
         </h3>
-        <span className="text-xs px-2 py-1 bg-white/4 border border-white/10 rounded-full text-muted-foreground">
-          Live API
-        </span>
-      </div>
+        <p className="text-xs text-muted-foreground mb-4">
+          Sorted by trust — safest first
+        </p>
 
-      <div className="space-y-2 max-h-[calc(100vh-400px)] overflow-y-auto pr-2 custom-scrollbar">
-        {listings.map((listing, index) => (
-          <ListingRow
-            key={listing.id}
-            listing={listing}
-            isSelected={selectedListingId === listing.id}
-            onClick={() => onSelectListing(listing.id)}
-            index={index}
-          />
-        ))}
+        {/* Table Header */}
+        <div className="flex items-center text-[10px] font-bold text-muted-foreground tracking-wider uppercase mb-2 px-3 pb-2 border-b border-white/10">
+          <div className="w-10 text-center">Rank</div>
+          <div className="flex-1 px-2">Listing</div>
+          <div className="w-20 text-right">Rent</div>
+          <div className="w-28 text-right">Trust</div>
+        </div>
+
+        <div className="space-y-1.5 max-h-[calc(100vh-450px)] overflow-y-auto pr-1 custom-scrollbar">
+          {listings.map((listing, index) => (
+            <ListingRow
+              key={listing.id}
+              listing={listing}
+              isSelected={selectedListingId === listing.id}
+              onClick={() => onSelectListing(listing.id)}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
     </motion.div>
   );

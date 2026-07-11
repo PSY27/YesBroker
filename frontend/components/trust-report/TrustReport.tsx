@@ -1,14 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { RankedListing } from '@/lib/types';
 import { TrustReport as TrustReportType } from '@/lib/types';
-import { TrustScoreGauge } from './TrustScoreGauge';
-import { AgentPipeline } from './AgentPipeline';
 import { AgentFindingCard } from './AgentFindingCard';
 import { TerminalReasoning } from './TerminalReasoning';
-import { Download } from 'lucide-react';
 
 interface TrustReportProps {
   listing: RankedListing;
@@ -16,7 +12,6 @@ interface TrustReportProps {
 }
 
 export function TrustReport({ listing, report }: TrustReportProps) {
-  // Sort findings: bad first
   const sortedFindings = [...report.flags].sort((a, b) => {
     const verdictOrder: Record<string, number> = {
       LIE: 0,
@@ -27,6 +22,21 @@ export function TrustReport({ listing, report }: TrustReportProps) {
     return (verdictOrder[a.verdict] || 99) - (verdictOrder[b.verdict] || 99);
   });
 
+  const getVerdictLabel = (verdict: string) => {
+    switch (verdict) {
+      case 'SAFE':
+        return { color: 'text-green-400', icon: '🟢', label: 'SAFE', sub: 'Likely a legitimate listing' };
+      case 'CAUTION':
+        return { color: 'text-yellow-400', icon: '🟡', label: 'CAUTION', sub: 'Proceed with verification' };
+      case 'HIGH_RISK':
+        return { color: 'text-red-400', icon: '🔴', label: 'HIGH RISK', sub: 'Likely a scam listing' };
+      default:
+        return { color: 'text-green-400', icon: '🟢', label: 'SAFE', sub: 'Likely a legitimate listing' };
+    }
+  };
+
+  const v = getVerdictLabel(report.verdict);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -35,128 +45,60 @@ export function TrustReport({ listing, report }: TrustReportProps) {
       transition={{ duration: 0.5 }}
       className="flex flex-col gap-4 h-full overflow-y-auto pr-2 custom-scrollbar"
     >
-      {/* Header Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="relative h-40 rounded-xl overflow-hidden"
-      >
-        <Image
-          src={listing.imageUrl}
-          alt={listing.title}
-          fill
-          className="object-cover brightness-50"
-        />
-        <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-t from-[#0b0d17] via-transparent to-transparent" />
+      {/* Header */}
+      <div className="glassmorphic-card p-5">
+        <h2 className="text-lg font-bold text-foreground mb-6">
+          {listing.bhk} · "{listing.title}" · {listing.area} · ₹{listing.rent.toLocaleString()}
+        </h2>
 
-        {/* Overlay content */}
-        <motion.div
-          className="absolute inset-0 flex flex-col justify-end p-4 text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <h2 className="text-lg font-bold mb-2 line-clamp-2">
-            {listing.title}
-          </h2>
-          <div className="flex flex-wrap gap-2 text-xs">
-            <span className="bg-white/10 backdrop-blur px-2 py-1 rounded">
-              {listing.bhk}
-            </span>
-            <span className="bg-white/10 backdrop-blur px-2 py-1 rounded">
-              {listing.area}
-            </span>
-            <span className="bg-white/10 backdrop-blur px-2 py-1 rounded">
-              {listing.pincode}
-            </span>
+        {/* Score Area */}
+        <div className="flex items-center gap-6 mb-2">
+          <div className="w-24 h-24 rounded-2xl bg-[#0b0d17] border border-white/10 flex flex-col items-center justify-center shadow-inner">
+            <span className="text-3xl font-bold text-foreground">{report.score}</span>
+            <span className="text-xs text-muted-foreground">/ 100</span>
           </div>
-          <div className="mt-2 text-lg font-bold">
-            ₹{listing.rent.toLocaleString()}/month
+          <div>
+            <div className={`text-xl font-bold flex items-center gap-2 mb-1 ${v.color}`}>
+              {v.icon} {v.label}
+            </div>
+            <p className="text-sm text-muted-foreground">{v.sub}</p>
           </div>
-        </motion.div>
-      </motion.div>
-
-      {/* Main content grid */}
-      <div className="grid md:grid-cols-2 gap-4">
-        {/* Left column: Score + Agents */}
-        <motion.div
-          className="space-y-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.15 }}
-        >
-          <div className="glassmorphic-card flex justify-center">
-            <TrustScoreGauge score={report.score} />
-          </div>
-
-          <AgentPipeline agents={report.flags} />
-        </motion.div>
-
-        {/* Right column: Terminal + Export */}
-        <motion.div
-          className="space-y-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <TerminalReasoning lines={report.reasoning} />
-
-          <button className="w-full glassmorphic-card hover:bg-white/8 transition-all flex items-center justify-center gap-2 py-3 text-sm font-medium text-foreground">
-            <Download className="w-4 h-4" />
-            Export PDF Report
-          </button>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Findings section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.25 }}
-        className="glassmorphic-card"
-      >
-        <h3 className="text-base font-bold text-foreground mb-4">
-          Agent Findings
+      {/* Red Flags / Agent Findings */}
+      <div className="glassmorphic-card p-5">
+        <h3 className="text-sm font-bold text-foreground mb-4 flex items-center gap-2 uppercase tracking-wide">
+          <span className="text-red-400">🚩</span> RED FLAGS (with proof)
         </h3>
         <div className="space-y-3">
           {sortedFindings.map((finding, idx) => (
-            <AgentFindingCard
-              key={finding.agent}
-              finding={finding}
-              index={idx}
-            />
+            <AgentFindingCard key={finding.agent} finding={finding} index={idx} />
           ))}
         </div>
-      </motion.div>
+      </div>
 
-      {/* Questions section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="glassmorphic-card"
-      >
-        <h3 className="text-base font-bold text-foreground mb-3">
-          Questions to Ask
+      {/* Questions to ask */}
+      <div className="glassmorphic-card p-5 border-l-4 border-l-[#7c5cff]">
+        <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2 uppercase tracking-wide">
+          <span className="text-[#7c5cff]">🛡️</span> BEFORE YOU CONTACT THIS BROKER, ASK:
         </h3>
-        <div className="space-y-2">
+        <ol className="space-y-2 ml-1">
           {report.questions_to_ask.map((question, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.35 + idx * 0.05 }}
-              className="flex gap-3 text-sm"
-            >
-              <span className="text-[#7c5cff] font-bold flex-shrink-0">
-                {idx + 1}.
-              </span>
-              <p className="text-muted-foreground">{question}</p>
-            </motion.div>
+            <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+              <span className="font-semibold text-foreground">{idx + 1}.</span> {question}
+            </li>
           ))}
-        </div>
-      </motion.div>
+        </ol>
+      </div>
+
+      {/* Reasoning Trace */}
+      <div className="glassmorphic-card p-5">
+        <h3 className="text-sm font-bold text-foreground mb-4 flex items-center gap-2 uppercase tracking-wide">
+          <span className="text-foreground">🧠</span> HOW WE DECIDED (agent reasoning trace)
+        </h3>
+        <TerminalReasoning lines={report.reasoning} />
+      </div>
     </motion.div>
   );
 }
