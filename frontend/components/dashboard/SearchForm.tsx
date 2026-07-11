@@ -158,7 +158,7 @@ export function SearchForm({
           className="w-full h-12 bg-gradient-to-r from-[#7c5cff] to-[#5b8cff] hover:shadow-[0_0_20px_rgba(124,92,255,0.4)] text-white font-bold rounded-lg transition-all duration-300 mt-6 flex items-center justify-center text-base disabled:opacity-60"
         >
           <Search className="w-5 h-5 mr-2" />
-          {isSearching ? 'Searching...' : 'Find Safe Homes'}
+          {isSearching ? 'Analyzing...' : 'Find Safe Homes'}
         </Button>
       </div>
     </motion.div>

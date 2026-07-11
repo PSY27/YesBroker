@@ -126,6 +126,39 @@ def trace_emit(kind: TraceKind, actor: str, message: str, **meta: Any) -> TraceE
     return tracer.emit(kind, actor, message, **meta)
 
 
+class SearchTraceHub:
+    """Multiplexes trace events from parallel listing investigations into one SSE stream."""
+
+    def __init__(self) -> None:
+        self._queue: asyncio.Queue[dict[str, Any]] = asyncio.Queue()
+
+    def status(self, message: str) -> None:
+        self._queue.put_nowait({"type": "trace", "actor": "system", "message": message})
+
+    def trace(self, listing_id: str, title: str, event: TraceEvent) -> None:
+        prefix = title[:28]
+        self._queue.put_nowait(
+            {
+                "type": "trace",
+                "actor": event.actor,
+                "message": f"[{prefix}] {event.terminal_line()}",
+                "listing_id": listing_id,
+            }
+        )
+
+    async def wait_event(self, timeout: float = 0.1) -> dict[str, Any] | None:
+        try:
+            return await asyncio.wait_for(self._queue.get(), timeout=timeout)
+        except asyncio.TimeoutError:
+            return None
+
+    def drain(self) -> list[dict[str, Any]]:
+        items: list[dict[str, Any]] = []
+        while not self._queue.empty():
+            items.append(self._queue.get_nowait())
+        return items
+
+
 class TracedInvestigation:
     """Context manager that installs a TraceLogger for the current task."""
 

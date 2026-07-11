@@ -7,10 +7,14 @@ dependencies = [
     "fastapi>=0.139.0",
     "google-genai>=2.11.0",
     "httpx>=0.28.1",
+    "playwright>=1.61.0",
     "pydantic>=2.13.4",
     "python-dotenv>=1.2.2",
     "uvicorn>=0.51.0",
 ]
+
+[project.optional-dependencies]
+scrape = ["playwright>=1.49.0"]
 
 [dependency-groups]
 dev = [

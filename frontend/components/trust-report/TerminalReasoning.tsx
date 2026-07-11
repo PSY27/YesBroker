@@ -5,12 +5,18 @@ import { useEffect, useState } from 'react';
 
 interface TerminalReasoningProps {
   lines: string[];
+  live?: boolean;
 }
 
-export function TerminalReasoning({ lines }: TerminalReasoningProps) {
+export function TerminalReasoning({ lines, live = false }: TerminalReasoningProps) {
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
 
   useEffect(() => {
+    if (live) {
+      setDisplayedLines(lines);
+      return;
+    }
+
     setDisplayedLines([]);
     let currentLine = 0;
 
@@ -24,7 +30,7 @@ export function TerminalReasoning({ lines }: TerminalReasoningProps) {
     }, 150);
 
     return () => clearInterval(interval);
-  }, [lines]);
+  }, [lines, live]);
 
   const getLineColor = (line: string | undefined) => {
     if (!line) return 'text-foreground';
@@ -80,7 +86,11 @@ export function TerminalReasoning({ lines }: TerminalReasoningProps) {
       </div>
 
       {/* Terminal content */}
-      <div className="space-y-1 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+      <div
+        className={`space-y-1 overflow-y-auto pr-2 custom-scrollbar ${
+          live ? 'max-h-[calc(100vh-280px)]' : 'max-h-64'
+        }`}
+      >
         {displayedLines.map((line, idx) => (
           <motion.div
             key={idx}
@@ -112,7 +122,7 @@ export function TerminalReasoning({ lines }: TerminalReasoningProps) {
         transition={{ delay: 0.6 }}
         className="mt-3 pt-3 border-t border-white/5 text-muted-foreground text-xs"
       >
-        $ Lines: {lines.length} | Analysis complete
+        $ Lines: {lines.length} | {live ? 'Streaming live...' : 'Analysis complete'}
       </motion.p>
     </motion.div>
   );

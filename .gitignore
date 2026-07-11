@@ -20,3 +20,8 @@ __pycache__/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# Scraped listing photos and local test images — do not commit
+frontend/images/
+hero_apartment.png
+stolen_flat.png
