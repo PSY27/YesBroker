@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GharCheck · Multi-Agent Rental Fraud Detection Architecture</title>
+<style>
+  :root{
+    --bg:#080a0f; --ink:#e8ebf2; --ink-dim:#9aa3b2; --ink-faint:#6b7484;
+    --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.16);
+    --blue:#4f8cff; --green:#38c98d; --purple:#a978ff; --amber:#e0ab4a; --red:#ff5c6c;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--font); color:var(--ink); background:
+      radial-gradient(1200px 600px at 12% -5%, rgba(79,140,255,.10), transparent 60%),
+      radial-gradient(1000px 700px at 95% 0%, rgba(169,120,255,.08), transparent 55%),
+      radial-gradient(1100px 800px at 50% 115%, rgba(56,201,141,.06), transparent 55%),
+      var(--bg);
+    min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1440px; margin:0 auto; padding:34px 26px 70px;}
+
+  /* Header */
+  header.page{display:flex; align-items:center; gap:15px; padding:16px 20px;
+    border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    backdrop-filter:blur(10px); margin-bottom:22px;}
+  header.page .glyph{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:12px;
+    background:linear-gradient(135deg,var(--blue),var(--purple)); box-shadow:0 8px 24px rgba(79,140,255,.35); font-size:20px;}
+  header.page h1{font-size:20px;margin:0;font-weight:650;letter-spacing:-.01em;}
+  header.page p{margin:3px 0 0;color:var(--ink-dim);font-size:13px;}
+
+  /* Responsive frame that scales the fixed-size canvas */
+  .frame{position:relative; width:100%; overflow:hidden;}
+  .stage{position:relative; transform-origin:top left;
+    background:
+      linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px) 0 0/40px 40px;
+    border-radius:20px;}
+
+  svg.edges{position:absolute; inset:0; z-index:2; overflow:visible; pointer-events:none;}
+  svg.edges path{fill:none; stroke-linejoin:round; stroke-linecap:round; transition:opacity .18s, stroke-width .18s;}
+  svg.edges path.anim{stroke-dasharray:7 7; animation:march 1s linear infinite;}
+  @keyframes march{to{stroke-dashoffset:-28;}}
+  svg.edges path.dim{opacity:.12;}
+  svg.edges path.hot{stroke-width:3.2px !important; filter:drop-shadow(0 0 5px currentColor);}
+
+  /* Layer & subgroup containers */
+  .layer{position:absolute; z-index:1; border:1px solid var(--line); border-radius:20px;
+    background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,0));}
+  .layer > .cap{position:absolute; top:12px; left:16px; font-size:11.5px; font-weight:600;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--ink-dim); display:flex; gap:8px; align-items:center;}
+  .layer > .cap .d{width:6px;height:6px;border-radius:50%;background:var(--ink-faint);}
+
+  .sub{position:absolute; z-index:1; border:1px solid var(--line-strong); border-radius:15px;
+    background:rgba(255,255,255,.014);}
+  .sub > .tag{position:absolute; top:-9px; left:14px; font-family:var(--mono); font-size:10px;
+    letter-spacing:.05em; padding:2px 9px; border-radius:999px; background:#0c0e14; border:1px solid var(--line-strong); color:var(--ink-dim);}
+
+  /* Component nodes */
+  .box{position:absolute; z-index:3; border:1px solid var(--line-strong); border-radius:13px;
+    background:rgba(255,255,255,.02); padding:0 13px; display:flex; align-items:center; gap:11px;
+    transition:transform .16s, box-shadow .16s, border-color .16s; cursor:default;}
+  .box:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.5);}
+  .box .ic{width:32px;height:32px;flex:none;border-radius:9px;display:grid;place-items:center;font-size:16px;}
+  .box .tt{font-size:13.5px;font-weight:600;letter-spacing:-.005em;line-height:1.2;}
+  .box .ss{font-size:10.5px;color:var(--ink-faint);margin-top:2px;}
+
+  .c-blue{border-color:rgba(79,140,255,.34);background:linear-gradient(180deg,rgba(79,140,255,.10),rgba(255,255,255,0));}
+  .c-green{border-color:rgba(56,201,141,.34);background:linear-gradient(180deg,rgba(56,201,141,.10),rgba(255,255,255,0));}
+  .c-purple{border-color:rgba(169,120,255,.34);background:linear-gradient(180deg,rgba(169,120,255,.10),rgba(255,255,255,0));}
+  .c-amber{border-color:rgba(224,171,74,.32);background:linear-gradient(180deg,rgba(224,171,74,.10),rgba(255,255,255,0));}
+  .c-red{border-color:rgba(255,92,108,.36);background:linear-gradient(180deg,rgba(255,92,108,.11),rgba(255,255,255,0));}
+  .c-blue .ic{background:rgba(79,140,255,.12);color:var(--blue);box-shadow:inset 0 0 0 1px rgba(79,140,255,.3);}
+  .c-green .ic{background:rgba(56,201,141,.12);color:var(--green);box-shadow:inset 0 0 0 1px rgba(56,201,141,.3);}
+  .c-purple .ic{background:rgba(169,120,255,.12);color:var(--purple);box-shadow:inset 0 0 0 1px rgba(169,120,255,.3);}
+  .c-amber .ic{background:rgba(224,171,74,.12);color:var(--amber);box-shadow:inset 0 0 0 1px rgba(224,171,74,.3);}
+  .c-red .ic{background:rgba(255,92,108,.12);color:var(--red);box-shadow:inset 0 0 0 1px rgba(255,92,108,.3);}
+  .box.accent{background:rgba(255,255,255,.06);}
+
+  /* Edge labels */
+  .elabel{position:absolute; z-index:4; transform:translate(-50%,-50%);
+    font-size:10.5px; font-weight:600; letter-spacing:.03em; white-space:nowrap;
+    padding:3px 8px; border-radius:7px; background:#0b0d13; border:1px solid var(--line);
+    color:var(--ink-dim); pointer-events:none;}
+  .elabel.risk{color:#ff9aa5; border-color:rgba(255,92,108,.4); background:rgba(28,10,13,.9);}
+
+  /* Legend */
+  .legend{display:flex; flex-wrap:wrap; gap:14px 24px; padding:15px 18px; margin-top:22px;
+    border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.02);}
+  .legend .i{display:flex; align-items:center; gap:9px; font-size:12px; color:var(--ink-dim);}
+  .legend .sw{width:28px;height:0;border-top:2.4px solid var(--ink-faint);}
+  .legend .sw.dash{border-top-style:dashed;}
+  .legend .sw.b{border-color:var(--blue);} .legend .sw.g{border-color:var(--green);}
+  .legend .sw.a{border-color:var(--amber);} .legend .sw.r{border-color:var(--red);}
+  .hint{text-align:center;color:var(--ink-faint);font-size:11px;margin-top:16px;letter-spacing:.04em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page">
+    <div class="glyph">🛡️</div>
+    <div><h1>GharCheck</h1><p>Multi-Agent Rental Fraud Detection Architecture</p></div>
+  </header>
+
+  <div class="frame" id="frame">
+    <div class="stage" id="stage"></div>
+  </div>
+
+  <div class="legend">
+    <div class="i"><span class="sw b"></span>Client / stream</div>
+    <div class="i"><span class="sw g"></span>Request &amp; result flow</div>
+    <div class="i"><span class="sw" style="border-color:var(--purple)"></span>State &amp; telemetry</div>
+    <div class="i"><span class="sw a"></span>Pipeline hand-off</div>
+    <div class="i"><span class="sw dash r"></span>Risk-triggered re-route / feedback loop</div>
+    <div class="i"><span class="sw dash b"></span>Async (SSE / dispatch)</div>
+  </div>
+  <div class="hint">Hover any component to isolate its connections · diagram scales to fit your window</div>
+</div>
+
+<script>
+const W = 1360, H = 1200;
+
+/* ---------- Geometry model: layers, subgroups, component nodes ---------- */
+const ITEMS = [
+  // layer containers
+  {id:'L_plat', type:'layer', x:24,  y:60,  w:1312, h:344, label:'Platform & Infrastructure'},
+  {id:'L_pipe', type:'layer', x:24,  y:492, w:1312, h:684, label:'Collaborative Agent Pipeline'},
+
+  // subgroups — platform
+  {id:'SG_client', type:'sub', x:56,  y:150, w:372, h:236, label:'Client · Next.js 16'},
+  {id:'SG_api',    type:'sub', x:470, y:150, w:372, h:236, label:'Backend API · FastAPI'},
+  {id:'SG_core',   type:'sub', x:884, y:150, w:420, h:236, label:'Core State & Telemetry'},
+
+  // subgroups — pipeline stages
+  {id:'SG_s1',   type:'sub', x:56,   y:556, w:300, h:250, label:'Stage 1 · Parallel Eval'},
+  {id:'SG_s2',   type:'sub', x:396,  y:556, w:280, h:250, label:'Stage 2 · Directives'},
+  {id:'SG_s3',   type:'sub', x:716,  y:556, w:360, h:250, label:'Stage 3 · Dynamic Exec'},
+  {id:'SG_out',  type:'sub', x:1116, y:556, w:188, h:250, label:'Final Output'},
+  {id:'SG_arb',  type:'sub', x:56,   y:900, w:320, h:236, label:'Stage 4 · Arbiter'},
+  {id:'SG_hand', type:'sub', x:716,  y:900, w:360, h:236, label:'Dynamic Hand-off'},
+
+  // platform component nodes
+  {id:'dashboard', type:'box', x:78,y:214,w:158,h:150, icon:'🖥️', tt:'Glassmorphic',   ss:'Dashboard',    color:'blue',  stack:1},
+  {id:'sse',       type:'box', x:252,y:214,w:158,h:150, icon:'📡', tt:'SSE Stream',     ss:'Realtime push', color:'blue',  stack:1},
+  {id:'rest',      type:'box', x:492,y:214,w:158,h:150, icon:'🔌', tt:'REST',           ss:'Case intake',   color:'green', stack:1},
+  {id:'orch',      type:'box', x:666,y:214,w:158,h:150, icon:'🤖', tt:'Orchestrator',   ss:'Runs pipeline', color:'green', stack:1},
+  {id:'state',     type:'box', x:906,y:214,w:180,h:150, icon:'📄', tt:'Unified Case',   ss:'Shared state',  color:'purple',stack:1},
+  {id:'telemetry', type:'box', x:1108,y:214,w:180,h:150,icon:'📈', tt:'iAPI Telemetry', ss:'Structured logs',color:'purple',stack:1},
+
+  // pipeline component nodes
+  {id:'price',   type:'box', x:78, y:620, w:256,h:76, icon:'💲', tt:'PriceAgent',   ss:'Market-rate anomaly', color:'amber'},
+  {id:'text',    type:'box', x:78, y:712, w:256,h:76, icon:'📝', tt:'TextAgent',    ss:'Listing NLP signals', color:'amber'},
+  {id:'update',  type:'box', x:418,y:648, w:236,h:100,icon:'🔄', tt:'Update Case State', ss:'Derive next directives', color:'amber', accent:1, stack:1},
+  {id:'web',     type:'box', x:740,y:620, w:150,h:76, icon:'🌐', tt:'WebAgent',     ss:'Cross-listing', color:'amber', stack:1},
+  {id:'photo',   type:'box', x:906,y:620, w:146,h:76, icon:'🖼️', tt:'PhotoAgent',   ss:'Reverse image', color:'amber', stack:1},
+  {id:'commute', type:'box', x:820,y:712, w:170,h:76, icon:'📍', tt:'CommuteAgent', ss:'Location check', color:'amber', stack:1},
+  {id:'trust',   type:'box', x:1132,y:620,w:156,h:70, icon:'📊', tt:'Trust Report', ss:'Evidence', color:'green', accent:1, stack:1},
+  {id:'score',   type:'box', x:1132,y:706,w:156,h:70, icon:'🎯', tt:'Score 0–100',  ss:'Composite risk', color:'green', accent:1, stack:1},
+  {id:'arbiter', type:'box', x:78, y:966, w:276,h:64, icon:'⚖️', tt:'Arbiter',      ss:'Final authority', color:'red', stack:1},
+  {id:'override',type:'box', x:78, y:1044,w:276,h:64, icon:'🚨', tt:'Escalation Override', ss:'Force deep re-scan', color:'red', accent:1, stack:1},
+  {id:'commute2',type:'box', x:740,y:966, w:312,h:64, icon:'📍', tt:'CommuteAgent · Geo', ss:'On-demand deep check', color:'blue', stack:1},
+  {id:'geo',     type:'box', x:740,y:1044,w:312,h:64, icon:'🛰️', tt:'Geo-Verification', ss:'Address ↔ map cross-ref', color:'blue', accent:1, stack:1},
+];
+
+/* ---------- Edges: directed connectors ---------- */
+const EDGES = [
+  {from:'dashboard',fs:'r', to:'rest', ts:'l', label:'Query',       at:{x:364,y:270}, color:'blue'},
+  {from:'rest',     fs:'r', to:'orch', ts:'l', label:'Trigger',     at:{x:658,y:244}, color:'green'},
+  {from:'orch',     fs:'r', to:'state',ts:'l', label:'R / W',       at:{x:865,y:270}, color:'purple'},
+  {from:'state',    fs:'r', to:'telemetry', ts:'l', label:'Logs',   at:{x:1097,y:244},color:'purple'},
+  {from:'telemetry',fs:'t', to:'sse', ts:'t', wp:[{x:1198,y:112},{x:331,y:112}], label:'Stream', at:{x:764,y:100}, color:'blue', dashed:1},
+  {from:'orch',     fs:'b', to:'SG_s1', ts:'t', wp:[{x:745,y:456},{x:206,y:456}], label:'Execute Pipeline', at:{x:432,y:440}, color:'blue', dashed:1},
+
+  {from:'SG_s1',  fs:'r', to:'update', ts:'l', label:'Flags',     at:{x:387,y:664}, color:'amber'},
+  {from:'update', fs:'r', to:'SG_s3',  ts:'l', label:'Directives',at:{x:690,y:664}, color:'amber'},
+  {from:'SG_s3',  fs:'r', to:'trust',  ts:'l', label:'Clean',     at:{x:1102,y:640},color:'green'},
+
+  {from:'web',   fs:'b', to:'arbiter', ts:'t', wp:[{x:815,y:842},{x:216,y:842}], label:'High Risk',   at:{x:470,y:826}, color:'red', dashed:1},
+  {from:'photo', fs:'b', to:'commute2',ts:'t', wp:[{x:979,y:872},{x:896,y:872}], label:'Photo Fraud', at:{x:1006,y:746},color:'red', dashed:1},
+  {from:'commute2',fs:'l', to:'arbiter', ts:'r', label:'Geo result', at:{x:547,y:982}, color:'red', dashed:1},
+  {from:'override',fs:'l', to:'SG_s3', ts:'t', wp:[{x:40,y:1076},{x:40,y:528},{x:896,y:528}], label:'Deep Re-scan', at:{x:466,y:512}, color:'red', dashed:1},
+  {from:'override',fs:'b', to:'SG_out',ts:'b', wp:[{x:216,y:1152},{x:1210,y:1152}], label:'Final Decision', at:{x:690,y:1136}, color:'green'},
+];
+
+const COL = {blue:'#4f8cff',green:'#38c98d',purple:'#a978ff',amber:'#e0ab4a',red:'#ff5c6c'};
+
+/* ---------- Build geometry lookup ---------- */
+const G = {}; ITEMS.forEach(i => G[i.id] = i);
+
+function anchor(id, side, t=0.5){
+  const n = G[id];
+  if(side==='t') return {x:n.x+n.w*t, y:n.y};
+  if(side==='b') return {x:n.x+n.w*t, y:n.y+n.h};
+  if(side==='l') return {x:n.x, y:n.y+n.h*t};
+  return {x:n.x+n.w, y:n.y+n.h*t}; // r
+}
+function points(e){
+  const a = anchor(e.from, e.fs), b = anchor(e.to, e.ts);
+  let pts = [a];
+  if(e.wp){ pts = pts.concat(e.wp); }
+  else if(e.fs==='r' && e.ts==='l' && a.y!==b.y){ const mx=(a.x+b.x)/2; pts.push({x:mx,y:a.y},{x:mx,y:b.y}); }
+  else if(e.fs==='b' && e.ts==='t'){ const my=(a.y+b.y)/2; pts.push({x:a.x,y:my},{x:b.x,y:my}); }
+  pts.push(b);
+  return pts;
+}
+function roundedPath(pts, r=13){
+  if(pts.length<3) return 'M '+pts.map(p=>p.x+' '+p.y).join(' L ');
+  let d = `M ${pts[0].x} ${pts[0].y}`;
+  for(let i=1;i<pts.length-1;i++){
+    const p0=pts[i-1], p1=pts[i], p2=pts[i+1];
+    const v1={x:p1.x-p0.x,y:p1.y-p0.y}, v2={x:p2.x-p1.x,y:p2.y-p1.y};
+    const l1=Math.hypot(v1.x,v1.y)||1, l2=Math.hypot(v2.x,v2.y)||1;
+    const rr=Math.min(r,l1/2,l2/2);
+    const A={x:p1.x-v1.x/l1*rr, y:p1.y-v1.y/l1*rr};
+    const B={x:p1.x+v2.x/l2*rr, y:p1.y+v2.y/l2*rr};
+    d += ` L ${A.x} ${A.y} Q ${p1.x} ${p1.y} ${B.x} ${B.y}`;
+  }
+  const last=pts[pts.length-1];
+  d += ` L ${last.x} ${last.y}`;
+  return d;
+}
+
+/* ---------- Render ---------- */
+const stage = document.getElementById('stage');
+stage.style.width = W+'px'; stage.style.height = H+'px';
+
+const SVGNS='http://www.w3.org/2000/svg';
+const svg = document.createElementNS(SVGNS,'svg');
+svg.setAttribute('class','edges');
+svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+svg.setAttribute('width',W); svg.setAttribute('height',H);
+
+// arrowhead markers, one per colour
+const defs = document.createElementNS(SVGNS,'defs');
+Object.entries(COL).forEach(([name,c])=>{
+  const m = document.createElementNS(SVGNS,'marker');
+  m.setAttribute('id','arw-'+name);
+  m.setAttribute('viewBox','0 0 10 10'); m.setAttribute('refX','8'); m.setAttribute('refY','5');
+  m.setAttribute('markerWidth','7'); m.setAttribute('markerHeight','7'); m.setAttribute('orient','auto-start-reverse');
+  const p = document.createElementNS(SVGNS,'path');
+  p.setAttribute('d','M 0 1 L 9 5 L 0 9 z'); p.setAttribute('fill',c);
+  m.appendChild(p); defs.appendChild(m);
+});
+svg.appendChild(defs);
+
+// render containers first (behind svg)
+ITEMS.filter(i=>i.type==='layer').forEach(i=>{
+  const d=document.createElement('div'); d.className='layer';
+  d.style.cssText=`left:${i.x}px;top:${i.y}px;width:${i.w}px;height:${i.h}px;`;
+  d.innerHTML=`<div class="cap"><span class="d"></span>${i.label}</div>`;
+  stage.appendChild(d);
+});
+ITEMS.filter(i=>i.type==='sub').forEach(i=>{
+  const d=document.createElement('div'); d.className='sub';
+  d.style.cssText=`left:${i.x}px;top:${i.y}px;width:${i.w}px;height:${i.h}px;`;
+  d.innerHTML=`<div class="tag">${i.label}</div>`;
+  stage.appendChild(d);
+});
+
+// svg edges layer
+stage.appendChild(svg);
+const edgeEls=[];
+EDGES.forEach((e,idx)=>{
+  const path=document.createElementNS(SVGNS,'path');
+  path.setAttribute('d', roundedPath(points(e)));
+  path.setAttribute('stroke', COL[e.color]);
+  path.setAttribute('stroke-width','2.1');
+  path.style.color = COL[e.color];
+  path.setAttribute('marker-end', `url(#arw-${e.color})`);
+  if(e.dashed) path.classList.add('anim');
+  path.dataset.from=e.from; path.dataset.to=e.to;
+  svg.appendChild(path); edgeEls.push({el:path,e});
+  if(e.label){
+    const lab=document.createElement('div');
+    lab.className='elabel'+(e.color==='red'?' risk':'');
+    lab.style.left=e.at.x+'px'; lab.style.top=e.at.y+'px';
+    lab.textContent=e.label;
+    stage.appendChild(lab);
+  }
+});
+
+// component nodes on top
+ITEMS.filter(i=>i.type==='box').forEach(i=>{
+  const d=document.createElement('div');
+  d.className='box c-'+i.color+(i.accent?' accent':'');
+  d.dataset.id=i.id;
+  const col = i.stack ? 'flex-direction:row;' : 'flex-direction:column;justify-content:center;text-align:center;';
+  d.style.cssText=`left:${i.x}px;top:${i.y}px;width:${i.w}px;height:${i.h}px;${i.stack?'':'align-items:center;gap:8px;padding:12px;'}`;
+  if(i.stack){
+    d.innerHTML=`<div class="ic">${i.icon}</div><div><div class="tt">${i.tt}</div><div class="ss">${i.ss}</div></div>`;
+  }else{
+    d.innerHTML=`<div class="ic" style="width:40px;height:40px;font-size:19px">${i.icon}</div><div><div class="tt" style="font-size:14px">${i.tt}</div><div class="ss">${i.ss}</div></div>`;
+  }
+  // hover → isolate connected edges
+  d.addEventListener('mouseenter',()=>{
+    edgeEls.forEach(({el,e})=>{
+      if(e.from===i.id||e.to===i.id) el.classList.add('hot');
+      else el.classList.add('dim');
+    });
+  });
+  d.addEventListener('mouseleave',()=>{
+    edgeEls.forEach(({el})=>{el.classList.remove('hot');el.classList.remove('dim');});
+  });
+  stage.appendChild(d);
+});
+
+/* ---------- Fit-to-width scaling ---------- */
+const frame=document.getElementById('frame');
+function fit(){
+  const s=Math.min(1, frame.clientWidth / W);
+  stage.style.transform=`scale(${s})`;
+  frame.style.height=(H*s)+'px';
+}
+window.addEventListener('resize',fit); fit();
+</script>
+</body>
+</html>
