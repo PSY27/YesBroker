@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 from typing import List, Optional
 
@@ -31,6 +31,14 @@ from listing_store import (
     cache_report,
     get_cached_report,
     all_cached_reports,
+)
+from media import resolve_listing_photo_url, media_file_path
+from share_store import (
+    SharedListingSnapshot,
+    SharedReportSnapshot,
+    create_share,
+    get_share,
+    new_token,
 )
 from tools.collect import fetch_live_listings
 
@@ -243,7 +251,7 @@ def _build_ranked_listings(
             verdict = "RISK"
 
         photo = (l.get("photo_urls") or [None])[0]
-        image_url = photo if isinstance(photo, str) and photo.startswith("images/") else ""
+        image_url = resolve_listing_photo_url(photo) if isinstance(photo, str) and photo else ""
 
         ranked_listings.append(
             RankedListing(
@@ -357,6 +365,15 @@ async def search_stream(
     )
 
 
+@app.get("/media/{file_path:path}")
+def serve_media(file_path: str):
+    """Serve listing photos and demo assets with path traversal protection."""
+    resolved = media_file_path(file_path)
+    if not resolved:
+        raise HTTPException(status_code=404, detail="Media not found")
+    return FileResponse(resolved)
+
+
 @app.get("/report/{listing_id}", response_model=TrustReport)
 def get_report(listing_id: str):
     """Return cached trust report from the last search (instant detail view)."""
@@ -451,3 +468,56 @@ async def investigate_stream(id: str, office: Optional[str] = None, force: bool 
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
+
+
+class ShareResponse(BaseModel):
+    token: str
+    url: str
+
+
+def _listing_snapshot(listing_id: str, listing: Listing, area: str = "") -> SharedListingSnapshot:
+    photo = (listing.photo_urls or [None])[0]
+    image_url = resolve_listing_photo_url(photo) if photo else None
+    return SharedListingSnapshot(
+        id=listing_id,
+        title=listing.title,
+        rent=listing.rent,
+        bhk=listing.bhk,
+        area=area,
+        address=listing.address,
+        imageUrl=image_url or None,
+    )
+
+
+@app.post("/share/{listing_id}", response_model=ShareResponse)
+def share_report(listing_id: str, area: str = ""):
+    """Create a persistent shareable snapshot of a cached trust report."""
+    report = get_cached_report(listing_id)
+    if not report:
+        raise HTTPException(
+            status_code=404,
+            detail="Report not found. Run search and analyze this listing first.",
+        )
+
+    listing = get_listing_by_id(listing_id)
+    if not listing:
+        raise HTTPException(status_code=404, detail="Listing not found.")
+
+    token = new_token()
+    snapshot = SharedReportSnapshot(
+        token=token,
+        listing=_listing_snapshot(listing_id, listing, area=area),
+        report=report,
+    )
+    create_share(snapshot)
+
+    base = os.getenv("PUBLIC_APP_URL", "http://localhost:3000")
+    return ShareResponse(token=token, url=f"{base}/report/{token}")
+
+
+@app.get("/share/{token}", response_model=SharedReportSnapshot)
+def get_shared_report(token: str):
+    snapshot = get_share(token)
+    if not snapshot:
+        raise HTTPException(status_code=404, detail="Shared report not found or expired.")
+    return snapshot

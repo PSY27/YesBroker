@@ -24,6 +24,14 @@ const nextConfig = {
         source: '/api/health',
         destination: 'http://127.0.0.1:8000/health',
       },
+      {
+        source: '/api/media/:path*',
+        destination: 'http://127.0.0.1:8000/media/:path*',
+      },
+      {
+        source: '/api/share/:path*',
+        destination: 'http://127.0.0.1:8000/share/:path*',
+      },
     ];
   },
 };

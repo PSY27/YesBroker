@@ -25,3 +25,6 @@ Thumbs.db
 frontend/images/
 hero_apartment.png
 stolen_flat.png
+
+# Runtime share snapshots
+backend/data/shares.json

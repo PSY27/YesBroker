@@ -16,14 +16,11 @@ class PriceEvidence(BaseModel):
     deposit_months: Optional[float] = None
 
 
-class CommuteEvidence(BaseModel):
-    distance_km: float
-    drive_minutes: int
-    metro_minutes: int
-    target_office: str
-    claimed_minutes: int
-    discrepancy_minutes: int
-    is_live_maps: bool = False
+class PhotoMatch(BaseModel):
+    source_url: str
+    match_url: str
+    portal: str = ""
+    label: str = ""
 
 
 class PhotoEvidence(BaseModel):
@@ -33,6 +30,23 @@ class PhotoEvidence(BaseModel):
     watermarks: list[str] = Field(default_factory=list)
     photos_scanned: int = 0
     is_live_vision: bool = False
+    source_photo: str = ""
+    matches: list[PhotoMatch] = Field(default_factory=list)
+
+
+class CommuteEvidence(BaseModel):
+    distance_km: float
+    drive_minutes: int
+    metro_minutes: int
+    target_office: str
+    claimed_minutes: int
+    discrepancy_minutes: int
+    is_live_maps: bool = False
+    origin_lat: Optional[float] = None
+    origin_lng: Optional[float] = None
+    destination_lat: Optional[float] = None
+    destination_lng: Optional[float] = None
+    origin_label: str = ""
 
 
 class WebEvidence(BaseModel):

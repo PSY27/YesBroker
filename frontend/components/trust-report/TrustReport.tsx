@@ -5,6 +5,9 @@ import { RankedListing } from '@/lib/types';
 import { TrustReport as TrustReportType } from '@/lib/types';
 import { AgentFindingCard } from './AgentFindingCard';
 import { TerminalReasoning } from './TerminalReasoning';
+import { PhotoForensicsPanel } from './PhotoForensicsPanel';
+import { CommuteTruthMap } from './CommuteTruthMap';
+import { ShareReportButton } from './ShareReportButton';
 
 interface TrustReportProps {
   listing: RankedListing;
@@ -12,6 +15,9 @@ interface TrustReportProps {
 }
 
 export function TrustReport({ listing, report }: TrustReportProps) {
+  const photoFinding = report.flags.find((f) => f.agent === 'photo');
+  const commuteFinding = report.flags.find((f) => f.agent === 'commute');
+
   const sortedFindings = [...report.flags].sort((a, b) => {
     const verdictOrder: Record<string, number> = {
       LIE: 0,
@@ -48,10 +54,13 @@ export function TrustReport({ listing, report }: TrustReportProps) {
     >
       {/* Header */}
       <div className="glassmorphic-card p-5">
-        <h2 className="text-lg font-bold text-foreground mb-6">
-          {listing.bhk ? `${listing.bhk} BHK · ` : ''}"{listing.title}"
-          {listing.area ? ` · ${listing.area}` : ''} · ₹{listing.rent.toLocaleString()}
-        </h2>
+        <div className="flex items-start justify-between gap-4 mb-6">
+          <h2 className="text-lg font-bold text-foreground">
+            {listing.bhk ? `${listing.bhk} BHK · ` : ''}&quot;{listing.title}&quot;
+            {listing.area ? ` · ${listing.area}` : ''} · ₹{listing.rent.toLocaleString()}
+          </h2>
+          <ShareReportButton listingId={listing.id} area={listing.area} />
+        </div>
 
         {/* Score Area */}
         <div className="flex items-center gap-6 mb-2">
@@ -67,6 +76,10 @@ export function TrustReport({ listing, report }: TrustReportProps) {
           </div>
         </div>
       </div>
+
+      {/* Visual proof panels */}
+      {photoFinding && <PhotoForensicsPanel photoFinding={photoFinding} />}
+      {commuteFinding && <CommuteTruthMap commuteFinding={commuteFinding} />}
 
       {/* Red Flags / Agent Findings */}
       <div className="glassmorphic-card p-5">

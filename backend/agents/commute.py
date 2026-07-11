@@ -48,6 +48,11 @@ class CommuteAgent(BaseAgent):
             claimed_minutes=claimed,
             discrepancy_minutes=discrepancy,
             is_live_maps=live,
+            origin_lat=maps_result.get("origin_lat"),
+            origin_lng=maps_result.get("origin_lng"),
+            destination_lat=maps_result.get("destination_lat"),
+            destination_lng=maps_result.get("destination_lng"),
+            origin_label=maps_result.get("origin_label", listing.address[:40]),
         )
         evidence = [
             f"Claimed commute: {claimed} min",

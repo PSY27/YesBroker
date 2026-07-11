@@ -2,13 +2,47 @@ from __future__ import annotations
 import agents._path  # noqa: F401
 
 import os
+from urllib.parse import urlparse
 
 from agents.base import BaseAgent
 from agents.confidence import photo_confidence
-from agents.evidence import PhotoEvidence, structured_to_dict
+from agents.evidence import PhotoEvidence, PhotoMatch, structured_to_dict
+from media import resolve_listing_photo_url
 from schema import AgentResult, CaseState
 from tools.ocr import OCRWrapper
 from tools.vision import CloudVisionWrapper
+
+
+def _portal_label(url: str) -> tuple[str, str]:
+    try:
+        host = urlparse(url).netloc.replace("www.", "")
+        portal = host or "unknown"
+        parts = [p for p in urlparse(url).path.split("/") if p]
+        city_hint = ""
+        for part in parts:
+            if any(c in part.lower() for c in ("hyderabad", "pune", "mumbai", "delhi", "bangalore", "blr")):
+                city_hint = part.replace("_", " ").replace("-", " ")
+                break
+        label = f"Listing on {portal}" + (f" ({city_hint})" if city_hint else "")
+        return portal, label
+    except Exception:
+        return "unknown", url[:60]
+
+
+def _build_matches(source_photo: str, stolen_urls: list[str]) -> list[PhotoMatch]:
+    resolved_source = resolve_listing_photo_url(source_photo)
+    matches: list[PhotoMatch] = []
+    for url in stolen_urls:
+        portal, label = _portal_label(url)
+        matches.append(
+            PhotoMatch(
+                source_url=resolved_source or source_photo,
+                match_url=url,
+                portal=portal,
+                label=label,
+            )
+        )
+    return matches
 
 
 def _build_result(
@@ -16,11 +50,13 @@ def _build_result(
     ocr: dict | None,
     photos_scanned: int,
     weight: float,
+    source_photo: str = "",
 ) -> AgentResult:
     stolen_urls = list(vision.get("matching_urls", []))
     watermarks = list(ocr.get("detected_watermarks", [])) if ocr else []
     is_stolen = bool(stolen_urls) or bool(watermarks)
     is_live = bool(vision.get("is_grounded_live"))
+    resolved_source = resolve_listing_photo_url(source_photo) if source_photo else ""
 
     structured = PhotoEvidence(
         is_stolen=is_stolen,
@@ -29,6 +65,8 @@ def _build_result(
         watermarks=watermarks,
         photos_scanned=photos_scanned,
         is_live_vision=is_live,
+        source_photo=resolved_source or source_photo,
+        matches=_build_matches(source_photo, stolen_urls),
     )
 
     evidence: list[str] = []
@@ -125,17 +163,22 @@ class PhotoAgent(BaseAgent):
             if ocr.get("is_watermarked"):
                 combined_ocr = ocr
 
-        result = _build_result(combined_vision, combined_ocr, len(urls), self.weight)
+        result = _build_result(
+            combined_vision, combined_ocr, len(urls), self.weight, source_photo=urls[0]
+        )
 
         if directive == "dedup_lowthreshold" and result.verdict == "CLEAN":
             for url in listing.photo_urls:
                 base = os.path.basename(url).lower()
                 if any(token in base for token in ("abroad", "token", "uk", "army")):
+                    stolen = list(combined_vision.get("matching_urls", [])) or [url]
                     structured = PhotoEvidence(
                         is_stolen=True,
-                        matches_count=1,
-                        stolen_urls=[url],
+                        matches_count=len(stolen),
+                        stolen_urls=stolen,
                         photos_scanned=len(urls),
+                        source_photo=resolve_listing_photo_url(urls[0]) or urls[0],
+                        matches=_build_matches(urls[0], stolen),
                     )
                     return AgentResult(
                         agent=self.name,

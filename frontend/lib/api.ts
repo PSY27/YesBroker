@@ -1,4 +1,4 @@
-import { RankedListing, SearchPrefs, TrustReport } from './types';
+import { RankedListing, SearchPrefs, TrustReport, SharedReportSnapshot } from './types';
 
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8000';
@@ -118,6 +118,28 @@ export async function fetchReport(listingId: string): Promise<TrustReport> {
   const response = await fetch(`${API_BASE}/report/${encodeURIComponent(listingId)}`);
   if (!response.ok) {
     throw new Error(`Report not found: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function createShareLink(
+  listingId: string,
+  area?: string
+): Promise<{ token: string; url: string }> {
+  const params = area ? `?area=${encodeURIComponent(area)}` : '';
+  const response = await fetch(`${API_BASE}/share/${encodeURIComponent(listingId)}${params}`, {
+    method: 'POST',
+  });
+  if (!response.ok) {
+    throw new Error(`Share failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function fetchSharedReport(token: string): Promise<SharedReportSnapshot> {
+  const response = await fetch(`${API_BASE}/share/${encodeURIComponent(token)}`);
+  if (!response.ok) {
+    throw new Error(`Shared report not found: ${response.status}`);
   }
   return response.json();
 }
