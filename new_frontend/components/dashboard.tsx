@@ -7,7 +7,7 @@ import { ResultsList } from './results-list'
 import { SearchForm } from './search-form'
 import { TrustReport } from './trust-report'
 import { LogOut, Sparkles } from 'lucide-react'
-import { searchListings, investigateStream, investigateListing } from '@/lib/api'
+import { searchListings, searchStream, investigateStream, investigateListing } from '@/lib/api'
 import { RankedListing, TrustReport as TrustReportType, SearchPrefs, DEFAULT_SEARCH_PREFS } from '@/lib/types'
 
 export function Dashboard() {
@@ -20,8 +20,12 @@ export function Dashboard() {
   const [isSearching, setIsSearching] = useState(false)
   const [searchError, setSearchError] = useState<string | null>(null)
   const closeStreamRef = useRef<(() => void) | null>(null)
+  const closeSearchStreamRef = useRef<(() => void) | null>(null)
 
-  const handleSearch = useCallback(async (prefs: SearchPrefs) => {
+  const handleSearch = useCallback((prefs: SearchPrefs) => {
+    closeSearchStreamRef.current?.()
+    closeSearchStreamRef.current = null
+
     setSearchPrefs(prefs)
     setIsSearching(true)
     setSearchError(null)
@@ -29,29 +33,37 @@ export function Dashboard() {
     setReport(null)
     setTraceLines([])
 
-    try {
-      const results = await searchListings(prefs)
-      if (Array.isArray(results)) {
-        setListings(results)
-        if (results.length > 0) {
-          setSelected(results[0])
+    const close = searchStream(prefs, {
+      onTrace: (line) => setTraceLines((prev) => [...prev, line]),
+      onDone: (results) => {
+        if (Array.isArray(results)) {
+          setListings(results)
+          if (results.length > 0) {
+            setSelected(results[0])
+          }
+        } else {
+          setListings([])
         }
-      } else {
+        setIsSearching(false)
+        closeSearchStreamRef.current = null
+      },
+      onError: (err) => {
+        setSearchError(
+          err.message || 'Search failed. Is the backend running on port 8000?'
+        )
         setListings([])
-      }
-    } catch (err) {
-      setSearchError(
-        err instanceof Error ? err.message : 'Search failed. Is the backend running on port 8000?'
-      )
-      setListings([])
-    } finally {
-      setIsSearching(false)
-    }
+        setIsSearching(false)
+        closeSearchStreamRef.current = null
+      },
+    })
+
+    closeSearchStreamRef.current = close
   }, [])
 
   // Auto search on mount
   useEffect(() => {
     handleSearch(DEFAULT_SEARCH_PREFS)
+    return () => closeSearchStreamRef.current?.()
   }, [handleSearch])
 
   // Coordinate the streaming EventSource for Multi-Agent Investigations
@@ -174,6 +186,7 @@ export function Dashboard() {
             report={report}
             traceLines={traceLines}
             isLoading={isLoadingReport}
+            isSearching={isSearching}
           />
         </div>
       </div>

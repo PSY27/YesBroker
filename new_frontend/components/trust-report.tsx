@@ -21,6 +21,7 @@ interface TrustReportProps {
   report: TrustReportType | null
   traceLines: string[]
   isLoading: boolean
+  isSearching?: boolean
 }
 
 export function TrustReport({
@@ -28,8 +29,29 @@ export function TrustReport({
   report,
   traceLines,
   isLoading,
+  isSearching = false,
 }: TrustReportProps) {
   const { toast } = useToast()
+
+  if (isSearching) {
+    return (
+      <div className="glass rounded-3xl p-6 flex flex-col gap-4 min-h-[70vh]">
+        <div className="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+          <Loader2 className="size-6 animate-spin text-[color:var(--brand)]" />
+          <div>
+            <h3 className="text-sm font-semibold text-white">AI Agents Auditing</h3>
+            <p className="text-xs text-muted-foreground">Scraping listings and running parallel trust analysis...</p>
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col min-h-0">
+          <p className="mb-2.5 text-xs font-medium uppercase tracking-widest text-muted-foreground">Search progress trace</p>
+          <div className="flex-1 min-h-0 overflow-y-auto">
+            <TerminalTrace lines={traceLines} />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   if (!listing) {
     return (

@@ -44,6 +44,75 @@ export async function searchListings(
 
 export const fetchSearchListings = searchListings;
 
+export interface SearchStreamHandlers {
+  onStart?: (data: { area: string; bhk: string; max_rent: number }) => void;
+  onTrace?: (line: string) => void;
+  onDone?: (listings: RankedListing[]) => void;
+  onError?: (error: Error) => void;
+}
+
+export function searchStream(
+  prefs: SearchPrefs,
+  handlers: SearchStreamHandlers
+): () => void {
+  const payload = buildSearchPayload(prefs);
+  const params = new URLSearchParams({
+    area: payload.area || 'Indiranagar',
+    max_rent: String(payload.max_rent),
+    bhk: payload.bhk,
+    power_backup: String(payload.power_backup),
+    non_veg: String(payload.non_veg),
+  });
+  if (payload.pincode) {
+    params.set('pincode', payload.pincode);
+  }
+  if (payload.office) {
+    params.set('office', payload.office);
+  }
+
+  const source = new EventSource(
+    `${API_BASE}/search/stream?${params.toString()}`
+  );
+
+  source.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+
+      if (data.type === 'start') {
+        handlers.onStart?.({
+          area: data.area,
+          bhk: data.bhk,
+          max_rent: data.max_rent,
+        });
+      } else if (data.type === 'trace') {
+        const line =
+          typeof data.message === 'string' && data.message.startsWith('[')
+            ? data.message
+            : `[${data.actor || 'system'}] ${data.message}`;
+        handlers.onTrace?.(line);
+      } else if (data.type === 'done') {
+        handlers.onDone?.(data.listings as RankedListing[]);
+        source.close();
+      } else if (data.type === 'error') {
+        handlers.onError?.(new Error(data.message || 'Search failed'));
+        source.close();
+      }
+    } catch (e) {
+      handlers.onError?.(e instanceof Error ? e : new Error('Failed to parse event data'));
+      source.close();
+    }
+  };
+
+  source.onerror = (err) => {
+    handlers.onError?.(new Error('EventSource failed'));
+    source.close();
+  };
+
+  return () => {
+    source.close();
+  };
+}
+
 export async function investigateListing(
   id: string,
   office?: string | null
