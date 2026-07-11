@@ -31,9 +31,13 @@ export function Dashboard() {
 
     try {
       const results = await searchListings(prefs)
-      setListings(results)
-      if (results.length > 0) {
-        setSelected(results[0])
+      if (Array.isArray(results)) {
+        setListings(results)
+        if (results.length > 0) {
+          setSelected(results[0])
+        }
+      } else {
+        setListings([])
       }
     } catch (err) {
       setSearchError(

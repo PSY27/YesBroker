@@ -44,7 +44,7 @@ export function ResultsList({
     )
   }
 
-  if (listings.length === 0) {
+  if (!listings || listings.length === 0) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -56,7 +56,7 @@ export function ResultsList({
         </div>
         <p className="text-sm font-semibold text-white">No safe matches found</p>
         <p className="text-xs text-muted-foreground mt-1 max-w-[280px]">
-          No trust-ranked properties match {searchPrefs.bhk} BHK in {searchPrefs.pincode || searchPrefs.area} under ₹{searchPrefs.max_rent.toLocaleString('en-IN')}.
+          No trust-ranked properties match {searchPrefs?.bhk} BHK in {searchPrefs?.pincode || searchPrefs?.area} under ₹{searchPrefs?.max_rent?.toLocaleString('en-IN') || '35,000'}.
         </p>
       </motion.div>
     )
@@ -64,7 +64,7 @@ export function ResultsList({
 
   return (
     <div className="flex flex-col gap-2.5 max-h-[calc(100vh-320px)] overflow-y-auto pr-1 custom-scrollbar">
-      {listings.map((l, i) => {
+      {(listings || []).map((l, i) => {
         const color = verdictColor(l.verdict)
         const selected = selectedId === l.id
         // Handle images inside/outside public dir safely
