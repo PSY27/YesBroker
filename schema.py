@@ -7,6 +7,8 @@ class Prefs(BaseModel):
     max_rent: int
     bhk: str
     office: Optional[str] = None
+    power_backup: Optional[bool] = False
+    non_veg: Optional[bool] = False
 
 class Listing(BaseModel):
     id: str

@@ -62,9 +62,8 @@ def search(p: Prefs):
     
     matched = []
     for l in listings:
-        # 1. Location match
-        pincode_match = True
-        area_match = True
+        pincode_match = False
+        area_match = False
         
         if p.pincode:
             pincode_match = (l.get("pincode") == p.pincode)
@@ -74,15 +73,37 @@ def search(p: Prefs):
                 p.area.lower() in l.get("title", "").lower()
             )
             
-        location_match = pincode_match or area_match
+        if p.pincode and p.area:
+            location_match = pincode_match or area_match
+        elif p.pincode:
+            location_match = pincode_match
+        elif p.area:
+            location_match = area_match
+        else:
+            location_match = True
+
         
         # 2. Budget match
         rent_match = (l.get("rent", 0) <= p.max_rent)
-        
+
         # 3. BHK match
         bhk_match = (l.get("bhk") == p.bhk)
-        
-        if location_match and rent_match and bhk_match:
+
+        # 4. Power backup filter (if required, ensure it doesn't state no backup)
+        backup_match = True
+        if p.power_backup:
+            desc_lower = l.get("description", "").lower()
+            if "no power backup" in desc_lower or "no backup" in desc_lower or "without backup" in desc_lower:
+                backup_match = False
+
+        # 5. Non-veg filter (if required, ensure it doesn't restrict to vegetarians only)
+        non_veg_match = True
+        if p.non_veg:
+            desc_lower = l.get("description", "").lower()
+            if "veg only" in desc_lower or "vegetarians only" in desc_lower or "strictly veg" in desc_lower or "pure veg" in desc_lower:
+                non_veg_match = False
+
+        if location_match and rent_match and bhk_match and backup_match and non_veg_match:
             matched.append(l)
             
     # Combine listings with precomputed score details

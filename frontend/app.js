@@ -12,6 +12,8 @@ const pincodeInput = document.getElementById('pincode');
 const maxRentInput = document.getElementById('max-rent');
 const bhkSelect = document.getElementById('bhk');
 const officeInput = document.getElementById('office');
+const powerBackupCheckbox = document.getElementById('power-backup');
+const nonVegCheckbox = document.getElementById('non-veg');
 
 const listingsFeed = document.getElementById('listings-feed');
 const resultsCount = document.getElementById('results-count');
@@ -52,7 +54,9 @@ async function performSearch() {
         pincode: pincodeInput.value.trim() || null,
         max_rent: parseInt(maxRentInput.value) || 35000,
         bhk: bhkSelect.value,
-        office: officeInput.value.trim() || null
+        office: officeInput.value.trim() || null,
+        power_backup: powerBackupCheckbox ? powerBackupCheckbox.checked : false,
+        non_veg: nonVegCheckbox ? nonVegCheckbox.checked : false
     };
 
     try {
