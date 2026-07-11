@@ -11,6 +11,7 @@ export function TerminalReasoning({ lines }: TerminalReasoningProps) {
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
 
   useEffect(() => {
+    setDisplayedLines([]);
     let currentLine = 0;
 
     const interval = setInterval(() => {

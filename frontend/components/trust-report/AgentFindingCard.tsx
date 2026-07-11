@@ -41,6 +41,16 @@ export function AgentFindingCard({ finding, index }: AgentFindingCardProps) {
               ))}
             </ul>
           )}
+          {finding.structured_evidence && (
+            <ul className="text-xs text-muted-foreground/80 space-y-1 mt-1">
+              {Object.entries(finding.structured_evidence).map(([key, value]) => (
+                <li key={key}>
+                  <span className="text-foreground/70">{key}:</span>{' '}
+                  {typeof value === 'object' ? JSON.stringify(value) : String(value)}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </motion.div>

@@ -1,50 +1,63 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-export interface SearchFormData {
-  area: string;
-  pincode: string;
-  max_rent: number;
-  bhk: string;
-  power_backup: boolean;
-  non_veg: boolean; // Note: false means vegetarian allowed only (strictly veg / pure veg check)
-}
+import { SearchPrefs, DEFAULT_SEARCH_PREFS } from '@/lib/types';
 
 interface SearchFormProps {
-  onSearch?: (data: SearchFormData) => void;
+  onSearch: (prefs: SearchPrefs) => void;
+  isSearching?: boolean;
+  initialPrefs?: SearchPrefs;
 }
 
-export function SearchForm({ onSearch }: SearchFormProps) {
-  const [locationInput, setPincodeOrArea] = useState('560038 / Indiranagar');
-  const [budgetInput, setMaxBudget] = useState('60,000');
-  const [bhk, setBhk] = useState('3 BHK');
-  const [powerBackup, setPowerBackup] = useState(true);
-  const [vegOnly, setVegOnly] = useState(true); // true means vegetarian only
+function parseLocationInput(value: string): { area: string; pincode: string | null } {
+  const trimmed = value.trim();
+  const pincodeMatch = trimmed.match(/\b\d{6}\b/);
+  if (pincodeMatch) {
+    const pincode = pincodeMatch[0];
+    const area = trimmed
+      .replace(/\b\d{6}\b/, '')
+      .replace(/[/,-]/g, ' ')
+      .trim();
+    return { area, pincode };
+  }
+  return { area: trimmed, pincode: null };
+}
+
+function parseBudget(value: string): number {
+  const digits = value.replace(/[^\d]/g, '');
+  return parseInt(digits, 10) || DEFAULT_SEARCH_PREFS.max_rent;
+}
+
+export function SearchForm({
+  onSearch,
+  isSearching = false,
+  initialPrefs = DEFAULT_SEARCH_PREFS,
+}: SearchFormProps) {
+  const [location, setLocation] = useState(
+    `${initialPrefs.pincode ?? '560038'} / ${initialPrefs.area}`
+  );
+  const [maxRent, setMaxRent] = useState(
+    initialPrefs.max_rent.toLocaleString('en-IN')
+  );
+  const [bhk, setBhk] = useState(initialPrefs.bhk);
+  const [office, setOffice] = useState(initialPrefs.office ?? 'Embassy GolfLinks');
+  const [powerBackup, setPowerBackup] = useState(initialPrefs.power_backup ?? false);
+  const [vegOnly, setVegOnly] = useState(!(initialPrefs.non_veg ?? false));
 
   const handleSubmit = () => {
-    // Smart regex parser to extract 6-digit Indian pincode
-    const pincodeMatch = locationInput.match(/\b\d{6}\b/);
-    const pincode = pincodeMatch ? pincodeMatch[0] : '';
-    const area = locationInput
-      .replace(/\b\d{6}\b/, '')
-      .replace(/[/,-]/g, '')
-      .trim();
-
-    // Clean rent string to standard numeric values
-    const rentVal = Number(budgetInput.replace(/\D/g, '')) || 100000;
-
-    if (onSearch) {
-      onSearch({
-        area,
-        pincode,
-        max_rent: rentVal,
-        bhk,
-        power_backup: powerBackup,
-        non_veg: !vegOnly // non_veg = false means "pure veg/vegetarian only" is matched
-      });
-    }
+    const { area, pincode } = parseLocationInput(location);
+    onSearch({
+      area: area || initialPrefs.area,
+      pincode,
+      max_rent: parseBudget(maxRent),
+      bhk,
+      office: office.trim() || null,
+      power_backup: powerBackup,
+      non_veg: !vegOnly,
+    });
   };
 
   return (
@@ -57,21 +70,19 @@ export function SearchForm({ onSearch }: SearchFormProps) {
       <h2 className="text-xl font-bold text-foreground mb-6">Find me a safe rental</h2>
 
       <div className="space-y-4">
-        {/* Pincode / Area */}
         <div>
           <label className="text-sm font-medium text-muted-foreground mb-1.5 block">
             Pincode / Area
           </label>
           <input
             type="text"
-            value={locationInput}
-            onChange={(e) => setPincodeOrArea(e.target.value)}
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#7c5cff] focus:ring-1 focus:ring-[#7c5cff] transition-all"
             placeholder="e.g. 560038 / Indiranagar"
           />
         </div>
 
-        {/* Max Budget */}
         <div>
           <label className="text-sm font-medium text-muted-foreground mb-1.5 block">
             Max Budget
@@ -80,15 +91,14 @@ export function SearchForm({ onSearch }: SearchFormProps) {
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">₹</span>
             <input
               type="text"
-              value={budgetInput}
-              onChange={(e) => setMaxBudget(e.target.value)}
+              value={maxRent}
+              onChange={(e) => setMaxRent(e.target.value)}
               className="w-full pl-8 pr-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#7c5cff] focus:ring-1 focus:ring-[#7c5cff] transition-all"
               placeholder="e.g. 50,000"
             />
           </div>
         </div>
 
-        {/* Configuration */}
         <div>
           <label className="text-sm font-medium text-muted-foreground mb-1.5 block">
             Configuration
@@ -98,14 +108,28 @@ export function SearchForm({ onSearch }: SearchFormProps) {
             onChange={(e) => setBhk(e.target.value)}
             className="w-full px-4 py-2.5 rounded-lg bg-[#111424] border border-white/10 text-foreground focus:outline-none focus:border-[#7c5cff] focus:ring-1 focus:ring-[#7c5cff] transition-all appearance-none"
           >
-            <option>1 BHK</option>
-            <option>2 BHK</option>
-            <option>3 BHK</option>
-            <option>4 BHK</option>
+            <option value="1">1 BHK</option>
+            <option value="2">2 BHK</option>
+            <option value="3">3 BHK</option>
+            <option value="4">4 BHK</option>
           </select>
         </div>
 
-        {/* Lifestyle Filters */}
+        <div>
+          <label className="text-sm font-medium text-muted-foreground mb-1.5 block">
+            Daily Office{' '}
+            <span className="text-xs text-muted-foreground/60 font-normal">
+              (for commute check)
+            </span>
+          </label>
+          <input
+            type="text"
+            value={office}
+            onChange={(e) => setOffice(e.target.value)}
+            className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#7c5cff] focus:ring-1 focus:ring-[#7c5cff] transition-all"
+          />
+        </div>
+
         <div className="pt-2 grid grid-cols-2 gap-4">
           <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-all">
             <input
@@ -128,13 +152,13 @@ export function SearchForm({ onSearch }: SearchFormProps) {
           </label>
         </div>
 
-        {/* Search Button */}
         <Button
           onClick={handleSubmit}
-          className="w-full h-12 bg-gradient-to-r from-[#7c5cff] to-[#5b8cff] hover:shadow-[0_0_20px_rgba(124,92,255,0.4)] text-white font-bold rounded-lg transition-all duration-300 mt-6 flex items-center justify-center text-base"
+          disabled={isSearching}
+          className="w-full h-12 bg-gradient-to-r from-[#7c5cff] to-[#5b8cff] hover:shadow-[0_0_20px_rgba(124,92,255,0.4)] text-white font-bold rounded-lg transition-all duration-300 mt-6 flex items-center justify-center text-base disabled:opacity-60"
         >
           <Search className="w-5 h-5 mr-2" />
-          Find Safe Homes
+          {isSearching ? 'Searching...' : 'Find Safe Homes'}
         </Button>
       </div>
     </motion.div>

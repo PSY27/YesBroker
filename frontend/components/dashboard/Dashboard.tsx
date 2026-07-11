@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
-import { fetchSearchListings, streamInvestigation } from '@/lib/api';
+import { DEFAULT_SEARCH_PREFS, SearchPrefs } from '@/lib/types';
+import { searchListings, investigateStream } from '@/lib/api';
 import { ListingsPanel } from './ListingsPanel';
 import { TrustReportPanel } from './TrustReportPanel';
 import { LogOut } from 'lucide-react';
@@ -14,78 +15,91 @@ interface DashboardProps {
 
 export function Dashboard({ onLogout }: DashboardProps) {
   const [listings, setListings] = useState<RankedListing[]>([]);
+  const [searchPrefs, setSearchPrefs] = useState<SearchPrefs>(DEFAULT_SEARCH_PREFS);
   const [selectedListingId, setSelectedListingId] = useState<string | null>(null);
   const [report, setReport] = useState<TrustReportType | null>(null);
+  const [traceLines, setTraceLines] = useState<string[]>([]);
   const [isLoadingReport, setIsLoadingReport] = useState(false);
-  const [traceLogs, setTraceLogs] = useState<string[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
+  const closeStreamRef = useRef<(() => void) | null>(null);
 
-  // Trigger search on mount with default search parameters
-  useEffect(() => {
-    handleSearch({
-      area: 'Indiranagar',
-      pincode: '560038',
-      max_rent: 75000,
-      bhk: '3 BHK',
-      power_backup: true,
-      non_veg: false // vegetarian allowed
-    });
-  }, []);
-
-  const handleSearch = async (params: {
-    area: string;
-    pincode: string;
-    max_rent: number;
-    bhk: string;
-    power_backup: boolean;
-    non_veg: boolean;
-  }) => {
-    setIsLoadingReport(false);
-    setReport(null);
+  const handleSearch = useCallback(async (prefs: SearchPrefs) => {
+    setSearchPrefs(prefs);
+    setIsSearching(true);
+    setSearchError(null);
     setSelectedListingId(null);
-    
+    setReport(null);
+    setTraceLines([]);
+
     try {
-      const data = await fetchSearchListings(params);
-      setListings(data);
-      if (data.length > 0) {
-        setSelectedListingId(data[0].id);
+      const results = await searchListings(prefs);
+      setListings(results);
+      if (results.length > 0) {
+        setSelectedListingId(results[0].id);
       }
     } catch (err) {
-      console.error('Search failed:', err);
+      setSearchError(
+        err instanceof Error ? err.message : 'Search failed. Is the backend running on port 8000?'
+      );
+      setListings([]);
+    } finally {
+      setIsSearching(false);
     }
-  };
+  }, []);
 
-  // Connect to backend EventSource SSE Stream when selection changes
   useEffect(() => {
-    if (selectedListingId) {
-      setIsLoadingReport(true);
-      setReport(null);
-      setTraceLogs([]);
+    handleSearch(DEFAULT_SEARCH_PREFS);
+  }, [handleSearch]);
 
-      const stream = streamInvestigation(selectedListingId, {
-        onStart: (title) => {
-          setTraceLogs([`🚀 Launching Multi-Agent Audit for: "${title}"`]);
-        },
-        onTrace: (agent, message) => {
-          setTraceLogs((prev) => [...prev, `[${agent.toUpperCase()}] ${message}`]);
-        },
-        onDone: (finalReport) => {
-          setReport(finalReport);
-          setIsLoadingReport(false);
-        },
-        onError: (err) => {
-          console.error('SSE Stream error:', err);
-          setIsLoadingReport(false);
-        },
-      });
-
-      return () => {
-        stream.close();
-      };
-    } else {
+  useEffect(() => {
+    if (!selectedListingId) {
       setReport(null);
-      setTraceLogs([]);
+      setTraceLines([]);
+      return;
     }
-  }, [selectedListingId]);
+
+    closeStreamRef.current?.();
+    setIsLoadingReport(true);
+    setReport(null);
+    setTraceLines([]);
+
+    const close = investigateStream(selectedListingId, searchPrefs.office, {
+      onStart: (data) => {
+        setTraceLines([`🚀 Launching Multi-Agent Audit for: "${data.title}"`]);
+      },
+      onTrace: (line) => {
+        setTraceLines((prev) => [...prev, line]);
+      },
+      onDone: (trustReport) => {
+        setReport(trustReport);
+        setIsLoadingReport(false);
+      },
+      onError: async () => {
+        try {
+          const { investigateListing } = await import('@/lib/api');
+          const fallback = await investigateListing(
+            selectedListingId,
+            searchPrefs.office
+          );
+          setReport(fallback);
+        } catch {
+          setSearchError('Investigation failed. Check backend on port 8000.');
+        } finally {
+          setIsLoadingReport(false);
+        }
+      },
+    });
+
+    closeStreamRef.current = close;
+
+    return () => {
+      close();
+    };
+  }, [selectedListingId, searchPrefs.office]);
+
+  const selectedListing =
+    listings.find((l) => l.id === selectedListingId) ?? null;
 
   return (
     <motion.div
@@ -94,12 +108,9 @@ export function Dashboard({ onLogout }: DashboardProps) {
       transition={{ duration: 0.5 }}
       className="min-h-screen w-full bg-[#0b0d17] p-6"
     >
-      {/* Background gradient */}
       <div className="aurora-gradient" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto h-screen flex flex-col">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,9 +133,13 @@ export function Dashboard({ onLogout }: DashboardProps) {
           </button>
         </motion.div>
 
-        {/* Main content */}
+        {searchError && (
+          <div className="mb-4 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-sm">
+            {searchError}
+          </div>
+        )}
+
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6 min-h-0">
-          {/* Left column: Listings */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -136,10 +151,11 @@ export function Dashboard({ onLogout }: DashboardProps) {
               selectedListingId={selectedListingId}
               onSelectListing={setSelectedListingId}
               onSearch={handleSearch}
+              isSearching={isSearching}
+              searchPrefs={searchPrefs}
             />
           </motion.div>
 
-          {/* Right column: Trust Report */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -147,14 +163,10 @@ export function Dashboard({ onLogout }: DashboardProps) {
             className="lg:col-span-2 min-h-0"
           >
             <TrustReportPanel
-              selectedListing={
-                selectedListingId
-                  ? listings.find((l) => l.id === selectedListingId) || null
-                  : null
-              }
+              selectedListing={selectedListing}
               report={report}
+              traceLines={traceLines}
               isLoading={isLoadingReport}
-              traceLogs={traceLogs}
             />
           </motion.div>
         </div>

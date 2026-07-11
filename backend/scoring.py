@@ -53,3 +53,23 @@ def build_trust_report(state: CaseState) -> TrustReport:
         reasoning=state.trace,
         questions_to_ask=questions,
     )
+
+
+def one_liner_from_report(report: TrustReport) -> str:
+    if report.flags:
+        top = max(report.flags, key=lambda f: f.weight)
+        return top.detail[:100]
+    if report.reasoning:
+        return report.reasoning[0][:100]
+    return "Unverified listing"
+
+
+def search_summary_from_report(report: TrustReport) -> dict:
+    verdict = report.verdict
+    if verdict == "HIGH_RISK":
+        verdict = "RISK"
+    return {
+        "score": report.score,
+        "verdict": verdict,
+        "one_liner": one_liner_from_report(report),
+    }

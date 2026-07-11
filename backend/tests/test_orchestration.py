@@ -1,4 +1,4 @@
-"""Integration tests for planner handoffs, escalation, and arbiter re-dispatch."""
+"""Integration tests for agentic planner, reflection, and selective execution."""
 
 from __future__ import annotations
 
@@ -26,11 +26,13 @@ async def test_safe_listing_standard_flow():
     assert "escalating" not in " ".join(state.trace).lower()
     assert _verdicts(state)["price"] == "CLEAN"
     assert _verdicts(state)["text"] == "CLEAN"
+    assert any("planner:" in t.lower() for t in state.trace)
+    assert any("reflection:" in t.lower() for t in state.trace)
 
 
 @pytest.mark.asyncio
 async def test_scam_escalation_after_price_and_text():
-    """Handoff #1: bait price + scam text → deep photo scan + phone web-recon."""
+    """Planner escalates bait price + scam text → deep photo scan + phone web-recon."""
     state = await run_investigation(SCAM_ABROAD)
 
     assert state.directives["photo"] == "deep_scan"
@@ -44,12 +46,12 @@ async def test_scam_escalation_after_price_and_text():
 
 @pytest.mark.asyncio
 async def test_scam_photo_to_commute_handoff():
-    """Handoff #2: suspicious photo → commute address verification directive."""
+    """Planner routes commute after suspicious photo with address verification."""
     state = await run_investigation(SCAM_ABROAD)
 
     assert "verify address" in state.directives.get("commute", "")
     assert any(
-        "commute" in t.lower() and ("re-run" in t.lower() or "address" in t.lower())
+        "commute" in t.lower() and ("address" in t.lower() or "photo" in t.lower())
         for t in state.trace
     )
     assert _verdicts(state)["photo"] == "SUSPICIOUS"
@@ -83,37 +85,34 @@ async def test_token_scam_pipeline():
 
 
 @pytest.mark.asyncio
-async def test_arbiter_redispatch_on_conflict():
-    """Arbiter re-dispatches Photo when clean photo conflicts with price/text/web flags."""
+async def test_reflection_redispatch_on_conflict():
+    """Reflection re-dispatches Photo when clean photo conflicts with price/text/web flags."""
     state = await run_investigation(CONFLICT_LISTING)
 
-    assert any("arbiter" in t.lower() and "conflict" in t.lower() for t in state.trace)
-    assert any("re-scan" in t.lower() or "re-dispatching" in t.lower() for t in state.trace)
+    assert any("reflection" in t.lower() and "conflict" in t.lower() for t in state.trace)
     assert state.directives.get("photo") == "dedup_lowthreshold"
     assert _verdicts(state)["photo"] == "SUSPICIOUS"
     assert _verdicts(state)["price"] == "BAIT"
 
 
 @pytest.mark.asyncio
-async def test_arbiter_dedup_lowthreshold_directive():
-    """Photo agent alone should flip to SUSPICIOUS under arbiter dedup directive."""
+async def test_reflection_dedup_lowthreshold_directive():
+    """Photo agent flips to SUSPICIOUS under reflection dedup directive."""
     state = CaseState(listing=CONFLICT_LISTING, directives={"photo": "dedup_lowthreshold"})
     result = await PhotoAgent().run(state)
-    # conflict listing has no abroad/token in filename — stays CLEAN under dedup alone
-    # use SCAM_ABROAD filename for explicit arbiter path
     state2 = CaseState(listing=SCAM_ABROAD, directives={"photo": "dedup_lowthreshold"})
     result2 = await PhotoAgent().run(state2)
     assert result2.verdict == "SUSPICIOUS"
 
 
 @pytest.mark.asyncio
-async def test_trace_records_planner_and_arbiter():
+async def test_trace_records_planner_and_reflection():
     state = await run_investigation(SCAM_ABROAD)
     trace_text = " ".join(state.trace).lower()
 
     assert "planner:" in trace_text
     assert "photo" in trace_text
-    assert "arbiter:" in trace_text
+    assert "reflection:" in trace_text
     assert "commute" in trace_text
 
 
@@ -126,3 +125,12 @@ async def test_findings_shared_via_case_state():
     assert agents_seen == {"price", "text", "photo", "web", "commute"}
     assert all(f.confidence > 0 for f in state.findings)
     assert all(f.detail for f in state.findings)
+    assert all(isinstance(f.recommend_next, list) for f in state.findings)
+
+
+@pytest.mark.asyncio
+async def test_agents_emit_structured_recommendations():
+    state = await run_investigation(SCAM_ABROAD)
+    price = next(f for f in state.findings if f.agent == "price")
+    assert price.recommend_next
+    assert price.structured_evidence.get("agent_output", {}).get("recommend_next")

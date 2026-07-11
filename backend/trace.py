@@ -5,6 +5,7 @@ from __future__ import annotations
 import contextvars
 import json
 import sys
+import asyncio
 from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Iterator
@@ -21,6 +22,7 @@ class TraceKind(str, Enum):
     GEMINI = "gemini"
     DIRECTIVE = "directive"
     RESULT = "result"
+    REFLECTION = "reflection"
 
 
 class TraceEvent(BaseModel):
@@ -40,6 +42,7 @@ class TraceEvent(BaseModel):
             TraceKind.GEMINI: "Gemini",
             TraceKind.DIRECTIVE: "DIRECTIVE",
             TraceKind.RESULT: "RESULT",
+            TraceKind.REFLECTION: "Reflection",
         }.get(self.kind, self.actor)
         return f"[{prefix}] {self.message}"
 
@@ -56,6 +59,7 @@ _COLORS = {
     TraceKind.GEMINI: "\033[94m",
     TraceKind.DIRECTIVE: "\033[90m",
     TraceKind.RESULT: "\033[97m",
+    TraceKind.REFLECTION: "\033[35m",
     TraceKind.SYSTEM: "\033[90m",
 }
 _RESET = "\033[0m"
@@ -65,6 +69,12 @@ class TraceLogger:
     def __init__(self, *, echo: bool = True) -> None:
         self.events: list[TraceEvent] = []
         self.echo = echo
+        self._queue: asyncio.Queue[TraceEvent] | None = None
+
+    def _get_queue(self) -> asyncio.Queue[TraceEvent]:
+        if self._queue is None:
+            self._queue = asyncio.Queue()
+        return self._queue
 
     def emit(
         self,
@@ -75,9 +85,19 @@ class TraceLogger:
     ) -> TraceEvent:
         event = TraceEvent(kind=kind, actor=actor, message=message, meta=meta)
         self.events.append(event)
+        try:
+            self._get_queue().put_nowait(event)
+        except RuntimeError:
+            pass
         if self.echo:
             self._print(event)
         return event
+
+    async def wait_event(self, timeout: float = 0.1) -> TraceEvent | None:
+        try:
+            return await asyncio.wait_for(self._get_queue().get(), timeout=timeout)
+        except asyncio.TimeoutError:
+            return None
 
     def _print(self, event: TraceEvent) -> None:
         color = _COLORS.get(event.kind, "")

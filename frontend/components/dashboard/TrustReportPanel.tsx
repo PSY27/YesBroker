@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
 import { TrustReport } from '@/components/trust-report/TrustReport';
@@ -6,15 +8,15 @@ import { TerminalReasoning } from '@/components/trust-report/TerminalReasoning';
 interface TrustReportPanelProps {
   selectedListing: RankedListing | null;
   report: TrustReportType | null;
+  traceLines: string[];
   isLoading: boolean;
-  traceLogs?: string[];
 }
 
 export function TrustReportPanel({
   selectedListing,
   report,
+  traceLines,
   isLoading,
-  traceLogs = [],
 }: TrustReportPanelProps) {
   return (
     <motion.div
@@ -24,7 +26,6 @@ export function TrustReportPanel({
       className="flex flex-col h-full bg-white/2"
     >
       {!selectedListing ? (
-        // Empty state
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -55,7 +56,6 @@ export function TrustReportPanel({
           </p>
         </motion.div>
       ) : isLoading ? (
-        // Live streaming loading state
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -70,16 +70,17 @@ export function TrustReportPanel({
             </motion.div>
             <div>
               <h3 className="text-sm font-semibold text-foreground">AI Agents Auditing</h3>
-              <p className="text-xs text-muted-foreground">Running 5 specialists in staged parallel concurrency...</p>
+              <p className="text-xs text-muted-foreground">
+                Planner selecting specialists and streaming live trace...
+              </p>
             </div>
           </div>
-          
+
           <div className="flex-1 min-h-0 overflow-y-auto">
-            <TerminalReasoning lines={traceLogs} />
+            <TerminalReasoning lines={traceLines} />
           </div>
         </motion.div>
       ) : report ? (
-        // Report view
         <TrustReport listing={selectedListing} report={report} />
       ) : null}
     </motion.div>

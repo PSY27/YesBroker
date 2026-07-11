@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional
 
@@ -19,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from schema import Prefs, RankedListing, TrustReport, Listing
 from orchestrator import run_investigation
-from scoring import build_trust_report
+from scoring import build_trust_report, search_summary_from_report
 from trace import TracedInvestigation
 
 app = FastAPI(title="YesBroker (GharCheck) Backend")
@@ -35,6 +34,8 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LISTINGS_PATH = os.path.join(BASE_DIR, "data", "listings.json")
 SCORES_PATH = os.path.join(BASE_DIR, "data", "scores.json")
+
+_DEFAULT_SCORE = {"score": 50, "verdict": "CAUTION", "one_liner": "Unverified listing"}
 
 
 def load_listings():
@@ -58,8 +59,18 @@ def get_listing_by_id(listing_id: str) -> Listing | None:
     return None
 
 
+def score_info_for_listing(scores: dict, listing_id: str) -> dict:
+    raw = scores.get(listing_id)
+    if not raw:
+        return _DEFAULT_SCORE.copy()
+    if "one_liner" in raw:
+        return raw
+    return search_summary_from_report(TrustReport(**raw))
+
+
 class InvestigateRequest(BaseModel):
     id: str
+    office: Optional[str] = None
 
 
 @app.get("/health")
@@ -94,11 +105,10 @@ def search(p: Prefs):
                 or p_area.lower() in l.get("title", "").lower()
             )
 
-        location_match = pincode_match and area_match
+        location_match = pincode_match or area_match
         rent_match = l.get("rent", 0) <= p.max_rent
         bhk_match = l.get("bhk") == p.bhk
 
-        # Apply custom lifestyle preference filtering based on description keywords
         prefs_match = True
         desc = l.get("description", "").lower()
         if p.power_backup and ("no power backup" in desc or "no backup" in desc or "without backup" in desc):
@@ -112,7 +122,7 @@ def search(p: Prefs):
     matched_with_scores = []
     for l in matched:
         l_id = l.get("id")
-        score_info = scores.get(l_id, {"score": 50, "verdict": "CAUTION", "one_liner": "Unverified listing"})
+        score_info = score_info_for_listing(scores, l_id)
         matched_with_scores.append((l, score_info))
 
     matched_with_scores.sort(key=lambda x: x[1]["score"], reverse=True)
@@ -144,15 +154,16 @@ def search(p: Prefs):
     return ranked_listings
 
 
-async def _live_investigation(listing_id: str) -> tuple[TrustReport, list]:
+async def _live_investigation(
+    listing_id: str, office: str | None = None
+) -> tuple[TrustReport, list]:
     listing = get_listing_by_id(listing_id)
     if not listing:
         raise HTTPException(status_code=404, detail="Listing not found.")
 
     async with TracedInvestigation(echo=True) as tracer:
-        state = await run_investigation(listing)
+        state = await run_investigation(listing, office=office)
         report = build_trust_report(state)
-        # Merge structured trace lines into reasoning for UI terminal
         trace_lines = [e.terminal_line() for e in tracer.events]
         report.reasoning = trace_lines + state.trace
         return report, tracer.events
@@ -161,12 +172,12 @@ async def _live_investigation(listing_id: str) -> tuple[TrustReport, list]:
 @app.post("/investigate", response_model=TrustReport)
 async def investigate(req: InvestigateRequest):
     """Run live multi-agent investigation with Gemini and return trust report."""
-    report, _ = await _live_investigation(req.id)
+    report, _ = await _live_investigation(req.id, office=req.office)
     return report
 
 
 @app.get("/investigate/stream")
-async def investigate_stream(id: str):
+async def investigate_stream(id: str, office: Optional[str] = None):
     """SSE stream of agent conversation / trace events, then final report."""
 
     listing = get_listing_by_id(id)
@@ -177,12 +188,22 @@ async def investigate_stream(id: str):
         async with TracedInvestigation(echo=False) as tracer:
             yield f"data: {json.dumps({'type': 'start', 'listing_id': id, 'title': listing.title})}\n\n"
 
-            state = await run_investigation(listing)
+            task = asyncio.create_task(run_investigation(listing, office=office))
 
-            for event in tracer.events:
+            while not task.done():
+                event = await tracer.wait_event(timeout=0.1)
+                if event is not None:
+                    payload = {"type": "trace", **event.model_dump()}
+                    yield f"data: {json.dumps(payload)}\n\n"
+
+            state = await task
+
+            while True:
+                event = await tracer.wait_event(timeout=0.01)
+                if event is None:
+                    break
                 payload = {"type": "trace", **event.model_dump()}
                 yield f"data: {json.dumps(payload)}\n\n"
-                await asyncio.sleep(0.05)
 
             report = build_trust_report(state)
             trace_lines = [e.terminal_line() for e in tracer.events]
@@ -195,8 +216,3 @@ async def investigate_stream(id: str):
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
-
-
-FRONTEND_DIR = os.path.join(os.path.dirname(BASE_DIR), "frontend")
-if os.path.exists(FRONTEND_DIR):
-    app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")

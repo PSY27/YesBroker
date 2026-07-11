@@ -1,7 +1,7 @@
 {
   "L_100": {
     "listing_id": "L_100",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -11,6 +11,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -21,6 +22,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -32,6 +34,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -43,6 +46,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -54,6 +58,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -69,11 +74,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_101": {
     "listing_id": "L_101",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -83,6 +89,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -93,6 +100,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -104,6 +112,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -115,6 +124,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -126,6 +136,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -141,11 +152,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_102": {
     "listing_id": "L_102",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -155,6 +167,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -165,6 +178,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -176,6 +190,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -187,6 +202,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -198,6 +214,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -213,11 +230,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_103": {
     "listing_id": "L_103",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -227,6 +245,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -237,6 +256,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -248,6 +268,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -259,6 +280,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -270,6 +292,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -285,11 +308,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_104": {
     "listing_id": "L_104",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -299,6 +323,7 @@
         "evidence": [
           "Area median: \u20b956,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -309,6 +334,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -320,6 +346,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -331,6 +358,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -342,6 +370,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -357,11 +386,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_105": {
     "listing_id": "L_105",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -371,6 +401,7 @@
         "evidence": [
           "Area median: \u20b935,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -381,6 +412,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -392,6 +424,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -403,6 +436,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -414,6 +448,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -429,11 +464,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_106": {
     "listing_id": "L_106",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -443,6 +479,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -453,6 +490,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -464,6 +502,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -475,6 +514,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -486,6 +526,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -501,11 +542,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_107": {
     "listing_id": "L_107",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -515,6 +557,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -525,6 +568,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -536,6 +580,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -547,6 +592,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -558,6 +604,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -573,11 +620,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_108": {
     "listing_id": "L_108",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -587,6 +635,7 @@
         "evidence": [
           "Area median: \u20b935,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -597,6 +646,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -608,6 +658,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -619,6 +670,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -630,6 +682,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -645,11 +698,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_109": {
     "listing_id": "L_109",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -659,6 +713,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -669,6 +724,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -680,6 +736,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -691,6 +748,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -702,6 +760,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -717,11 +776,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_110": {
     "listing_id": "L_110",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -731,6 +791,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -741,6 +802,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -752,6 +814,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -763,6 +826,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -774,6 +838,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -789,11 +854,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_111": {
     "listing_id": "L_111",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -803,6 +869,7 @@
         "evidence": [
           "Area median: \u20b916,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -813,6 +880,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -824,6 +892,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -835,6 +904,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -846,6 +916,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -861,11 +932,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_112": {
     "listing_id": "L_112",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -875,6 +947,7 @@
         "evidence": [
           "Area median: \u20b916,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -885,6 +958,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -896,6 +970,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -907,6 +982,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -918,6 +994,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -933,11 +1010,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_113": {
     "listing_id": "L_113",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -947,6 +1025,7 @@
         "evidence": [
           "Area median: \u20b948,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -957,6 +1036,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -968,6 +1048,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -979,6 +1060,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -990,6 +1072,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1005,11 +1088,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_114": {
     "listing_id": "L_114",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1019,6 +1103,7 @@
         "evidence": [
           "Area median: \u20b935,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1029,6 +1114,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1040,6 +1126,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1051,6 +1138,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1062,6 +1150,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1077,11 +1166,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_115": {
     "listing_id": "L_115",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1091,6 +1181,7 @@
         "evidence": [
           "Area median: \u20b928,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1101,6 +1192,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1112,6 +1204,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1123,6 +1216,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1134,6 +1228,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1149,11 +1244,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_116": {
     "listing_id": "L_116",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1163,6 +1259,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1173,6 +1270,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1184,6 +1282,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1195,6 +1294,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1206,6 +1306,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1221,11 +1322,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_117": {
     "listing_id": "L_117",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1235,6 +1337,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1245,6 +1348,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1256,6 +1360,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1267,6 +1372,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1278,6 +1384,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1293,11 +1400,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_118": {
     "listing_id": "L_118",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1307,6 +1415,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1317,6 +1426,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1328,6 +1438,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1339,6 +1450,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1350,6 +1462,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1365,11 +1478,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_119": {
     "listing_id": "L_119",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1379,6 +1493,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1389,6 +1504,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1400,6 +1516,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1411,6 +1528,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1422,6 +1540,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1437,11 +1556,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_120": {
     "listing_id": "L_120",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1451,6 +1571,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1461,6 +1582,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1472,6 +1594,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1483,6 +1606,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1494,6 +1618,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1509,11 +1634,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_121": {
     "listing_id": "L_121",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1523,6 +1649,7 @@
         "evidence": [
           "Area median: \u20b935,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1533,6 +1660,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1544,6 +1672,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1555,6 +1684,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1566,6 +1696,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1581,11 +1712,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_122": {
     "listing_id": "L_122",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1595,6 +1727,7 @@
         "evidence": [
           "Area median: \u20b952,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1605,6 +1738,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1616,6 +1750,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1627,6 +1762,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1638,6 +1774,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1653,11 +1790,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_123": {
     "listing_id": "L_123",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1667,6 +1805,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1677,6 +1816,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1688,6 +1828,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1699,6 +1840,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1710,6 +1852,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1725,11 +1868,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_124": {
     "listing_id": "L_124",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1739,6 +1883,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1749,6 +1894,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1760,6 +1906,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1771,6 +1918,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1782,6 +1930,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1797,11 +1946,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_125": {
     "listing_id": "L_125",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1811,6 +1961,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1821,6 +1972,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1832,6 +1984,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1843,6 +1996,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1854,6 +2008,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1869,11 +2024,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_126": {
     "listing_id": "L_126",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1883,6 +2039,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1893,6 +2050,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1904,6 +2062,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1915,6 +2074,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1926,6 +2086,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -1941,11 +2102,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_127": {
     "listing_id": "L_127",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -1955,6 +2117,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -1965,6 +2128,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -1976,6 +2140,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -1987,6 +2152,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -1998,6 +2164,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2013,11 +2180,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_128": {
     "listing_id": "L_128",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2027,6 +2195,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2037,6 +2206,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2048,6 +2218,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2059,6 +2230,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2070,6 +2242,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2085,11 +2258,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_129": {
     "listing_id": "L_129",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2099,6 +2273,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2109,6 +2284,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2120,6 +2296,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2131,6 +2308,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2142,6 +2320,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2157,11 +2336,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_130": {
     "listing_id": "L_130",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2171,6 +2351,7 @@
         "evidence": [
           "Area median: \u20b948,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2181,6 +2362,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2192,6 +2374,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2203,6 +2386,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2214,6 +2398,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2229,11 +2414,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_131": {
     "listing_id": "L_131",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2243,6 +2429,7 @@
         "evidence": [
           "Area median: \u20b928,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2253,6 +2440,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2264,6 +2452,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2275,6 +2464,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2286,6 +2476,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2301,11 +2492,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_132": {
     "listing_id": "L_132",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2315,6 +2507,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2325,6 +2518,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2336,6 +2530,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2347,6 +2542,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2358,6 +2554,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2373,11 +2570,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_133": {
     "listing_id": "L_133",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2387,6 +2585,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2397,6 +2596,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2408,6 +2608,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2419,6 +2620,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2430,6 +2632,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2445,11 +2648,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_134": {
     "listing_id": "L_134",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2459,6 +2663,7 @@
         "evidence": [
           "Area median: \u20b916,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2469,6 +2674,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2480,6 +2686,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2491,6 +2698,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2502,6 +2710,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2517,11 +2726,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_135": {
     "listing_id": "L_135",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2531,6 +2741,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2541,6 +2752,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2552,6 +2764,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2563,6 +2776,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2574,6 +2788,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2589,11 +2804,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_136": {
     "listing_id": "L_136",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2603,6 +2819,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2613,6 +2830,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2624,6 +2842,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2635,6 +2854,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2646,6 +2866,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2661,11 +2882,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_137": {
     "listing_id": "L_137",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2675,6 +2897,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2685,6 +2908,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2696,6 +2920,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2707,6 +2932,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2718,6 +2944,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2733,11 +2960,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_138": {
     "listing_id": "L_138",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2747,6 +2975,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2757,6 +2986,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2768,6 +2998,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2779,6 +3010,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2790,6 +3022,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2805,11 +3038,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_139": {
     "listing_id": "L_139",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2819,6 +3053,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2829,6 +3064,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2840,6 +3076,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2851,6 +3088,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2862,6 +3100,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2877,11 +3116,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_140": {
     "listing_id": "L_140",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2891,6 +3131,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2901,6 +3142,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2912,6 +3154,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2923,6 +3166,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -2934,6 +3178,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -2949,11 +3194,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_141": {
     "listing_id": "L_141",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -2963,6 +3209,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -2973,6 +3220,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -2984,6 +3232,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -2995,6 +3244,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3006,6 +3256,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3021,11 +3272,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_142": {
     "listing_id": "L_142",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3035,6 +3287,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3045,6 +3298,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3056,6 +3310,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3067,6 +3322,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3078,6 +3334,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3093,11 +3350,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_143": {
     "listing_id": "L_143",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3107,6 +3365,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3117,6 +3376,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3128,6 +3388,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3139,6 +3400,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3150,6 +3412,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3165,11 +3428,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_144": {
     "listing_id": "L_144",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3179,6 +3443,7 @@
         "evidence": [
           "Area median: \u20b952,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3189,6 +3454,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3200,6 +3466,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3211,6 +3478,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3222,6 +3490,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3237,11 +3506,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_145": {
     "listing_id": "L_145",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3251,6 +3521,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3261,6 +3532,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3272,6 +3544,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3283,6 +3556,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3294,6 +3568,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3309,11 +3584,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_146": {
     "listing_id": "L_146",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3323,6 +3599,7 @@
         "evidence": [
           "Area median: \u20b956,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3333,6 +3610,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3344,6 +3622,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3355,6 +3634,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3366,6 +3646,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3381,11 +3662,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_147": {
     "listing_id": "L_147",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3395,6 +3677,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3405,6 +3688,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3416,6 +3700,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3427,6 +3712,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3438,6 +3724,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3453,11 +3740,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_148": {
     "listing_id": "L_148",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3467,6 +3755,7 @@
         "evidence": [
           "Area median: \u20b928,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3477,6 +3766,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3488,6 +3778,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3499,6 +3790,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3510,6 +3802,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3525,11 +3818,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_149": {
     "listing_id": "L_149",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3539,6 +3833,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3549,6 +3844,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3560,6 +3856,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3571,6 +3868,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3582,6 +3880,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3597,11 +3896,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_150": {
     "listing_id": "L_150",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3611,6 +3911,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3621,6 +3922,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3632,6 +3934,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3643,6 +3946,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3654,6 +3958,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3669,11 +3974,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_151": {
     "listing_id": "L_151",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3683,6 +3989,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3693,6 +4000,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3704,6 +4012,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3715,6 +4024,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3726,6 +4036,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3741,11 +4052,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_152": {
     "listing_id": "L_152",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3755,6 +4067,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3765,6 +4078,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3776,6 +4090,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3787,6 +4102,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3798,6 +4114,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3813,11 +4130,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_153": {
     "listing_id": "L_153",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3827,6 +4145,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3837,6 +4156,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3848,6 +4168,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3859,6 +4180,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3870,6 +4192,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3885,11 +4208,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_154": {
     "listing_id": "L_154",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3899,6 +4223,7 @@
         "evidence": [
           "Area median: \u20b935,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3909,6 +4234,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3920,6 +4246,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -3931,6 +4258,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -3942,6 +4270,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -3957,11 +4286,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_155": {
     "listing_id": "L_155",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -3971,6 +4301,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -3981,6 +4312,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -3992,6 +4324,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4003,6 +4336,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4014,6 +4348,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4029,11 +4364,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_156": {
     "listing_id": "L_156",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4043,6 +4379,7 @@
         "evidence": [
           "Area median: \u20b948,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4053,6 +4390,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4064,6 +4402,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4075,6 +4414,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4086,6 +4426,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4101,11 +4442,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_157": {
     "listing_id": "L_157",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4115,6 +4457,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4125,6 +4468,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4136,6 +4480,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4147,6 +4492,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4158,6 +4504,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4173,11 +4520,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_158": {
     "listing_id": "L_158",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4187,6 +4535,7 @@
         "evidence": [
           "Area median: \u20b948,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4197,6 +4546,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4208,6 +4558,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4219,6 +4570,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4230,6 +4582,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4245,11 +4598,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_159": {
     "listing_id": "L_159",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4259,6 +4613,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4269,6 +4624,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4280,6 +4636,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4291,6 +4648,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4302,6 +4660,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4317,11 +4676,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_160": {
     "listing_id": "L_160",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4331,6 +4691,7 @@
         "evidence": [
           "Area median: \u20b956,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4341,6 +4702,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4352,6 +4714,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4363,6 +4726,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4374,6 +4738,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4389,11 +4754,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_161": {
     "listing_id": "L_161",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4403,6 +4769,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4413,6 +4780,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4424,6 +4792,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4435,6 +4804,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4446,6 +4816,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4461,11 +4832,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_162": {
     "listing_id": "L_162",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4475,6 +4847,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4485,6 +4858,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4496,6 +4870,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4507,6 +4882,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4518,6 +4894,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4533,11 +4910,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_163": {
     "listing_id": "L_163",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4547,6 +4925,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4557,6 +4936,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4568,6 +4948,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4579,6 +4960,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4590,6 +4972,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4605,11 +4988,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_164": {
     "listing_id": "L_164",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4619,6 +5003,7 @@
         "evidence": [
           "Area median: \u20b928,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4629,6 +5014,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4640,6 +5026,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4651,6 +5038,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4662,6 +5050,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4677,11 +5066,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_165": {
     "listing_id": "L_165",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4691,6 +5081,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4701,6 +5092,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4712,6 +5104,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4723,6 +5116,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4734,6 +5128,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4749,11 +5144,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_166": {
     "listing_id": "L_166",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4763,6 +5159,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4773,6 +5170,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4784,6 +5182,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4795,6 +5194,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4806,6 +5206,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4821,11 +5222,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_167": {
     "listing_id": "L_167",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4835,6 +5237,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4845,6 +5248,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4856,6 +5260,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4867,6 +5272,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4878,6 +5284,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4893,11 +5300,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_168": {
     "listing_id": "L_168",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4907,6 +5315,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4917,6 +5326,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -4928,6 +5338,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -4939,6 +5350,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -4950,6 +5362,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -4965,11 +5378,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_169": {
     "listing_id": "L_169",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -4979,6 +5393,7 @@
         "evidence": [
           "Area median: \u20b951,200"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -4989,6 +5404,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5000,6 +5416,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5011,6 +5428,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5022,6 +5440,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5037,11 +5456,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_170": {
     "listing_id": "L_170",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5051,6 +5471,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5061,6 +5482,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5072,6 +5494,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5083,6 +5506,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5094,6 +5518,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5109,11 +5534,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_171": {
     "listing_id": "L_171",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5123,6 +5549,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5133,6 +5560,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5144,6 +5572,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5155,6 +5584,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5166,6 +5596,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5181,11 +5612,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_172": {
     "listing_id": "L_172",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5195,6 +5627,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5205,6 +5638,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5216,6 +5650,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5227,6 +5662,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5238,6 +5674,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5253,11 +5690,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_173": {
     "listing_id": "L_173",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5267,6 +5705,7 @@
         "evidence": [
           "Area median: \u20b932,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5277,6 +5716,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5288,6 +5728,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5299,6 +5740,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5310,6 +5752,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5325,11 +5768,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_174": {
     "listing_id": "L_174",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5339,6 +5783,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5349,6 +5794,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5360,6 +5806,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5371,6 +5818,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5382,6 +5830,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5397,11 +5846,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_175": {
     "listing_id": "L_175",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5411,6 +5861,7 @@
         "evidence": [
           "Area median: \u20b948,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5421,6 +5872,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5432,6 +5884,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5443,6 +5896,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5454,6 +5908,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5469,11 +5924,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_176": {
     "listing_id": "L_176",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5483,6 +5939,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5493,6 +5950,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5504,6 +5962,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5515,6 +5974,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5526,6 +5986,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5541,11 +6002,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_177": {
     "listing_id": "L_177",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5555,6 +6017,7 @@
         "evidence": [
           "Area median: \u20b928,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5565,6 +6028,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5576,6 +6040,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5587,6 +6052,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5598,6 +6064,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5613,11 +6080,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_178": {
     "listing_id": "L_178",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5627,6 +6095,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5637,6 +6106,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5648,6 +6118,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5659,6 +6130,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5670,6 +6142,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5685,11 +6158,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_179": {
     "listing_id": "L_179",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5699,6 +6173,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5709,6 +6184,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5720,6 +6196,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5731,6 +6208,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5742,6 +6220,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5757,11 +6236,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_180": {
     "listing_id": "L_180",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5771,6 +6251,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5781,6 +6262,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5792,6 +6274,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5803,6 +6286,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5814,6 +6298,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5829,11 +6314,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_181": {
     "listing_id": "L_181",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5843,6 +6329,7 @@
         "evidence": [
           "Area median: \u20b933,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5853,6 +6340,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5864,6 +6352,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5875,6 +6364,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5886,6 +6376,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5901,11 +6392,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_182": {
     "listing_id": "L_182",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5915,6 +6407,7 @@
         "evidence": [
           "Area median: \u20b935,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5925,6 +6418,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -5936,6 +6430,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -5947,6 +6442,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -5958,6 +6454,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -5973,11 +6470,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_183": {
     "listing_id": "L_183",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -5987,6 +6485,7 @@
         "evidence": [
           "Area median: \u20b944,800"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -5997,6 +6496,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6008,6 +6508,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6019,6 +6520,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6030,6 +6532,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6045,11 +6548,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_184": {
     "listing_id": "L_184",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6059,6 +6563,7 @@
         "evidence": [
           "Area median: \u20b916,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6069,6 +6574,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6080,6 +6586,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6091,6 +6598,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6102,6 +6610,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6117,11 +6626,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_185": {
     "listing_id": "L_185",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6131,6 +6641,7 @@
         "evidence": [
           "Area median: \u20b916,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6141,6 +6652,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6152,6 +6664,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6163,6 +6676,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6174,6 +6688,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6189,11 +6704,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_186": {
     "listing_id": "L_186",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6203,6 +6719,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6213,6 +6730,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6224,6 +6742,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6235,6 +6754,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6246,6 +6766,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6261,11 +6782,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_187": {
     "listing_id": "L_187",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6275,6 +6797,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6285,6 +6808,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6296,6 +6820,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6307,6 +6832,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6318,6 +6844,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6333,11 +6860,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_188": {
     "listing_id": "L_188",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6347,6 +6875,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6357,6 +6886,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6368,6 +6898,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6379,6 +6910,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6390,6 +6922,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6405,11 +6938,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_189": {
     "listing_id": "L_189",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6419,6 +6953,7 @@
         "evidence": [
           "Area median: \u20b915,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6429,6 +6964,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6440,6 +6976,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6451,6 +6988,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6462,6 +7000,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6477,11 +7016,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_190": {
     "listing_id": "L_190",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6491,6 +7031,7 @@
         "evidence": [
           "Area median: \u20b930,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6501,6 +7042,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6512,6 +7054,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6523,6 +7066,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6534,6 +7078,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6549,11 +7094,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_191": {
     "listing_id": "L_191",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6563,6 +7109,7 @@
         "evidence": [
           "Area median: \u20b928,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6573,6 +7120,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6584,6 +7132,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6595,6 +7144,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6606,6 +7156,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6621,11 +7172,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_192": {
     "listing_id": "L_192",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6635,6 +7187,7 @@
         "evidence": [
           "Area median: \u20b956,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6645,6 +7198,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6656,6 +7210,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6667,6 +7222,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6678,6 +7234,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6693,11 +7250,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_193": {
     "listing_id": "L_193",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6707,6 +7265,7 @@
         "evidence": [
           "Area median: \u20b917,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6717,6 +7276,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6728,6 +7288,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6739,6 +7300,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6750,6 +7312,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6765,11 +7328,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_194": {
     "listing_id": "L_194",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6779,6 +7343,7 @@
         "evidence": [
           "Area median: \u20b914,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6789,6 +7354,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6800,6 +7366,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6811,6 +7378,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6822,6 +7390,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6837,11 +7406,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_195": {
     "listing_id": "L_195",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6851,6 +7421,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6861,6 +7432,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6872,6 +7444,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6883,6 +7456,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6894,6 +7468,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6909,11 +7484,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_196": {
     "listing_id": "L_196",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6923,6 +7499,7 @@
         "evidence": [
           "Area median: \u20b956,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -6933,6 +7510,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -6944,6 +7522,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -6955,6 +7534,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -6966,6 +7546,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -6981,11 +7562,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_197": {
     "listing_id": "L_197",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -6995,6 +7577,7 @@
         "evidence": [
           "Area median: \u20b916,500"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -7005,6 +7588,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7016,6 +7600,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -7027,6 +7612,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7038,6 +7624,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -7053,11 +7640,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_198": {
     "listing_id": "L_198",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -7067,6 +7655,7 @@
         "evidence": [
           "Area median: \u20b956,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -7077,6 +7666,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7088,6 +7678,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -7099,6 +7690,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7110,6 +7702,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -7125,11 +7718,12 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "L_199": {
     "listing_id": "L_199",
-    "score": 75,
+    "score": 100,
     "verdict": "SAFE",
     "flags": [
       {
@@ -7139,6 +7733,7 @@
         "evidence": [
           "Area median: \u20b916,000"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.15
       },
@@ -7149,6 +7744,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7160,6 +7756,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -7171,6 +7768,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7182,6 +7780,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -7197,12 +7796,13 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "SCAM_001": {
     "listing_id": "SCAM_001",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 63,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7213,6 +7813,7 @@
           "Listing rent: \u20b918,000",
           "Deviation: 48% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7225,6 +7826,7 @@
           "Found phrase matching 'refundable token'",
           "Found phrase matching 'whatsapp me'"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.1
       },
@@ -7236,6 +7838,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7247,6 +7850,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7257,6 +7861,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7270,15 +7875,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_002": {
     "listing_id": "SCAM_002",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 63,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7289,6 +7895,7 @@
           "Listing rent: \u20b916,000",
           "Deviation: 54% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7300,6 +7907,7 @@
           "Found phrase matching 'pay token'",
           "Found phrase matching 'urgent listing'"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.1
       },
@@ -7311,6 +7919,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7322,6 +7931,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7332,6 +7942,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7345,15 +7956,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_003": {
     "listing_id": "SCAM_003",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 68,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7363,6 +7975,7 @@
           "Area median: \u20b935,000",
           "Deviation: 31% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.8,
         "weight": 0.15
       },
@@ -7373,6 +7986,7 @@
         "evidence": [
           "Found phrase matching 'first come first served'"
         ],
+        "structured_evidence": null,
         "confidence": 0.7,
         "weight": 0.1
       },
@@ -7384,6 +7998,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7395,6 +8010,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7405,6 +8021,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7418,15 +8035,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_004": {
     "listing_id": "SCAM_004",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 68,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7437,6 +8055,7 @@
           "Listing rent: \u20b919,000",
           "Deviation: 45% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7447,6 +8066,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7458,6 +8078,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7469,6 +8090,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7479,6 +8101,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7492,15 +8115,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_005": {
     "listing_id": "SCAM_005",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 63,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7511,6 +8135,7 @@
           "Listing rent: \u20b99,000",
           "Deviation: 43% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7521,6 +8146,7 @@
         "evidence": [
           "Found phrase matching 'whatsapp me'"
         ],
+        "structured_evidence": null,
         "confidence": 0.7,
         "weight": 0.1
       },
@@ -7532,6 +8158,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7543,6 +8170,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7553,6 +8181,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7566,14 +8195,15 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_006": {
     "listing_id": "SCAM_006",
-    "score": 75,
+    "score": 84,
     "verdict": "SAFE",
     "flags": [
       {
@@ -7584,6 +8214,7 @@
           "Area median: \u20b930,000",
           "Deviation: 30% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.8,
         "weight": 0.15
       },
@@ -7594,6 +8225,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7605,6 +8237,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -7616,6 +8249,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7627,6 +8261,7 @@
           "Claimed: 3 min",
           "Actual Metro: 8 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.75,
         "weight": 0.15
       }
@@ -7642,12 +8277,13 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "SCAM_007": {
     "listing_id": "SCAM_007",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 68,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7658,6 +8294,7 @@
           "Listing rent: \u20b929,000",
           "Deviation: 48% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7668,6 +8305,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7679,6 +8317,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7690,6 +8329,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7700,6 +8340,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7713,15 +8354,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_008": {
     "listing_id": "SCAM_008",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 60,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7732,6 +8374,7 @@
           "Listing rent: \u20b917,500",
           "Deviation: 50% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7742,6 +8385,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7753,6 +8397,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7764,6 +8409,7 @@
           "Claimed: 2 min",
           "Actual Metro: 8 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.75,
         "weight": 0.15
       },
@@ -7774,6 +8420,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7787,15 +8434,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_009": {
     "listing_id": "SCAM_009",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 68,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7806,6 +8454,7 @@
           "Listing rent: \u20b919,500",
           "Deviation: 44% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7816,6 +8465,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7827,6 +8477,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7838,6 +8489,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7848,6 +8500,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7861,15 +8514,16 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_010": {
     "listing_id": "SCAM_010",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 60,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -7880,6 +8534,7 @@
           "Listing rent: \u20b915,000",
           "Deviation: 46% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -7890,6 +8545,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7901,6 +8557,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7912,6 +8569,7 @@
           "Claimed: 2 min",
           "Actual Metro: 8 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.75,
         "weight": 0.15
       },
@@ -7922,6 +8580,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -7935,14 +8594,15 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   },
   "SCAM_011": {
     "listing_id": "SCAM_011",
-    "score": 75,
+    "score": 92,
     "verdict": "SAFE",
     "flags": [
       {
@@ -7953,6 +8613,7 @@
           "Area median: \u20b916,500",
           "Deviation: 33% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.8,
         "weight": 0.15
       },
@@ -7963,6 +8624,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -7974,6 +8636,7 @@
           "Original EXIF tags present",
           "Reverse image search: 0 duplicates on web"
         ],
+        "structured_evidence": null,
         "confidence": 0.92,
         "weight": 0.35
       },
@@ -7985,6 +8648,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -7996,6 +8660,7 @@
           "Real metro: 8 min",
           "Real office: 20 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       }
@@ -8011,12 +8676,13 @@
       "Is the security deposit refundable in the agreement?",
       "Are there any maintenance charges excluded from the rent?",
       "What are the rules regarding tenant guests or pets?"
-    ]
+    ],
+    "one_liner": "Photos are original. No duplicate matches found across any major rental aggregators."
   },
   "SCAM_012": {
     "listing_id": "SCAM_012",
-    "score": 75,
-    "verdict": "SAFE",
+    "score": 60,
+    "verdict": "CAUTION",
     "flags": [
       {
         "agent": "price",
@@ -8027,6 +8693,7 @@
           "Listing rent: \u20b918,500",
           "Deviation: 47% below median"
         ],
+        "structured_evidence": null,
         "confidence": 0.95,
         "weight": 0.15
       },
@@ -8037,6 +8704,7 @@
         "evidence": [
           "No scam keywords flagged"
         ],
+        "structured_evidence": null,
         "confidence": 0.85,
         "weight": 0.1
       },
@@ -8048,6 +8716,7 @@
           "Truecaller business directory verification: Verified Individual Owner",
           "Google Maps check: Society exists and matches location exactly"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.25
       },
@@ -8059,6 +8728,7 @@
           "Claimed: 3 min",
           "Actual Metro: 8 min"
         ],
+        "structured_evidence": null,
         "confidence": 0.75,
         "weight": 0.15
       },
@@ -8069,6 +8739,7 @@
         "evidence": [
           "Staging Match: nobroker.in/hyd/... (updated 4h ago)"
         ],
+        "structured_evidence": null,
         "confidence": 0.9,
         "weight": 0.35
       }
@@ -8082,9 +8753,10 @@
       "Arbiter: Re-scan complete \u2192 Stolen match found in regional staging db."
     ],
     "questions_to_ask": [
-      "Is the security deposit refundable in the agreement?",
-      "Are there any maintenance charges excluded from the rent?",
-      "What are the rules regarding tenant guests or pets?"
-    ]
+      "Can you share the exact building society registration number?",
+      "Is there 24x7 security guard coverage?",
+      "Why is the claimed transit time slightly lower than live map times?"
+    ],
+    "one_liner": "Photo #2 stolen recently. Matched duplicate in regional staging database."
   }
 }

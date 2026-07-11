@@ -23,6 +23,7 @@ export function ListingRow({
       case 'CAUTION':
         return { color: 'text-yellow-400', icon: '🟡', label: 'CAUTION' };
       case 'HIGH_RISK':
+      case 'RISK':
         return { color: 'text-red-400', icon: '🔴', label: 'RISK' };
       default:
         return { color: 'text-green-400', icon: '🟢', label: 'SAFE' };

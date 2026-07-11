@@ -29,6 +29,7 @@ export function TrustReport({ listing, report }: TrustReportProps) {
       case 'CAUTION':
         return { color: 'text-yellow-400', icon: '🟡', label: 'CAUTION', sub: 'Proceed with verification' };
       case 'HIGH_RISK':
+      case 'RISK':
         return { color: 'text-red-400', icon: '🔴', label: 'HIGH RISK', sub: 'Likely a scam listing' };
       default:
         return { color: 'text-green-400', icon: '🟢', label: 'SAFE', sub: 'Likely a legitimate listing' };
@@ -48,7 +49,8 @@ export function TrustReport({ listing, report }: TrustReportProps) {
       {/* Header */}
       <div className="glassmorphic-card p-5">
         <h2 className="text-lg font-bold text-foreground mb-6">
-          {listing.bhk} · "{listing.title}" · {listing.area} · ₹{listing.rent.toLocaleString()}
+          {listing.bhk ? `${listing.bhk} BHK · ` : ''}"{listing.title}"
+          {listing.area ? ` · ${listing.area}` : ''} · ₹{listing.rent.toLocaleString()}
         </h2>
 
         {/* Score Area */}

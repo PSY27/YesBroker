@@ -35,12 +35,36 @@ class AgentResult(BaseModel):
     structured_evidence: Optional[Dict[str, Any]] = None  # typed payload for frontend UI
     confidence: float
     weight: float
+    recommend_next: List[str] = []
+
+    def to_agent_output(self, recommend_next: List[str] | None = None) -> Dict[str, Any]:
+        return {
+            "agent": self.agent,
+            "result": self.verdict,
+            "confidence": round(self.confidence, 2),
+            "reason": self.detail,
+            "recommend_next": recommend_next if recommend_next is not None else self.recommend_next,
+        }
+
+
+class PlannerDecision(BaseModel):
+    next_agents: List[str]
+    reason: str
+    stop: bool = False
+
+
+class ReflectionDecision(BaseModel):
+    sufficient: bool
+    reason: str
+    additional_agent: Optional[str] = None
+    approved: bool = False
 
 class CaseState(BaseModel):
     listing: Listing
     findings: List[AgentResult] = []
     directives: Dict[str, str] = {}
     trace: List[str] = []
+    reflection_notes: List[str] = []
 
 class RankedListing(BaseModel):
     rank: int

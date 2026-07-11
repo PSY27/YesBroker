@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { RankedListing } from '@/lib/types';
+import { RankedListing, SearchPrefs } from '@/lib/types';
 import { SearchForm } from './SearchForm';
 import { ListingsResults } from './ListingsResults';
 
@@ -9,7 +9,9 @@ interface ListingsPanelProps {
   listings: RankedListing[];
   selectedListingId: string | null;
   onSelectListing: (id: string) => void;
-  onSearch?: (params: any) => void;
+  onSearch: (prefs: SearchPrefs) => void;
+  isSearching?: boolean;
+  searchPrefs: SearchPrefs;
 }
 
 export function ListingsPanel({
@@ -17,6 +19,8 @@ export function ListingsPanel({
   selectedListingId,
   onSelectListing,
   onSearch,
+  isSearching = false,
+  searchPrefs,
 }: ListingsPanelProps) {
   return (
     <motion.div
@@ -25,11 +29,17 @@ export function ListingsPanel({
       transition={{ duration: 0.6, delay: 0.2 }}
       className="flex flex-col gap-4 h-full"
     >
-      <SearchForm onSearch={onSearch} />
+      <SearchForm
+        onSearch={onSearch}
+        isSearching={isSearching}
+        initialPrefs={searchPrefs}
+      />
       <ListingsResults
         listings={listings}
         selectedListingId={selectedListingId}
         onSelectListing={onSelectListing}
+        isSearching={isSearching}
+        searchPrefs={searchPrefs}
       />
     </motion.div>
   );

@@ -71,8 +71,8 @@ async def test_text_negation_not_flagged_offline():
 
 
 @pytest.mark.asyncio
-async def test_parallel_stage2_all_three_agents():
-    """Stage 2 runs photo, web, commute concurrently — all present in findings."""
+async def test_parallel_batch_execution():
+    """Planner runs independent agents concurrently when selected together."""
     state = await run_investigation(SCAM_ABROAD)
     agents = {f.agent for f in state.findings}
     assert agents == {"price", "text", "photo", "web", "commute"}
