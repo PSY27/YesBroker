@@ -1,0 +1,14 @@
+[project]
+name = "yesbroker"
+version = "2.0.0"
+description = "GharCheck — Autonomous Multi-Agent Rental Safety Scanner"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+    "pydantic>=2.0.0",
+]
+
+[tool.uv]
+dev-dependencies = []
