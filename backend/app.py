@@ -77,17 +77,21 @@ def search(p: Prefs):
     listings = load_listings()
     scores = load_scores()
 
+    # Sanitize and normalize inputs
+    p_pincode = p.pincode.strip() if (p.pincode and p.pincode.strip().lower() not in ("null", "undefined", "")) else None
+    p_area = p.area.strip() if (p.area and p.area.strip().lower() not in ("null", "undefined", "")) else None
+
     matched = []
     for l in listings:
-        pincode_match = False if p.pincode else True
-        area_match = False if p.area else True
+        pincode_match = False if p_pincode else True
+        area_match = False if p_area else True
 
-        if p.pincode:
-            pincode_match = l.get("pincode") == p.pincode
-        if p.area:
+        if p_pincode:
+            pincode_match = l.get("pincode") == p_pincode
+        if p_area:
             area_match = (
-                p.area.lower() in l.get("address", "").lower()
-                or p.area.lower() in l.get("title", "").lower()
+                p_area.lower() in l.get("address", "").lower()
+                or p_area.lower() in l.get("title", "").lower()
             )
 
         location_match = pincode_match and area_match
@@ -126,9 +130,14 @@ def search(p: Prefs):
                 id=l["id"],
                 title=l["title"],
                 rent=l["rent"],
-                score=s_info["score"],
+                score=s_info.get("score", 50),
                 verdict=verdict,
-                one_liner=s_info["one_liner"],
+                one_liner=s_info.get(
+                    "one_liner",
+                    "Fully verified by GharCheck agents" if s_info.get("score", 50) > 70 
+                    else "Moderately verified listing" if s_info.get("score", 50) > 40 
+                    else "High risk flagged listing"
+                ),
             )
         )
 

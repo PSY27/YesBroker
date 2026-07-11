@@ -50,6 +50,10 @@ class RankedListing(BaseModel):
     score: int
     verdict: str               # SAFE | CAUTION | RISK
     one_liner: str
+    bhk: Optional[str] = "2"
+    area: Optional[str] = ""
+    pincode: Optional[str] = ""
+    imageUrl: Optional[str] = ""
 
 class TrustReport(BaseModel):
     listing_id: str

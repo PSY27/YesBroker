@@ -69,46 +69,32 @@ Get a free key at [Google AI Studio](https://aistudio.google.com/apikey).
 All AI features (text analysis, web search, photo forensics, OCR, commute) use **Gemini only**.
 The `.env` file is gitignored and will never be committed.
 
-### 2. Install dependencies (creates `.venv` automatically)
+### 2. Install Python dependencies and Playwright
 From the project root (`YesBroker/`):
 ```bash
 uv sync
+uv run playwright install
 ```
 
-### 3. Run Pre-computation (Optional)
-This compiles the raw listings database and runs all 5 agents through the Planner and Arbiter loops, saving the results in `backend/data/scores.json` for latency-free demo performance:
+### 3. Start the Next.js Premium Frontend
+Navigate into the `frontend/` directory, install packages, and boot the React dev server:
 ```bash
-uv run python backend/precompute.py
+cd frontend
+npm install --legacy-peer-deps
+npm run dev
 ```
+The Next.js dashboard will be available at **[http://localhost:3000/](http://localhost:3000/)**.
 
-### 4. Start the FastAPI Server
-Launch the server on port `8000`:
+### 4. Start the FastAPI Backend Server
+Launch the server on port `8000` from the project root (`YesBroker/`):
 ```bash
 uv run uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-### Live agent tracing
-Watch planner ↔ agent handoffs in the terminal:
-
-```bash
-# CLI trace (colored logs in terminal)
-uv run python backend/trace_demo.py SCAM_001
-
-# Or click any listing in the UI — terminal streams live via SSE
-uv run uvicorn backend.app:app --host 127.0.0.1 --port 8000
-```
-
-Set `GEMINI_MODEL=gemini-3.1-pro-preview` in `.env` (default). Trace shows Planner escalations, HANDOFFs, Gemini API calls, and Arbiter conflicts.
-
-### 6. Run tests
-```bash
-uv run pytest backend/tests -v
-```
-
-### 7. Access the Platform
-Once running, simply:
-- Open your browser and navigate to **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** (hosted directly by FastAPI).
-- Or double-click **`frontend/index.html`** on your system (handles cross-origin requests seamlessly).
+### 5. Access the Platform
+Once both servers are running:
+- Open your browser and navigate to **[http://localhost:3000/](http://localhost:3000/)** to interact with the premium React Glassmorphism Dashboard.
+- The UI is fully connected to the live agentic backend at `http://127.0.0.1:8000`. Clicks on property cards will trigger the live Gemini Multi-Agent investigation pipeline in real-time!
 
 ---
 
