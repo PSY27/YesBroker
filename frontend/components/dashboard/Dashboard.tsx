@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
 import { DEFAULT_SEARCH_PREFS, SearchPrefs } from '@/lib/types';
-import { searchStream, fetchReport } from '@/lib/api';
+import { searchStream, investigateStream } from '@/lib/api';
 import { ListingsPanel } from './ListingsPanel';
 import { TrustReportPanel } from './TrustReportPanel';
 import { LogOut } from 'lucide-react';
@@ -24,6 +24,7 @@ export function Dashboard({ onLogout }: DashboardProps) {
   const [searchError, setSearchError] = useState<string | null>(null);
   const [traceLines, setTraceLines] = useState<string[]>([]);
   const closeSearchStreamRef = useRef<(() => void) | null>(null);
+  const closeInvestigateStreamRef = useRef<(() => void) | null>(null);
 
   const handleSearch = useCallback((prefs: SearchPrefs) => {
     closeSearchStreamRef.current?.();
@@ -45,10 +46,16 @@ export function Dashboard({ onLogout }: DashboardProps) {
         closeSearchStreamRef.current = null;
       },
       onError: (err) => {
-        setSearchError(
-          err.message || 'Search failed. Is the backend running on port 8000?'
-        );
-        setListings([]);
+        // Only surface an error if we never got results. A late disconnect
+        // after `done` should not wipe the listings back to the empty state.
+        setListings((prev) => {
+          if (prev.length === 0) {
+            setSearchError(
+              err.message || 'Search failed. Is the backend running on port 8000?'
+            );
+          }
+          return prev;
+        });
         setIsSearching(false);
         closeSearchStreamRef.current = null;
       },
@@ -58,33 +65,55 @@ export function Dashboard({ onLogout }: DashboardProps) {
   }, []);
 
   useEffect(() => {
-    return () => closeSearchStreamRef.current?.();
+    return () => {
+      closeSearchStreamRef.current?.();
+      closeInvestigateStreamRef.current?.();
+    };
   }, []);
 
-  const handleSelectListing = useCallback(async (listingId: string) => {
-    setSelectedListingId(listingId);
-    setIsLoadingReport(true);
-    setReport(null);
-    setSearchError(null);
+  const handleSelectListing = useCallback(
+    (listingId: string) => {
+      // Cancel any investigation already in flight before starting a new one.
+      closeInvestigateStreamRef.current?.();
+      closeInvestigateStreamRef.current = null;
 
-    try {
-      const cachedReport = await fetchReport(listingId);
-      setReport(cachedReport);
-    } catch (err) {
-      setSearchError(
-        err instanceof Error ? err.message : 'Could not load report for this listing.'
-      );
-    } finally {
-      setIsLoadingReport(false);
-    }
-  }, []);
+      setSelectedListingId(listingId);
+      setIsLoadingReport(true);
+      setReport(null);
+      setSearchError(null);
+      setTraceLines([]);
+
+      const office = searchPrefs.office || null;
+      const close = investigateStream(listingId, office, {
+        onTrace: (line) => setTraceLines((prev) => [...prev, line]),
+        onDone: (result) => {
+          setReport(result);
+          setIsLoadingReport(false);
+          closeInvestigateStreamRef.current = null;
+        },
+        onError: (err) => {
+          setSearchError(
+            err instanceof Error
+              ? err.message
+              : 'Could not load report for this listing.'
+          );
+          setIsLoadingReport(false);
+          closeInvestigateStreamRef.current = null;
+        },
+      });
+
+      closeInvestigateStreamRef.current = close;
+    },
+    [searchPrefs.office]
+  );
 
   const selectedListing =
     listings.find((l) => l.id === selectedListingId) ?? null;
 
-  const activeTraceLines = isSearching
-    ? traceLines
-    : report?.reasoning ?? traceLines;
+  const activeTraceLines =
+    isSearching || isLoadingReport
+      ? traceLines
+      : report?.reasoning ?? traceLines;
 
   return (
     <motion.div

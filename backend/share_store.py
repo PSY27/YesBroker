@@ -6,6 +6,7 @@ import json
 import os
 import uuid
 from datetime import datetime, timezone
+from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -22,7 +23,7 @@ class SharedListingSnapshot(BaseModel):
     bhk: str = "2"
     area: str = ""
     address: str = ""
-    imageUrl: str | None = None
+    imageUrl: Optional[str] = None
 
 
 class SharedReportSnapshot(BaseModel):
