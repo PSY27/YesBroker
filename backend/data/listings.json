@@ -2174,5 +2174,77 @@
       "images/chinnappanahalli_3.jpg"
     ],
     "source_url": "https://nobroker.in/blr/chinnappanahalli/cph_003"
+  },
+  {
+    "id": "REAL_560037_100",
+    "title": "2 BHK Flat for Rent in Indira Nagar Stage 2",
+    "rent": 30000,
+    "deposit": 120000,
+    "bhk": "2",
+    "area_sqft": 1000,
+    "address": "Indiranagar Double Road, close to ESI and Metro Station, Indira Nagar, Bangalore",
+    "pincode": "560037",
+    "landmark": "Near Main Road",
+    "claimed_commute_min": 12,
+    "description": "Semi-furnished 2 BHK apartment on the 1st floor. 750 sqft carpet area, suitable for bachelor or small family. Features 2 bathrooms, 1 balcony, power backup, reserved parking, security, and service/goods lift.",
+    "phone": "+91-9876543210",
+    "photo_urls": [
+      "images/chinnappanahalli_1.jpg"
+    ],
+    "source_url": "https://www.magicbricks.com/propertyDetails/2-BHK-flat-for-rent-Indira-Nagar-Bangalore"
+  },
+  {
+    "id": "REAL_560037_101",
+    "title": "2 BHK Flat for Rent in 18th Main, Indira Nagar Stage 2",
+    "rent": 30000,
+    "deposit": 100000,
+    "bhk": "2",
+    "area_sqft": 1000,
+    "address": "118, 18th Main Road, Indira Nagar Stage 2, Bangalore",
+    "pincode": "560037",
+    "landmark": "Near Main Road",
+    "claimed_commute_min": 12,
+    "description": "Newly constructed 2 BHK flat on the 3rd floor. Semi-furnished with 4 wardrobes, 901 sqft carpet area. Includes 1 bathroom, 1 balcony, power backup, and security.",
+    "phone": "+91-9988776655",
+    "photo_urls": [
+      "images/chinnappanahalli_2.jpg"
+    ],
+    "source_url": "https://www.magicbricks.com/propertyDetails/2-BHK-flat-for-rent-Indira-Nagar-Stage-2-Bangalore"
+  },
+  {
+    "id": "REAL_560037_102",
+    "title": "2 BHK House for Rent In Indiranagar",
+    "rent": 20000,
+    "deposit": 100000,
+    "bhk": "2",
+    "area_sqft": 1000,
+    "address": "Chinmaya Mission Hospital Rd, near Meghana Foods, Indira Nagar, Bangalore",
+    "pincode": "560037",
+    "landmark": "Near Main Road",
+    "claimed_commute_min": 12,
+    "description": "Independent 2 BHK house located on CMH Road near Meghana Foods. Great location close to Indiranagar Metro Station, Manipal Hospitals, and daily amenities. Maintenance included.",
+    "phone": "+91-8899001122",
+    "photo_urls": [
+      "images/chinnappanahalli_3.jpg"
+    ],
+    "source_url": "https://www.nobroker.in/property/rent/bangalore/indiranagar"
+  },
+  {
+    "id": "REAL_560037_103",
+    "title": "2 BHK House for Rent in Stage 2 Indiranagar",
+    "rent": 27000,
+    "deposit": 135000,
+    "bhk": "2",
+    "area_sqft": 1000,
+    "address": "Indira Nagar Stage 2, Bangalore - Central, Karnataka",
+    "pincode": "560037",
+    "landmark": "Near Main Road",
+    "claimed_commute_min": 12,
+    "description": "Semi-furnished 2 BHK house on rent in a highly sought-after area of Indira Nagar Stage 2. Super built-up area of 900 sqft. Comes with 1 open parking and 2 wardrobes.",
+    "phone": "+91-9876501234",
+    "photo_urls": [
+      "images/chinnappanahalli_1.jpg"
+    ],
+    "source_url": "https://www.magicbricks.com/property-for-rent/residential-real-estate?bedroom=2&Locality=Indira-Nagar"
   }
 ]
