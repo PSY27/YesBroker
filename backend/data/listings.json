@@ -2120,5 +2120,59 @@
       "photo_hal_scam_1.jpg"
     ],
     "source_url": "https://quikr.com/blr/hal/metro"
+  },
+  {
+    "id": "CPH_001",
+    "title": "2BHK \u00b7 Chinnappanahalli Premium",
+    "rent": 32000,
+    "deposit": 120000,
+    "bhk": "2",
+    "area_sqft": 1100,
+    "address": "Premium Layout, Chinnappanahalli, Bangalore",
+    "pincode": "560037",
+    "landmark": "Near Chinnappanahalli Lake",
+    "claimed_commute_min": 10,
+    "description": "Spacious 2 BHK on the 3rd floor. Comes with complete 100% power backup, modular kitchen, and covered parking. Open to all tenants (non-veg allowed). Very close to outer ring road.",
+    "phone": "+91 98845 23812",
+    "photo_urls": [
+      "images/chinnappanahalli_1.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/chinnappanahalli/cph_001"
+  },
+  {
+    "id": "CPH_002",
+    "title": "2BHK \u00b7 Chinnappanahalli Lake View",
+    "rent": 28000,
+    "deposit": 100000,
+    "bhk": "2",
+    "area_sqft": 950,
+    "address": "Lake Road, Chinnappanahalli, Bangalore",
+    "pincode": "560037",
+    "landmark": "Opposite Chinnappanahalli Lake Park",
+    "claimed_commute_min": 8,
+    "description": "Cozy 2BHK flat with beautiful lake view. Very quiet residential area. Please note: strictly pure vegetarians only. No power backup available in this building.",
+    "phone": "+91 97723 88121",
+    "photo_urls": [
+      "images/chinnappanahalli_2.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/chinnappanahalli/cph_002"
+  },
+  {
+    "id": "CPH_003",
+    "title": "2BHK \u00b7 Chinnappanahalli Main Road",
+    "rent": 30000,
+    "deposit": 150000,
+    "bhk": "2",
+    "area_sqft": 1000,
+    "address": "Main Road, Chinnappanahalli, Bangalore",
+    "pincode": "560037",
+    "landmark": "Near Bus Stop",
+    "claimed_commute_min": 12,
+    "description": "Well maintained 2BHK close to bus stop. Non-veg families are welcome. Safe neighborhood. Power backup is not available, but inverter line is provided.",
+    "phone": "+91 96621 34912",
+    "photo_urls": [
+      "images/chinnappanahalli_3.jpg"
+    ],
+    "source_url": "https://nobroker.in/blr/chinnappanahalli/cph_003"
   }
 ]

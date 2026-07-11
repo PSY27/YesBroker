@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional, Dict, Any
+from typing import Optional, List, Dict
 
 class Prefs(BaseModel):
     area: str
@@ -12,12 +12,11 @@ class Prefs(BaseModel):
 
 class Listing(BaseModel):
     id: str
-    title: str
-    rent: int
+    rent: Optional[int] = None
     deposit: Optional[int] = None
-    bhk: str
+    bhk: Optional[str] = None
     area_sqft: Optional[int] = None
-    address: str
+    address: Optional[str] = None
     pincode: Optional[str] = None
     landmark: Optional[str] = None
     claimed_commute_min: Optional[int] = None
@@ -27,13 +26,12 @@ class Listing(BaseModel):
     source_url: Optional[str] = None
 
 class AgentResult(BaseModel):
-    agent: str                 # photo | price | commute | text | web
-    verdict: str               # SAFE | SUSPICIOUS | BAIT | LIE | CLEAN
-    detail: str
-    evidence: List[str] = []
-    structured_evidence: Optional[Dict[str, Any]] = None  # typed payload for frontend UI
-    confidence: float
-    weight: float
+    agent: str            # photo | web | price | commute | text
+    verdict: str          # SAFE | CAUTION | BAIT | LIE | SUSPICIOUS | CLEAN
+    detail: str           # explanatory text
+    evidence: List[str] = []  # links, values, etc.
+    confidence: float     # 0.0 to 1.0
+    weight: float         # influence on final score
 
 class CaseState(BaseModel):
     listing: Listing
@@ -47,13 +45,13 @@ class RankedListing(BaseModel):
     title: str
     rent: int
     score: int
-    verdict: str               # SAFE | CAUTION | RISK
-    one_liner: str
+    verdict: str          # SAFE | CAUTION | HIGH_RISK
+    one_liner: str        # e.g., "Original photos, fair price, 18-min commute"
 
 class TrustReport(BaseModel):
     listing_id: str
     score: int
-    verdict: str               # SAFE | CAUTION | HIGH_RISK
+    verdict: str          # SAFE | CAUTION | HIGH_RISK
     flags: List[AgentResult]
     reasoning: List[str]
     questions_to_ask: List[str]

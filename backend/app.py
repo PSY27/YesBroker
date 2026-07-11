@@ -78,8 +78,8 @@ def search(p: Prefs):
 
     matched = []
     for l in listings:
-        pincode_match = True
-        area_match = True
+        pincode_match = False if p.pincode else True
+        area_match = False if p.area else True
 
         if p.pincode:
             pincode_match = l.get("pincode") == p.pincode
@@ -89,11 +89,19 @@ def search(p: Prefs):
                 or p.area.lower() in l.get("title", "").lower()
             )
 
-        location_match = pincode_match or area_match
+        location_match = pincode_match and area_match
         rent_match = l.get("rent", 0) <= p.max_rent
         bhk_match = l.get("bhk") == p.bhk
 
-        if location_match and rent_match and bhk_match:
+        # Apply custom lifestyle preference filtering based on description keywords
+        prefs_match = True
+        desc = l.get("description", "").lower()
+        if p.power_backup and ("no power backup" in desc or "no backup" in desc or "without backup" in desc):
+            prefs_match = False
+        if p.non_veg and ("pure veg" in desc or "strictly veg" in desc or "no non veg" in desc or "no non-veg" in desc):
+            prefs_match = False
+
+        if location_match and rent_match and bhk_match and prefs_match:
             matched.append(l)
 
     matched_with_scores = []
