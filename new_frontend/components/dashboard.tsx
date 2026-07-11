@@ -60,11 +60,13 @@ export function Dashboard() {
     closeSearchStreamRef.current = close
   }, [])
 
-  // Auto search on mount
+  // Clean up streaming connections on unmount
   useEffect(() => {
-    handleSearch(DEFAULT_SEARCH_PREFS)
-    return () => closeSearchStreamRef.current?.()
-  }, [handleSearch])
+    return () => {
+      closeStreamRef.current?.()
+      closeSearchStreamRef.current?.()
+    }
+  }, [])
 
   // Coordinate the streaming EventSource for Multi-Agent Investigations
   useEffect(() => {
