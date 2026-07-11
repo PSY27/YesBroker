@@ -1,21 +1,20 @@
-'use client';
-
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { RankedListing } from '@/lib/types';
-import { TrustReport as TrustReportType } from '@/lib/types';
+import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
 import { TrustReport } from '@/components/trust-report/TrustReport';
+import { TerminalReasoning } from '@/components/trust-report/TerminalReasoning';
 
 interface TrustReportPanelProps {
   selectedListing: RankedListing | null;
   report: TrustReportType | null;
   isLoading: boolean;
+  traceLogs?: string[];
 }
 
 export function TrustReportPanel({
   selectedListing,
   report,
   isLoading,
+  traceLogs = [],
 }: TrustReportPanelProps) {
   return (
     <motion.div
@@ -56,27 +55,28 @@ export function TrustReportPanel({
           </p>
         </motion.div>
       ) : isLoading ? (
-        // Loading state
+        // Live streaming loading state
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-col items-center justify-center h-full text-center"
+          className="flex flex-col gap-4 h-full p-4 overflow-hidden"
         >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-            className="mb-4"
-          >
-            <div className="w-12 h-12 rounded-full border-2 border-white/10 border-t-[#7c5cff]" />
-          </motion.div>
-          <motion.p
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-sm text-muted-foreground font-medium"
-          >
-            Launching live investigation...
-          </motion.p>
+          <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+            >
+              <div className="w-6 h-6 rounded-full border-2 border-white/10 border-t-[#7c5cff]" />
+            </motion.div>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">AI Agents Auditing</h3>
+              <p className="text-xs text-muted-foreground">Running 5 specialists in staged parallel concurrency...</p>
+            </div>
+          </div>
+          
+          <div className="flex-1 min-h-0 overflow-y-auto">
+            <TerminalReasoning lines={traceLogs} />
+          </div>
         </motion.div>
       ) : report ? (
         // Report view

@@ -9,12 +9,14 @@ interface ListingsPanelProps {
   listings: RankedListing[];
   selectedListingId: string | null;
   onSelectListing: (id: string) => void;
+  onSearch?: (params: any) => void;
 }
 
 export function ListingsPanel({
   listings,
   selectedListingId,
   onSelectListing,
+  onSearch,
 }: ListingsPanelProps) {
   return (
     <motion.div
@@ -23,7 +25,7 @@ export function ListingsPanel({
       transition={{ duration: 0.6, delay: 0.2 }}
       className="flex flex-col gap-4 h-full"
     >
-      <SearchForm />
+      <SearchForm onSearch={onSearch} />
       <ListingsResults
         listings={listings}
         selectedListingId={selectedListingId}

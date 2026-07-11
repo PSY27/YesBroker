@@ -2,9 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { RankedListing } from '@/lib/types';
-import { TrustReport as TrustReportType } from '@/lib/types';
-import { mockListings, mockTrustReports } from '@/lib/mock-data';
+import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
+import { fetchSearchListings, streamInvestigation } from '@/lib/api';
 import { ListingsPanel } from './ListingsPanel';
 import { TrustReportPanel } from './TrustReportPanel';
 import { LogOut } from 'lucide-react';
@@ -14,30 +13,77 @@ interface DashboardProps {
 }
 
 export function Dashboard({ onLogout }: DashboardProps) {
-  const [selectedListingId, setSelectedListingId] = useState<string | null>(
-    null
-  );
+  const [listings, setListings] = useState<RankedListing[]>([]);
+  const [selectedListingId, setSelectedListingId] = useState<string | null>(null);
   const [report, setReport] = useState<TrustReportType | null>(null);
   const [isLoadingReport, setIsLoadingReport] = useState(false);
+  const [traceLogs, setTraceLogs] = useState<string[]>([]);
 
-  // Simulate loading report when listing is selected
+  // Trigger search on mount with default search parameters
+  useEffect(() => {
+    handleSearch({
+      area: 'Indiranagar',
+      pincode: '560038',
+      max_rent: 75000,
+      bhk: '3 BHK',
+      power_backup: true,
+      non_veg: false // vegetarian allowed
+    });
+  }, []);
+
+  const handleSearch = async (params: {
+    area: string;
+    pincode: string;
+    max_rent: number;
+    bhk: string;
+    power_backup: boolean;
+    non_veg: boolean;
+  }) => {
+    setIsLoadingReport(false);
+    setReport(null);
+    setSelectedListingId(null);
+    
+    try {
+      const data = await fetchSearchListings(params);
+      setListings(data);
+      if (data.length > 0) {
+        setSelectedListingId(data[0].id);
+      }
+    } catch (err) {
+      console.error('Search failed:', err);
+    }
+  };
+
+  // Connect to backend EventSource SSE Stream when selection changes
   useEffect(() => {
     if (selectedListingId) {
       setIsLoadingReport(true);
       setReport(null);
+      setTraceLogs([]);
 
-      // Simulate API call delay
-      const timeout = setTimeout(() => {
-        const mockReport = mockTrustReports[selectedListingId];
-        if (mockReport) {
-          setReport(mockReport);
-        }
-        setIsLoadingReport(false);
-      }, 1200);
+      const stream = streamInvestigation(selectedListingId, {
+        onStart: (title) => {
+          setTraceLogs([`🚀 Launching Multi-Agent Audit for: "${title}"`]);
+        },
+        onTrace: (agent, message) => {
+          setTraceLogs((prev) => [...prev, `[${agent.toUpperCase()}] ${message}`]);
+        },
+        onDone: (finalReport) => {
+          setReport(finalReport);
+          setIsLoadingReport(false);
+        },
+        onError: (err) => {
+          console.error('SSE Stream error:', err);
+          setIsLoadingReport(false);
+        },
+      });
 
-      return () => clearTimeout(timeout);
+      return () => {
+        stream.close();
+      };
     } else {
       setReport(null);
+      setTraceLogs([]);
     }
   }, [selectedListingId]);
 
@@ -86,9 +132,10 @@ export function Dashboard({ onLogout }: DashboardProps) {
             className="lg:col-span-1 min-h-0"
           >
             <ListingsPanel
-              listings={mockListings}
+              listings={listings}
               selectedListingId={selectedListingId}
               onSelectListing={setSelectedListingId}
+              onSearch={handleSearch}
             />
           </motion.div>
 
@@ -102,11 +149,12 @@ export function Dashboard({ onLogout }: DashboardProps) {
             <TrustReportPanel
               selectedListing={
                 selectedListingId
-                  ? mockListings.find((l) => l.id === selectedListingId) || null
+                  ? listings.find((l) => l.id === selectedListingId) || null
                   : null
               }
               report={report}
               isLoading={isLoadingReport}
+              traceLogs={traceLogs}
             />
           </motion.div>
         </div>
