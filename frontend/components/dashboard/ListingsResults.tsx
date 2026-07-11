@@ -20,7 +20,7 @@ export function ListingsResults({
   searchPrefs,
 }: ListingsResultsProps) {
   const header = isSearching
-    ? 'Searching listings...'
+    ? 'Fetching listings & running trust analysis...'
     : listings.length === 0
       ? `No matches for ${searchPrefs.bhk} BHK · ${searchPrefs.area} · ≤₹${searchPrefs.max_rent.toLocaleString()}`
       : `Showing ${listings.length} matches for ${searchPrefs.bhk} BHK · ${searchPrefs.area} · ≤₹${searchPrefs.max_rent.toLocaleString()}`;
@@ -48,7 +48,7 @@ export function ListingsResults({
         <div className="space-y-1.5 max-h-[calc(100vh-450px)] overflow-y-auto pr-1 custom-scrollbar">
           {isSearching ? (
             <div className="py-8 text-center text-sm text-muted-foreground">
-              Querying trust-ranked corpus...
+              Scraping live listings and analyzing with AI agents...
             </div>
           ) : (
             listings.map((listing, index) => (

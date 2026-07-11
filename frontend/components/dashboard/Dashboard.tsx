@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { RankedListing, TrustReport as TrustReportType } from '@/lib/types';
 import { DEFAULT_SEARCH_PREFS, SearchPrefs } from '@/lib/types';
-import { searchListings, investigateStream } from '@/lib/api';
+import { searchStream, fetchReport } from '@/lib/api';
 import { ListingsPanel } from './ListingsPanel';
 import { TrustReportPanel } from './TrustReportPanel';
 import { LogOut } from 'lucide-react';
@@ -18,13 +18,16 @@ export function Dashboard({ onLogout }: DashboardProps) {
   const [searchPrefs, setSearchPrefs] = useState<SearchPrefs>(DEFAULT_SEARCH_PREFS);
   const [selectedListingId, setSelectedListingId] = useState<string | null>(null);
   const [report, setReport] = useState<TrustReportType | null>(null);
-  const [traceLines, setTraceLines] = useState<string[]>([]);
   const [isLoadingReport, setIsLoadingReport] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
-  const closeStreamRef = useRef<(() => void) | null>(null);
+  const [traceLines, setTraceLines] = useState<string[]>([]);
+  const closeSearchStreamRef = useRef<(() => void) | null>(null);
 
-  const handleSearch = useCallback(async (prefs: SearchPrefs) => {
+  const handleSearch = useCallback((prefs: SearchPrefs) => {
+    closeSearchStreamRef.current?.();
+    closeSearchStreamRef.current = null;
+
     setSearchPrefs(prefs);
     setIsSearching(true);
     setSearchError(null);
@@ -32,74 +35,55 @@ export function Dashboard({ onLogout }: DashboardProps) {
     setReport(null);
     setTraceLines([]);
 
-    try {
-      const results = await searchListings(prefs);
-      setListings(results);
-      if (results.length > 0) {
-        setSelectedListingId(results[0].id);
-      }
-    } catch (err) {
-      setSearchError(
-        err instanceof Error ? err.message : 'Search failed. Is the backend running on port 8000?'
-      );
-      setListings([]);
-    } finally {
-      setIsSearching(false);
-    }
+    const close = searchStream(prefs, {
+      onTrace: (line) => setTraceLines((prev) => [...prev, line]),
+      onDone: (results) => {
+        setListings(results);
+        setIsSearching(false);
+        closeSearchStreamRef.current = null;
+      },
+      onError: (err) => {
+        setSearchError(
+          err.message || 'Search failed. Is the backend running on port 8000?'
+        );
+        setListings([]);
+        setIsSearching(false);
+        closeSearchStreamRef.current = null;
+      },
+    });
+
+    closeSearchStreamRef.current = close;
   }, []);
 
   useEffect(() => {
     handleSearch(DEFAULT_SEARCH_PREFS);
+    return () => closeSearchStreamRef.current?.();
   }, [handleSearch]);
 
-  useEffect(() => {
-    if (!selectedListingId) {
-      setReport(null);
-      setTraceLines([]);
-      return;
-    }
-
-    closeStreamRef.current?.();
+  const handleSelectListing = useCallback(async (listingId: string) => {
+    setSelectedListingId(listingId);
     setIsLoadingReport(true);
     setReport(null);
-    setTraceLines([]);
+    setSearchError(null);
 
-    const close = investigateStream(selectedListingId, searchPrefs.office, {
-      onStart: (data) => {
-        setTraceLines([`🚀 Launching Multi-Agent Audit for: "${data.title}"`]);
-      },
-      onTrace: (line) => {
-        setTraceLines((prev) => [...prev, line]);
-      },
-      onDone: (trustReport) => {
-        setReport(trustReport);
-        setIsLoadingReport(false);
-      },
-      onError: async () => {
-        try {
-          const { investigateListing } = await import('@/lib/api');
-          const fallback = await investigateListing(
-            selectedListingId,
-            searchPrefs.office
-          );
-          setReport(fallback);
-        } catch {
-          setSearchError('Investigation failed. Check backend on port 8000.');
-        } finally {
-          setIsLoadingReport(false);
-        }
-      },
-    });
-
-    closeStreamRef.current = close;
-
-    return () => {
-      close();
-    };
-  }, [selectedListingId, searchPrefs.office]);
+    try {
+      const cachedReport = await fetchReport(listingId);
+      setReport(cachedReport);
+    } catch (err) {
+      setSearchError(
+        err instanceof Error ? err.message : 'Could not load report for this listing.'
+      );
+    } finally {
+      setIsLoadingReport(false);
+    }
+  }, []);
 
   const selectedListing =
     listings.find((l) => l.id === selectedListingId) ?? null;
+
+  const activeTraceLines = isSearching
+    ? traceLines
+    : report?.reasoning ?? traceLines;
 
   return (
     <motion.div
@@ -149,7 +133,7 @@ export function Dashboard({ onLogout }: DashboardProps) {
             <ListingsPanel
               listings={listings}
               selectedListingId={selectedListingId}
-              onSelectListing={setSelectedListingId}
+              onSelectListing={handleSelectListing}
               onSearch={handleSearch}
               isSearching={isSearching}
               searchPrefs={searchPrefs}
@@ -165,8 +149,9 @@ export function Dashboard({ onLogout }: DashboardProps) {
             <TrustReportPanel
               selectedListing={selectedListing}
               report={report}
-              traceLines={traceLines}
+              traceLines={activeTraceLines}
               isLoading={isLoadingReport}
+              isSearching={isSearching}
             />
           </motion.div>
         </div>

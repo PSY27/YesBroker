@@ -10,6 +10,44 @@ interface TrustReportPanelProps {
   report: TrustReportType | null;
   traceLines: string[];
   isLoading: boolean;
+  isSearching?: boolean;
+}
+
+function AnalyzingView({
+  title,
+  subtitle,
+  traceLines,
+  live = false,
+}: {
+  title: string;
+  subtitle: string;
+  traceLines: string[];
+  live?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="flex flex-col gap-4 h-full p-4 overflow-hidden"
+    >
+      <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+        >
+          <div className="w-6 h-6 rounded-full border-2 border-white/10 border-t-[#7c5cff]" />
+        </motion.div>
+        <div>
+          <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+          <p className="text-xs text-muted-foreground">{subtitle}</p>
+        </div>
+      </div>
+
+      <div className="flex-1 min-h-0 overflow-y-auto">
+        <TerminalReasoning lines={traceLines} live={live} />
+      </div>
+    </motion.div>
+  );
 }
 
 export function TrustReportPanel({
@@ -17,6 +55,7 @@ export function TrustReportPanel({
   report,
   traceLines,
   isLoading,
+  isSearching = false,
 }: TrustReportPanelProps) {
   return (
     <motion.div
@@ -25,7 +64,14 @@ export function TrustReportPanel({
       transition={{ duration: 0.6, delay: 0.2 }}
       className="flex flex-col h-full bg-white/2"
     >
-      {!selectedListing ? (
+      {isSearching ? (
+        <AnalyzingView
+          title="AI Agents Auditing"
+          subtitle="Scraping listings and running parallel trust analysis..."
+          traceLines={traceLines}
+          live
+        />
+      ) : !selectedListing ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -51,35 +97,15 @@ export function TrustReportPanel({
             Select a Listing
           </h3>
           <p className="text-sm text-muted-foreground max-w-xs">
-            Choose a property from the left panel to launch our AI-powered
-            investigation
+            Choose a property from the list to view its trust report
           </p>
         </motion.div>
       ) : isLoading ? (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="flex flex-col gap-4 h-full p-4 overflow-hidden"
-        >
-          <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
-            >
-              <div className="w-6 h-6 rounded-full border-2 border-white/10 border-t-[#7c5cff]" />
-            </motion.div>
-            <div>
-              <h3 className="text-sm font-semibold text-foreground">AI Agents Auditing</h3>
-              <p className="text-xs text-muted-foreground">
-                Planner selecting specialists and streaming live trace...
-              </p>
-            </div>
-          </div>
-
-          <div className="flex-1 min-h-0 overflow-y-auto">
-            <TerminalReasoning lines={traceLines} />
-          </div>
-        </motion.div>
+        <AnalyzingView
+          title="Loading report"
+          subtitle="Fetching trust analysis from search results..."
+          traceLines={traceLines}
+        />
       ) : report ? (
         <TrustReport listing={selectedListing} report={report} />
       ) : null}

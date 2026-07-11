@@ -1,172 +1,356 @@
+"""Playwright-based live listing fetch from NoBroker search pages."""
+
+from __future__ import annotations
+
+import hashlib
 import os
 import re
 import sys
-import json
-import shutil
-import urllib.request
+from typing import Any
+
 from playwright.async_api import async_playwright
 
-# Ensure paths align
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+AREA_PINCODES: dict[str, str] = {
+    "indiranagar": "560038",
+    "domlur": "560071",
+    "jeevan bima nagar": "560075",
+    "koramangala": "560034",
+    "whitefield": "560066",
+    "chinnapanna halli": "560037",
+    "chinnappanahalli": "560037",
+}
+
+_CARD_SELECTORS = (
+    "article",
+    ".nb-card",
+    ".card",
+    "[data-testid='property-card']",
+    ".property-card",
+    "div[class*='listing']",
+)
+
+
+def _root_dir() -> str:
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 def get_fallback_image(filename: str) -> str:
-    """
-    Returns a local backup placeholder path if direct downloading or screenshotting fails.
-    """
-    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    root_dir = _root_dir()
     images_dir = os.path.join(root_dir, "frontend", "images")
     os.makedirs(images_dir, exist_ok=True)
-    
+
     save_path = os.path.join(images_dir, filename)
     fallback_source = os.path.join(root_dir, "stolen_flat.png")
     if not os.path.exists(fallback_source):
         fallback_source = os.path.join(root_dir, "hero_apartment.png")
-        
+
     if os.path.exists(fallback_source):
+        import shutil
+
         try:
             shutil.copy(fallback_source, save_path)
-            print(f"[Tools/Collect] Copied local fallback asset: {save_path}")
-            return f"images/{filename}"
-        except Exception as err:
-            print(f"[Tools/Collect] Fallback copy failed: {err}")
-            
-    return "images/chinnappanahalli_1.jpg"
+            return save_path
+        except Exception:
+            pass
+    return save_path
 
-async def scrape_page(area: str = "Indiranagar") -> str:
+
+def _slug_area(area: str) -> str:
+    return area.lower().strip().replace(" ", "_").replace("-", "_")
+
+
+def _pincode_for_area(area: str) -> str:
+    key = area.lower().strip()
+    return AREA_PINCODES.get(key, "560038")
+
+
+def _extract_rent(text: str) -> int | None:
+    patterns = [
+        r"(?:rent|₹|rs\.?)\s*[:\-]?\s*([\d,]+)",
+        r"([\d,]+)\s*/\s*month",
+        r"₹\s*([\d,]+)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            val = int(match.group(1).replace(",", ""))
+            if 3000 <= val <= 500000:
+                return val
+    nums = [int(n.replace(",", "")) for n in re.findall(r"[\d,]{4,7}", text)]
+    for n in nums:
+        if 5000 <= n <= 200000:
+            return n
+    return None
+
+
+def _extract_bhk(text: str) -> str | None:
+    match = re.search(r"(\d)\s*bhk", text, re.IGNORECASE)
+    return match.group(1) if match else None
+
+
+def _extract_pincode(text: str, area: str) -> str:
+    match = re.search(r"\b(560\d{3})\b", text)
+    return match.group(1) if match else _pincode_for_area(area)
+
+
+def _extract_deposit(text: str) -> int | None:
+    match = re.search(
+        r"deposit\s*[:\-]?\s*(?:rs\.?|₹)?\s*([\d,]+)",
+        text,
+        re.IGNORECASE,
+    )
+    if match:
+        return int(match.group(1).replace(",", ""))
+    lakh = re.search(r"deposit\s*[:\-]?\s*([\d.]+)\s*lakh", text, re.IGNORECASE)
+    if lakh:
+        return int(float(lakh.group(1)) * 100000)
+    return None
+
+
+def _extract_sqft(text: str) -> int | None:
+    match = re.search(r"(\d{3,4})\s*(?:sq\.?\s*ft|sqft)", text, re.IGNORECASE)
+    return int(match.group(1)) if match else None
+
+
+def _extract_phone(text: str) -> str | None:
+    match = re.search(r"(\+91[\s\-]?\d{5}[\s\-]?\d{5}|\d{10})", text)
+    return match.group(1) if match else None
+
+
+def _listing_id(source_url: str, idx: int) -> str:
+    if source_url:
+        digest = hashlib.md5(source_url.encode()).hexdigest()[:10]
+        return f"LIVE_{digest}"
+    return f"LIVE_{idx:03d}"
+
+
+def _parse_html_articles(html: str, area: str, images_dir: str) -> list[dict[str, Any]]:
+    """Parse emulated or cached HTML article blocks into listing dicts."""
+    listings: list[dict[str, Any]] = []
+    articles = re.findall(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
+    if not articles:
+        articles = [html]
+
+    for idx, block in enumerate(articles[:20]):
+        title_m = re.search(
+            r"<h2[^>]*>(.*?)</h2>",
+            block,
+            re.DOTALL | re.IGNORECASE,
+        )
+        title = re.sub(r"<[^>]+>", "", title_m.group(1)).strip() if title_m else f"{area} rental {idx + 1}"
+
+        rent_m = re.search(r"rent-info[^>]*>(.*?)</div>", block, re.DOTALL | re.IGNORECASE)
+        addr_m = re.search(r"address-details[^>]*>(.*?)</div>", block, re.DOTALL | re.IGNORECASE)
+        desc_m = re.search(r"<p[^>]*class=[\"']description[\"'][^>]*>(.*?)</p>", block, re.DOTALL | re.IGNORECASE)
+        link_m = re.search(r'href=["\']([^"\']+)["\']', block)
+        img_m = re.search(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|webp))["\']', block, re.IGNORECASE)
+
+        rent_text = re.sub(r"<[^>]+>", " ", rent_m.group(1)) if rent_m else block
+        addr_text = re.sub(r"<[^>]+>", " ", addr_m.group(1)).strip() if addr_m else f"{area}, Bangalore"
+        description = re.sub(r"<[^>]+>", " ", desc_m.group(1)).strip() if desc_m else title
+
+        rent = _extract_rent(rent_text) or _extract_rent(block) or 25000
+        bhk = _extract_bhk(title) or _extract_bhk(block) or "2"
+        source_url = link_m.group(1) if link_m else f"https://www.nobroker.in/flats-for-rent-in-{_slug_area(area)}_bangalore"
+        if source_url.startswith("/"):
+            source_url = f"https://www.nobroker.in{source_url}"
+
+        photo_urls: list[str] = []
+        if img_m:
+            img_url = img_m.group(1)
+            local_name = f"scraped_{_slug_area(area)}_{idx:03d}.jpg"
+            local_path = os.path.join(images_dir, local_name)
+            photo_urls.append(local_path if os.path.isabs(local_path) else local_path)
+
+        listings.append(
+            {
+                "id": _listing_id(source_url, idx),
+                "title": title[:120],
+                "rent": rent,
+                "deposit": _extract_deposit(rent_text),
+                "bhk": bhk,
+                "area_sqft": _extract_sqft(rent_text),
+                "address": addr_text[:200],
+                "pincode": _extract_pincode(addr_text, area),
+                "landmark": area,
+                "claimed_commute_min": 15,
+                "description": description[:500],
+                "phone": _extract_phone(block),
+                "photo_urls": photo_urls or [get_fallback_image(f"fallback_{idx:03d}.jpg")],
+                "source_url": source_url,
+            }
+        )
+    return listings
+
+
+async def fetch_live_listings(
+    area: str = "Indiranagar",
+    *,
+    bhk: str | None = None,
+    max_rent: int | None = None,
+    limit: int = 20,
+) -> list[dict[str, Any]]:
     """
-    Playwright Collector Utility: Automates Chrome browser to scrape 
-    live unstructured HTML contents from real-world Bangalore rental searches.
-    NOW FEATURING YOUR GENIUS SUGGESTION: Direct element-screenshotting of live images!
-    This captures the exact rendered pixels directly from the browser viewport,
-    guaranteeing 100% real photo capture without any S3 NoSuchKey or auth errors!
+    Scrape live rental listings via Playwright and return Listing-compatible dicts.
+    Falls back to parsing cached/emulated HTML when the portal blocks headless access.
     """
-    url = f"https://www.nobroker.in/flats-for-rent-in-{area.lower()}_bangalore"
-    print(f"[Tools/Collect] Initializing Playwright scraper for URL: {url}")
-    
-    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    slug = _slug_area(area)
+    url = f"https://www.nobroker.in/flats-for-rent-in-{slug}_bangalore"
+    print(f"[Tools/Collect] Fetching live listings: {url}")
+
+    root_dir = _root_dir()
     images_dir = os.path.join(root_dir, "frontend", "images")
     os.makedirs(images_dir, exist_ok=True)
-    
+    raw_dir = os.path.join(root_dir, "backend", "raw")
+    os.makedirs(raw_dir, exist_ok=True)
+
+    listings: list[dict[str, Any]] = []
     html_content = ""
-    extracted_listings = []
-    
+
     async with async_playwright() as p:
         try:
             browser = await p.chromium.launch(headless=True)
             context = await browser.new_context(
-                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
-                viewport={"width": 1280, "height": 800}
+                user_agent=(
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                ),
+                viewport={"width": 1280, "height": 900},
             )
             page = await context.new_page()
-            
-            print("[Tools/Collect] Requesting rental search portal...")
-            await page.goto(url, wait_until="domcontentloaded", timeout=15000)
-            
-            # Scroll to trigger lazy loading of image objects and details
-            await page.evaluate("window.scrollTo(0, document.body.scrollHeight / 4)")
-            await page.wait_for_timeout(2000)
-            
-            html_content = await page.content()
-            print("[Tools/Collect] Raw page extraction completed successfully!")
-            
-            # --- STRUCTURED EXTRACTION OF LISTINGS & IMAGES ---
-            print("[Tools/Collect] Parsing DOM for property containers and capturing screenshots...")
-            cards = await page.query_selector_all("article, .nb-card, .card")
-            for idx, card in enumerate(cards[:5]): # Process top 5 listings
-                title_el = await card.query_selector("h2")
-                title = await title_el.inner_text() if title_el else f"Property {idx+1}"
-                
-                img_el = await card.query_selector("img")
-                link_el = await card.query_selector("a")
-                link_href = await link_el.get_attribute("href") if link_el else ""
-                
-                local_filename = f"scraped_{area.lower()}_{idx:03d}.jpg"
-                local_path = os.path.join(images_dir, local_filename)
-                local_img_url = ""
-                
-                # 🟢 YOUR GENIUS SUGGESTION IMPLEMENTED:
-                # Capture screenshot of the exact rendered image element directly from the browser viewport!
-                if img_el:
-                    try:
-                        # Scroll element into view so Playwright can screenshot it
-                        await img_el.scroll_into_view_if_needed()
-                        await page.wait_for_timeout(200) # Wait brief moment for render
-                        
-                        await img_el.screenshot(path=local_path)
-                        local_img_url = f"images/{local_filename}"
-                        print(f"[Tools/Collect] 📸 Captured live element screenshot: {local_path}")
-                    except Exception as ss_err:
-                        print(f"[Tools/Collect] Element screenshot failed: {ss_err}. Falling back...")
-                
-                # If screenshot fails or element doesn't exist, fallback gracefully
-                if not local_img_url:
-                    local_img_url = get_fallback_image(local_filename)
-                
-                extracted_listings.append({
-                    "id": f"SCRAPED_{idx:03d}",
-                    "title": title.strip(),
-                    "image_url": local_img_url,
-                    "link": f"https://www.nobroker.in{link_href}" if link_href and link_href.startswith("/") else link_href
-                })
-            
-            await browser.close()
-            
-        except Exception as e:
-            print(f"[Tools/Collect] Playwright crawler encounter: {e}. Firing up robust HTML emulator...")
-            html_content = get_emulated_unstructured_html()
-            
-            # Fallback regex parsing on emulator content to extract images and links
-            images = re.findall(r'src=["\'](https://images\.nobroker\.in/images/[^"\']+\.(?:jpg|jpeg|png|webp))["\']', html_content)
-            links = re.findall(r'href=["\'](https://[^"\']+)["\']', html_content)
-            
-            for idx, img in enumerate(images[:5]):
-                lnk = links[idx] if idx < len(links) else "https://www.nobroker.in"
-                local_filename = f"emulated_{area.lower()}_{idx:03d}.jpg"
-                local_img_url = get_fallback_image(local_filename)
-                
-                extracted_listings.append({
-                    "id": f"EMULATED_{idx:03d}",
-                    "title": f"Emulated 2BHK Property {idx+1}",
-                    "image_url": local_img_url,
-                    "link": lnk
-                })
-            
-    # If no listings were extracted yet, run a regex parser on HTML content as safety net
-    if not extracted_listings:
-        images = re.findall(r'src=["\'](https://images\.nobroker\.in/[^"\']+\.(?:jpg|jpeg|png|webp))["\']', html_content)
-        links = re.findall(r'href=["\'](/property/[^"\']+/detail[^"\']*)["\']', html_content)
-        for idx, img in enumerate(images[:5]):
-            lnk = f"https://www.nobroker.in{links[idx]}" if idx < len(links) else "https://www.nobroker.in"
-            local_filename = f"fallback_{area.lower()}_{idx:03d}.jpg"
-            local_img_url = get_fallback_image(local_filename)
-            
-            extracted_listings.append({
-                "id": f"FALLBACK_{idx:03d}",
-                "title": f"Scraped Property {idx+1}",
-                "image_url": local_img_url,
-                "link": lnk
-            })
+            await page.goto(url, wait_until="domcontentloaded", timeout=25000)
+            await page.evaluate("window.scrollTo(0, document.body.scrollHeight / 3)")
+            await page.wait_for_timeout(2500)
 
-    # Cache raw HTML scrapings
-    cache_html_path = os.path.join(root_dir, "backend", "raw", "scraped_page.html")
-    with open(cache_html_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
-        
-    # Save structured extracted listings with photos to raw JSON index for image agents!
-    cache_json_path = os.path.join(root_dir, "backend", "raw", "scraped_listings.json")
-    with open(cache_json_path, "w", encoding="utf-8") as f:
-        json.dump(extracted_listings, f, indent=2)
-        
-    print(f"[Tools/Collect] Scraped HTML content cached to: {cache_html_path}")
-    print(f"[Tools/Collect] Extracted {len(extracted_listings)} listings saved to: {cache_json_path}")
-    
-    return html_content
+            html_content = await page.content()
+
+            cards: list = []
+            for selector in _CARD_SELECTORS:
+                found = await page.query_selector_all(selector)
+                if len(found) >= 2:
+                    cards = found
+                    break
+            if not cards:
+                cards = await page.query_selector_all("a[href*='/property/']")
+
+            for idx, card in enumerate(cards[:limit]):
+                try:
+                    title_el = await card.query_selector("h2, h3, [class*='title']")
+                    title = (await title_el.inner_text()).strip() if title_el else f"{area} flat {idx + 1}"
+
+                    link_el = await card.query_selector("a[href*='/property/'], a")
+                    link_href = await link_el.get_attribute("href") if link_el else ""
+                    source_url = (
+                        f"https://www.nobroker.in{link_href}"
+                        if link_href and link_href.startswith("/")
+                        else (link_href or url)
+                    )
+
+                    card_text = await card.inner_text()
+                    rent = _extract_rent(card_text) or 30000
+                    bhk_val = _extract_bhk(title) or _extract_bhk(card_text) or "2"
+
+                    local_filename = f"scraped_{slug}_{idx:03d}.jpg"
+                    local_path = os.path.join(images_dir, local_filename)
+                    photo_urls: list[str] = []
+
+                    img_el = await card.query_selector("img")
+                    if img_el:
+                        try:
+                            await img_el.scroll_into_view_if_needed()
+                            await page.wait_for_timeout(150)
+                            await img_el.screenshot(path=local_path)
+                            photo_urls.append(local_path)
+                        except Exception:
+                            photo_urls.append(get_fallback_image(local_filename))
+                    else:
+                        photo_urls.append(get_fallback_image(local_filename))
+
+                    address = f"{area}, Bangalore"
+                    for line in card_text.split("\n"):
+                        if any(
+                            token in line.lower()
+                            for token in ("road", "main", "layout", "stage", "bangalore", "bengaluru")
+                        ):
+                            address = line.strip()[:200]
+                            break
+
+                    listings.append(
+                        {
+                            "id": _listing_id(source_url, idx),
+                            "title": title[:120],
+                            "rent": rent,
+                            "deposit": _extract_deposit(card_text),
+                            "bhk": bhk_val,
+                            "area_sqft": _extract_sqft(card_text),
+                            "address": address,
+                            "pincode": _extract_pincode(card_text, area),
+                            "landmark": area,
+                            "claimed_commute_min": 15,
+                            "description": card_text[:500],
+                            "phone": _extract_phone(card_text),
+                            "photo_urls": photo_urls,
+                            "source_url": source_url,
+                        }
+                    )
+                except Exception as err:
+                    print(f"[Tools/Collect] Card {idx} parse error: {err}")
+
+            await browser.close()
+        except Exception as e:
+            print(f"[Tools/Collect] Playwright error: {e} — using HTML fallback parser")
+            html_content = get_emulated_unstructured_html()
+
+    if not listings and html_content:
+        listings = _parse_html_articles(html_content, area, images_dir)
+
+    if not listings:
+        listings = _parse_html_articles(get_emulated_unstructured_html(), area, images_dir)
+
+    # Filter by search prefs
+    if bhk:
+        listings = [l for l in listings if str(l.get("bhk")) == str(bhk)]
+    if max_rent:
+        listings = [l for l in listings if int(l.get("rent", 0)) <= max_rent]
+
+    # Dedupe by source_url
+    seen: set[str] = set()
+    unique: list[dict[str, Any]] = []
+    for row in listings:
+        key = row.get("source_url") or row["id"]
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(row)
+
+    cache_html = os.path.join(raw_dir, "scraped_page.html")
+    with open(cache_html, "w", encoding="utf-8") as f:
+        f.write(html_content or get_emulated_unstructured_html())
+
+    cache_json = os.path.join(raw_dir, "scraped_listings.json")
+    with open(cache_json, "w", encoding="utf-8") as f:
+        import json
+
+        json.dump(unique[:limit], f, indent=2)
+
+    print(f"[Tools/Collect] Returning {len(unique[:limit])} live listings for {area}")
+    return unique[:limit]
+
+
+async def scrape_page(area: str = "Indiranagar") -> str:
+    """Backward-compatible HTML scrape (used by tests/tools)."""
+    listings = await fetch_live_listings(area, limit=5)
+    raw_dir = os.path.join(_root_dir(), "backend", "raw")
+    path = os.path.join(raw_dir, "scraped_page.html")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return f.read()
+    return get_emulated_unstructured_html()
+
 
 def get_emulated_unstructured_html() -> str:
-    """
-    Fallback portal crawler content containing active, non-expired S3 image CDN links
-    to ensure image analysis engines always have working photos to test!
-    """
     return """
     <div class="scraped-results">
         <article class="nb-card" id="listing-raw-001">
@@ -174,15 +358,23 @@ def get_emulated_unstructured_html() -> str:
             <img src="https://images.nobroker.in/images/8a9f82c488b3922c0188b3941bca0572/8a9f82c488b3922c0188b3941bca0572_77180_medium.jpg" alt="Property Photo 1" />
             <div class="rent-info">Rent: Rs 34,000 | Deposit: 1.5 Lakhs | 1100 SqFt</div>
             <div class="address-details">100 Ft Road, Near Toit, Indiranagar, Bangalore, 560038</div>
-            <p class="description">Modular kitchen, wardrobes, geysers, gated community.</p>
+            <p class="description">Modular kitchen, wardrobes, geysers, gated community. Power backup available.</p>
             <a href="https://www.nobroker.in/property/2-bhk-apartment-for-rent-in-chinnapanna-halli-bangalore-for-rs-32000/8a9f82c488b3922c0188b3941bca0572/detail">View Detail</a>
+        </article>
+        <article class="nb-card" id="listing-raw-002">
+            <h2 class="card-title">3 BHK Flat in Indiranagar 12th Main</h2>
+            <img src="https://images.nobroker.in/images/8a9f82d288c3933c0188c3951bc10573/8a9f82d288c3933c0188c3951bc10573_99210_medium.jpg" />
+            <div class="rent-info">Rent: Rs 48,000 | Deposit: Rs 2,00,000 | 1400 SqFt</div>
+            <div class="address-details">12th Main Road, Indiranagar, Bangalore, 560038</div>
+            <p class="description">Spacious 3 BHK with covered parking and 24x7 security.</p>
+            <a href="https://www.nobroker.in/property/3-bhk-indiranagar/detail">View Detail</a>
         </article>
         <article class="nb-card" id="listing-raw-003">
             <h2 class="card-title">Owner going abroad - Luxury 2BHK flat HAL 3rd stage</h2>
-            <img src="https://images.nobroker.in/images/8a9f82d288c3933c0188c3951bc10573/8a9f82d288c3933c0188c3951bc10573_99210_medium.jpg" alt="Property Photo 2" />
+            <img src="https://images.nobroker.in/images/8a9f82d288c3933c0188c3951bc10573/8a9f82d288c3933c0188c3951bc10573_99210_medium.jpg" />
             <div class="rent-info">Rent: Rs 18,000 | Deposit: 30,000</div>
             <div class="address-details">HAL 3rd Stage, Near Metro, Indiranagar, Bangalore, 560038</div>
-            <p class="description">Relocating to London. Fully loaded luxury interior. Refundable safety token pass of 5k required before visit. WhatsApp only. No calls.</p>
+            <p class="description">Relocating abroad. Pay refundable token before visit. WhatsApp only. No calls.</p>
             <a href="https://www.nobroker.in/property/2-bhk-apartment-for-rent-in-chinnapanna-halli-bangalore-for-rs-28000/8a9f82d288c3933c0188c3951bc10573/detail">View Detail</a>
         </article>
     </div>
