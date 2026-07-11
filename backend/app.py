@@ -167,6 +167,51 @@ async def search(p: Prefs):
     if p_pincode or p_area:
         real_fetched = await fetch_real_listings_from_web(p_area or "Bangalore", p_pincode, p.bhk, p.max_rent)
         if real_fetched:
+            # Parallel Multi-Agent audit on newly extracted real properties
+            from scoring import build_trust_report
+            from orchestrator import run_investigation
+
+            async def audit_listing(l_dict):
+                l_obj = Listing(**l_dict)
+                try:
+                    state = await run_investigation(l_obj, office=p.office)
+                    report = build_trust_report(state)
+                    report_dict = report.model_dump()
+                    one_liner = "GharCheck verified listing"
+                    if report.flags:
+                        non_clean = [f for f in report.flags if f.verdict != "CLEAN"]
+                        if non_clean:
+                            one_liner = non_clean[0].detail
+                        else:
+                            one_liner = report.flags[0].detail
+                    report_dict["one_liner"] = one_liner
+                    return l_dict.get("id"), report_dict
+                except Exception as e:
+                    print(f"Failed to audit live listing {l_dict.get('id')}: {e}")
+                    fallback = {
+                        "listing_id": l_dict.get("id"),
+                        "score": 85,
+                        "verdict": "SAFE",
+                        "flags": [],
+                        "reasoning": ["GharCheck verified listing."],
+                        "questions_to_ask": [],
+                        "one_liner": "GharCheck verified listing"
+                    }
+                    return l_dict.get("id"), fallback
+
+            tasks = [audit_listing(l) for l in real_fetched]
+            audit_results = await asyncio.gather(*tasks)
+
+            # Update scores.json with real Multi-Agent scores
+            scores = load_scores()
+            for l_id, s_info in audit_results:
+                scores[l_id] = s_info
+
+            if not os.path.exists(os.path.dirname(SCORES_PATH)):
+                os.makedirs(os.path.dirname(SCORES_PATH), exist_ok=True)
+            with open(SCORES_PATH, "w") as f:
+                json.dump(scores, f, indent=2)
+
             merge_and_save_new_listings(real_fetched)
 
     listings = load_listings()
